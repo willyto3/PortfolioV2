@@ -199,7 +199,6 @@ const NavBar = () => {
               sx={{
                 color: dark,
                 fontSize: '25px',
-                display: { xs: 'none', sm: 'flex' },
                 '&:hover': {
                   color: '#f39f18',
                   cursor: 'pointer',
@@ -210,7 +209,6 @@ const NavBar = () => {
             <DarkMode
               sx={{
                 fontSize: '20px',
-                display: { xs: 'none', sm: 'flex' },
                 '&:hover': {
                   color: '#3c688e',
                   cursor: 'pointer',

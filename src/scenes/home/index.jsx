@@ -1,51 +1,35 @@
-// Importacion de Styled del Styled-Components
-// import styled from 'styled-components'
-// // Importacion de Componentes
-// import Presentacion from '../components/Presentacion'
-import Image from 'mui-image'
+import Grid from '@mui/material/Grid'
+import Paper from '@mui/material/Paper'
+import { CardMedia } from '@mui/material'
+import Presentacion from './Presentacion'
+
 
 const Home = () => {
   return (
-    <div className='container'>
-      <div className='box grid'>
-        <div className='box__columna'>
-          
-        </div>
-        <div className='box__columna'>
-          {/* <Presentacion /> */}
-          <Image
-            src='WillyNegro.png'
-            height='50vh'
-            width='50%'
-            fit='cover'
-            duration={3000}
-            easing='cubic-bezier(0.7, 0, 0.6, 1)'
-            showLoading={false}
-            errorIcon={true}
-            distance='100px'
-            shiftDuration={900}
-            bgColor='inherit'
+    <Paper
+      sx={{
+        p: 2,
+        margin: 'auto',
+        maxWidth: 1700,
+        flexGrow: 1,
+      }}
+    >
+      <Grid container spacing={2}>
+        <Grid item >
+          <CardMedia
+            component='img'
+            width='800'
+            height='600'
+            image='WillyNegro.png'
+            alt='Paella dish'
           />
-        </div>
-      </div>
-    </div>
+          
+        </Grid>
+        <Grid item xs={12} lg container alignContent='center'>
+          <Presentacion />
+        </Grid>
+      </Grid>
+    </Paper>
   )
 }
 export default Home
-
-// const Wrapper = styled.section`
-//   img {
-//     width: 35rem;
-//   }
-
-//   .box {
-//     grid-template-columns: 1fr 2fr;
-//     align-items: center;
-//     justify-items: center;
-
-//     @media (max-width: ${({ theme }) => theme.media.tablet}),
-//       (max-width: ${({ theme }) => theme.media.movil}) {
-//       grid-template-columns: 1fr;
-//     }
-//   }
-// `
