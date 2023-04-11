@@ -1,9 +1,10 @@
 // Importacion de React Router Dom
 import { createBrowserRouter } from 'react-router-dom'
-import LayoutPublic from '../layout/LayoutPublic'
+
 // Importacion de Paginas
-import Home from '../scenes/home'
+import LayoutPublic from '../layout/LayoutPublic'
 import Error404 from '../scenes/error404'
+import Home from '../scenes/home'
 
 // Funcion Router
 export const router = createBrowserRouter([

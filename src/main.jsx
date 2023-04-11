@@ -10,26 +10,25 @@ import globalReducer from './state'
 import { configureStore } from '@reduxjs/toolkit'
 // Importamos el Provider de React Redux
 import { Provider } from 'react-redux'
-
+// Importamos el Listeners de ReduxJS Toolkit
 import { setupListeners } from '@reduxjs/toolkit/dist/query'
-
-
 
 // Creamos la constante Store
 const store = configureStore({
   reducer: { global: globalReducer },
 })
 
+// configuramos la Store
 setupListeners(store.dispatch)
-// importacion del tema de la aplicacion
 
 // importacion del estilo global
-
 import './index.css'
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
+    {/* // Proveemos la Store */}
     <Provider store={store}>
+      {/* // Proveemos las Rutas */}
       <RouterProvider router={router} />
     </Provider>
   </React.StrictMode>
