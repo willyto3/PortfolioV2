@@ -10,6 +10,9 @@ import {
   ListItem,
   ListItemButton,
   ListItemText,
+  Tab,
+  Tabs,
+  Toolbar,
   Typography,
   useTheme,
 } from '@mui/material'
@@ -23,8 +26,6 @@ import { useDispatch, useSelector } from 'react-redux'
 import { setMode } from '../state'
 
 import { useNavigate } from 'react-router-dom'
-
-import FlexBetween from './FlexBetween'
 
 const drawerWidth = 425
 const navItems = ['Inicio', 'Experiencia', 'Estudios', 'Proyectos', 'Contactos']
@@ -45,6 +46,17 @@ const NavBar = () => {
   // Creamos constantes para los colores
   const neutralLigth = theme.palette.neutral.light
   const dark = theme.palette.neutral.dark
+  const principal = theme.palette.primary.main
+
+  const [value, setValue] = useState(0)
+
+  const handleChange = (event, newValue) => {
+    setValue(newValue)
+  }
+
+  const handleChangeIndex = index => {
+    setValue(index)
+  }
 
   const drawer = (
     <Box onClick={handleDrawerToggle} sx={{ textAlign: 'center' }}>
@@ -123,27 +135,27 @@ const NavBar = () => {
   )
 
   return (
-    <Box component='nav'>
-      {/* //? MENU DESPLEGABLE */}
-      <Drawer
-        variant='temporary'
-        open={mobileOpen}
-        onClose={handleDrawerToggle}
-        ModalProps={{
-          keepMounted: true,
-        }}
-        sx={{
-          display: { xs: 'block', sm: 'none' },
-          '& .MuiDrawer-paper': {
-            boxSizing: 'border-box',
-            width: drawerWidth,
-          },
-        }}
-      >
-        {drawer}
-      </Drawer>
+    <AppBar sx={{ backgroundColor: neutralLigth }}>
+      <Toolbar>
+        {/* //? MENU DESPLEGABLE */}
+        <Drawer
+          variant='temporary'
+          open={mobileOpen}
+          onClose={handleDrawerToggle}
+          ModalProps={{
+            keepMounted: true,
+          }}
+          sx={{
+            display: { xs: 'block', sm: 'none' },
+            '& .MuiDrawer-paper': {
+              boxSizing: 'border-box',
+              width: drawerWidth,
+            },
+          }}
+        >
+          {drawer}
+        </Drawer>
 
-      <FlexBetween padding='1rem 6%' backgroundColor={neutralLigth}>
         <Typography
           fontWeight='bold'
           fontSize='clamp(2rem, 2rem, 3.3rem)'
@@ -173,24 +185,27 @@ const NavBar = () => {
         </IconButton>
 
         {/* //? NAVEGACION POR ITEMS*/}
-        <Box sx={{ display: { xs: 'none', sm: 'flex' } }}>
+        <Tabs
+          value={value}
+          onChange={handleChange}
+          sx={{ display: { xs: 'none', sm: 'flex' } }}
+        >
           {navItems.map(item => (
-            <Button key={item} sx={{ color: dark }}>
-              <Typography
-                fontSize='max(0.9rem, 1.2vw)'
-                sx={{
-                  flexGrow: 1,
-                  '&:hover': {
-                    color: theme.palette.primary.main,
-                    cursor: 'pointer',
-                  },
-                }}
-              >
-                {item}
-              </Typography>
-            </Button>
+            <Tab
+              label={item}
+              key={item}
+              sx={{
+                height: 65,
+                color: dark,
+                fontSize: 25,
+                flexGrow: 1,
+                '&:hover': {
+                  color: theme.palette.primary.main,
+                },
+              }}
+            ></Tab>
           ))}
-        </Box>
+        </Tabs>
 
         {/* //? BOTON PARA CAMBIAR EL TEMA */}
         <IconButton onClick={() => dispatch(setMode())}>
@@ -208,7 +223,7 @@ const NavBar = () => {
           ) : (
             <DarkMode
               sx={{
-                fontSize: '20px',
+                fontSize: '25px',
                 '&:hover': {
                   color: '#3c688e',
                   cursor: 'pointer',
@@ -217,8 +232,8 @@ const NavBar = () => {
             />
           )}
         </IconButton>
-      </FlexBetween>
-    </Box>
+      </Toolbar>
+    </AppBar>
   )
 }
 export default NavBar
