@@ -21,7 +21,7 @@ import MenuIcon from '@mui/icons-material/Menu'
 
 import { useState } from 'react'
 
-import { useDispatch, useSelector } from 'react-redux'
+import { useDispatch } from 'react-redux'
 
 import { setMode } from '../state'
 
@@ -54,10 +54,6 @@ const NavBar = () => {
     setValue(newValue)
   }
 
-  const handleChangeIndex = index => {
-    setValue(index)
-  }
-
   const drawer = (
     <Box onClick={handleDrawerToggle} sx={{ textAlign: 'center' }}>
       <Box display='flex' justifyContent='space-evenly'>
@@ -67,7 +63,7 @@ const NavBar = () => {
           sx={{
             my: 2,
             '&:hover': {
-              color: theme.palette.primary.main,
+              color: principal,
               cursor: 'pointer',
             },
           }}
@@ -86,14 +82,17 @@ const NavBar = () => {
       <List>
         {navItems.map(item => (
           <ListItem key={item} disablePadding>
-            <ListItemButton sx={{ textAlign: 'center' }}>
+            <ListItemButton
+              sx={{ textAlign: 'center' }}
+              onClick={() => navigate(`/${item}`)}
+            >
               <ListItemText>
                 <Typography
                   fontSize='max(0.9rem, 1.2vw)'
                   sx={{
                     flexGrow: 1,
                     '&:hover': {
-                      color: theme.palette.primary.main,
+                      color: principal,
                       cursor: 'pointer',
                     },
                   }}
@@ -165,7 +164,7 @@ const NavBar = () => {
           sx={{
             flexGrow: 1,
             '&:hover': {
-              color: theme.palette.primary.main,
+              color: principal,
               cursor: 'pointer',
             },
           }}
@@ -200,7 +199,7 @@ const NavBar = () => {
                 fontSize: 25,
                 flexGrow: 1,
                 '&:hover': {
-                  color: theme.palette.primary.main,
+                  color: principal,
                 },
               }}
             ></Tab>
