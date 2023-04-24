@@ -1,0 +1,36 @@
+import Typography from '@mui/material/Typography'
+import React from 'react'
+import Carousel from 'react-material-ui-carousel'
+
+export function Example(props) {
+  var items = [
+    'Master en Gerencia de Proyectos',
+    'Ingeniero Químico',
+    'Especialista NTC ISO 17025:2017',
+    'Desarrollador Web',
+    'Experto en Excel - VBA',
+  ]
+
+  return (
+    <Carousel
+      indicatorIconButtonProps={{
+        style: {
+          color: 'transparent',
+        },
+      }}
+    >
+      {items.map((item, i) => (
+        <Typography
+          gutterBottom
+          variant='h2'
+          component='div'
+          fontSize={{ xs: '1.5rem', sm: '4.5rem' }}
+          key={i}
+          item={item}
+        >
+          {item}
+        </Typography>
+      ))}
+    </Carousel>
+  )
+}

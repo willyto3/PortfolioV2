@@ -1,5 +1,6 @@
 import { Box } from '@mui/material'
 import Typography from '@mui/material/Typography'
+import { Example } from './Carrusel'
 
 const Presentacion = () => {
   return (
@@ -22,19 +23,9 @@ const Presentacion = () => {
       </Typography>
 
       {/* //! TOCA BUSCAR COMO HACER LA ANIMACION */}
-      <div className='inicio__caja'>
-        <div className='inicio__titulo'>
-          <div className='inicio__profesion'>
-            Master en Gerencia de Proyectos
-          </div>
-          <div className='inicio__profesion'>Ingeniero Químico</div>
-          <div className='inicio__profesion'>
-            Especialista NTC ISO 17025:2017
-          </div>
-          <div className='inicio__profesion'>Desarrollador Web</div>
-          <div className='inicio__profesion'>Experto en Excel - VBA</div>
-        </div>
-      </div>
+
+      <Example />
+
       <Typography
         gutterBottom
         variant='body'
@@ -75,4 +66,3 @@ export default Presentacion
 //       transform: translateY(-20rem);
 //     }
 //   }
-
