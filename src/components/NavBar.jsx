@@ -28,7 +28,7 @@ import { setMode } from '../state'
 import { useNavigate } from 'react-router-dom'
 
 const drawerWidth = 425
-const navItems = ['Inicio', 'Experiencia', 'Estudios', 'Proyectos', 'Contactos']
+const navItems = ['inicio', 'experiencia', 'estudios', 'proyectos', 'contacto']
 
 const NavBar = () => {
   // Usamos useState para poder asignar si el menu se encuetra visible
@@ -81,10 +81,13 @@ const NavBar = () => {
       {/* //? NAVEGACION POR ITEMS*/}
       <List>
         {navItems.map(item => (
+          
           <ListItem key={item} disablePadding>
             <ListItemButton
               sx={{ textAlign: 'center' }}
-              onClick={() => navigate(`/${item}`)}
+              onClick={() => {
+                item === 'inicio' ? navigate('/') : navigate(`/${item}`)
+              }}
             >
               <ListItemText>
                 <Typography
@@ -193,6 +196,9 @@ const NavBar = () => {
             <Tab
               label={item}
               key={item}
+              onClick={() => {
+                item === 'inicio' ? navigate('/') : navigate(`/${item}`)
+              }}
               sx={{
                 height: 65,
                 color: dark,
