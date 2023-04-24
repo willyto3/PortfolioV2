@@ -1,6 +1,6 @@
 import { Box } from '@mui/material'
 import Typography from '@mui/material/Typography'
-import { Example } from './Carrusel'
+import { Carrusel } from './Carrusel'
 
 const Presentacion = () => {
   return (
@@ -22,9 +22,7 @@ const Presentacion = () => {
         Willy Corzo
       </Typography>
 
-      {/* //! TOCA BUSCAR COMO HACER LA ANIMACION */}
-
-      <Example />
+      <Carrusel />
 
       <Typography
         gutterBottom
@@ -46,23 +44,3 @@ const Presentacion = () => {
   )
 }
 export default Presentacion
-
-//   .inicio__titulo {
-//     height: 100%;
-//     animation: move 10s ease-in-out infinite alternate;
-//   }
-
-//   @keyframes move {
-//     25% {
-//       transform: translateY(-5rem);
-//     }
-//     50% {
-//       transform: translateY(-10rem);
-//     }
-//     75% {
-//       transform: translateY(-15rem);
-//     }
-//     100% {
-//       transform: translateY(-20rem);
-//     }
-//   }

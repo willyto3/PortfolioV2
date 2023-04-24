@@ -2,7 +2,7 @@ import Typography from '@mui/material/Typography'
 import React from 'react'
 import Carousel from 'react-material-ui-carousel'
 
-export function Example(props) {
+export function Carrusel(props) {
   var items = [
     'Master en Gerencia de Proyectos',
     'Ingeniero Químico',
