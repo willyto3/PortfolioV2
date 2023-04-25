@@ -9,7 +9,7 @@ const Home = () => {
       elevation={2}
       sx={{
         display:'flex',
-        height:900,
+        height:850,
         alignItems:'center',
         p: 2,
         margin: 'auto',

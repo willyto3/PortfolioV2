@@ -9,6 +9,7 @@ import { CssBaseline, ThemeProvider, createTheme } from '@mui/material'
 // Importamos themeSettings del arhivo theme
 import NavBar from '../components/NavBar'
 import { themeSettings } from '../theme'
+import Footer from '../components/Footer'
 // Importacion de Componentes
 
 const LayoutPublic = () => {
@@ -20,6 +21,7 @@ const LayoutPublic = () => {
         <CssBaseline />
         <NavBar />
         <Outlet />
+        <Footer/>
       </ThemeProvider>
     </main>
   )
