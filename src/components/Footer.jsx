@@ -211,15 +211,6 @@ const Footer = () => {
         </Grid>
       </Paper>
 
-      {/* const Wrapper = styled.footer`
-  width: 100%;
-  padding: 1rem 0;
-  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' version='1.1' xmlns:xlink='http://www.w3.org/1999/xlink' xmlns:svgjs='http://svgjs.com/svgjs' width='1920' height='250' preserveAspectRatio='none' viewBox='0 0 1920 250'%3e%3cg mask='url(%26quot%3b%23SvgjsMask1032%26quot%3b)' fill='none'%3e%3cpath d='M58 250L308 0L582.5 0L332.5 250z' fill='url(%23SvgjsLinearGradient1033)'%3e%3c/path%3e%3cpath d='M378.8 250L628.8 0L1081.8 0L831.8 250z' fill='url(%23SvgjsLinearGradient1033)'%3e%3c/path%3e%3cpath d='M681.6 250L931.6 0L985.6 0L735.6 250z' fill='url(%23SvgjsLinearGradient1033)'%3e%3c/path%3e%3cpath d='M956.4000000000001 250L1206.4 0L1297.9 0L1047.9 250z' fill='url(%23SvgjsLinearGradient1033)'%3e%3c/path%3e%3cpath d='M1866 250L1616 0L1515.5 0L1765.5 250z' fill='url(%23SvgjsLinearGradient1034)'%3e%3c/path%3e%3cpath d='M1542.2 250L1292.2 0L921.7 0L1171.7 250z' fill='url(%23SvgjsLinearGradient1034)'%3e%3c/path%3e%3cpath d='M1265.4 250L1015.4000000000001 0L718.4000000000001 0L968.4000000000001 250z' fill='url(%23SvgjsLinearGradient1034)'%3e%3c/path%3e%3cpath d='M910.5999999999999 250L660.5999999999999 0L293.0999999999999 0L543.0999999999999 250z' fill='url(%23SvgjsLinearGradient1034)'%3e%3c/path%3e%3cpath d='M1749.9186966054617 250L1920 79.91869660546172L1920 250z' fill='url(%23SvgjsLinearGradient1033)'%3e%3c/path%3e%3cpath d='M0 250L170.08130339453828 250L 0 79.91869660546172z' fill='url(%23SvgjsLinearGradient1034)'%3e%3c/path%3e%3c/g%3e%3cdefs%3e%3cmask id='SvgjsMask1032'%3e%3crect width='1920' height='250' fill='white'%3e%3c/rect%3e%3c/mask%3e%3clinearGradient x1='0%25' y1='100%25' x2='100%25' y2='0%25' id='SvgjsLinearGradient1033'%3e%3cstop stop-color='rgba(15%2c 70%2c 185%2c 0.2)' offset='0'%3e%3c/stop%3e%3cstop stop-opacity='0' stop-color='rgba(15%2c 70%2c 185%2c 0.2)' offset='0.66'%3e%3c/stop%3e%3c/linearGradient%3e%3clinearGradient x1='100%25' y1='100%25' x2='0%25' y2='0%25' id='SvgjsLinearGradient1034'%3e%3cstop stop-color='rgba(15%2c 70%2c 185%2c 0.2)' offset='0'%3e%3c/stop%3e%3cstop stop-opacity='0' stop-color='rgba(15%2c 70%2c 185%2c 0.2)' offset='0.66'%3e%3c/stop%3e%3c/linearGradient%3e%3c/defs%3e%3c/svg%3e");
-  background-repeat: no-repeat;
-  background-size: cover;
-  align-items: start;
-   */}
-
       <Divider />
       <Box
         display='flex'
