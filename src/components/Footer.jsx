@@ -1,4 +1,3 @@
-import { DarkMode, LightMode } from '@mui/icons-material'
 import GitHubIcon from '@mui/icons-material/GitHub'
 import LinkedInIcon from '@mui/icons-material/LinkedIn'
 import WhatsAppIcon from '@mui/icons-material/WhatsApp'
@@ -24,7 +23,7 @@ import { useDispatch } from 'react-redux'
 
 import { setMode } from '../state'
 
-import { useNavigate } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
 
 const navItems = ['inicio', 'experiencia', 'estudios', 'proyectos', 'contacto']
 
@@ -110,15 +109,56 @@ const Footer = () => {
             </Typography>
             <Grid container>
               <Grid item xs={4}>
-                <LinkedInIcon sx={{ fontSize: 60 }} />
+                <LinkedInIcon
+                  onClick={() =>
+                    window.open(
+                      'https://www.linkedin.com/in/ing-quimico-willy-corzo/',
+                      '_blank'
+                    )
+                  }
+                  sx={{
+                    fontSize: 60,
+                    flexGrow: 1,
+                    '&:hover': {
+                      color: '#0e76a8',
+                      cursor: 'pointer',
+                    },
+                  }}
+                />
               </Grid>
               <Grid item xs={4}>
-                <GitHubIcon sx={{ fontSize: 60 }} />
+                <GitHubIcon
+                  onClick={() =>
+                    window.open('https://github.com/willyto3', '_blank')
+                  }
+                  sx={{
+                    fontSize: 60,
+                    flexGrow: 1,
+                    '&:hover': {
+                      color: principal,
+                      cursor: 'pointer',
+                    },
+                  }}
+                />
               </Grid>
               <Grid item xs={4}>
-                <WhatsAppIcon sx={{ fontSize: 60 }} />
+                <WhatsAppIcon
+                  onClick={() =>
+                    window.open(
+                      'https://api.whatsapp.com/send?phone=573017893883&text=Me%20interesa%20Saber%20m%C3%A1s%20sobre%20tu%20Hoja%20de%20Vida',
+                      '_blank'
+                    )
+                  }
+                  sx={{
+                    fontSize: 60,
+                    flexGrow: 1,
+                    '&:hover': {
+                      color: '#00bb2d',
+                      cursor: 'pointer',
+                    },
+                  }}
+                />
               </Grid>
-              
             </Grid>
           </Grid>
 
@@ -159,7 +199,7 @@ const Footer = () => {
                             },
                           }}
                         >
-                          {capitalize(item) }
+                          {capitalize(item)}
                         </Typography>
                       </ListItemText>
                     </ListItemButton>
