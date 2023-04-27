@@ -14,10 +14,9 @@ import {
   Tab,
   Tabs,
   Typography,
+  capitalize,
   useTheme,
 } from '@mui/material'
-
-import FlexBetween from './FlexBetween'
 
 import { useState } from 'react'
 
@@ -57,17 +56,17 @@ const Footer = () => {
       >
         <Grid
           container
-          pt='1rem'
           mt='1rem'
-          spacing={5}
+          spacing={1}
           alignContent='center'
           justifyContent='center'
+          gap='2rem'
           sx={{ backgroundColor: neutralLigth }}
         >
-          <Grid item xs={3}>
+          <Grid item xs={10} sm={3}>
             <Typography
               fontWeight='bold'
-              fontSize='clamp(2rem, 2rem, 3.3rem)'
+              fontSize='clamp(1.5rem, 1.5rem, 2rem)'
               lineHeight='1'
               component='div'
               color={dark}
@@ -95,54 +94,44 @@ const Footer = () => {
             </Typography>
           </Grid>
 
-          <Grid item xs={3}>
+          <Grid item xs={10} sm={2}>
             <Typography
               fontWeight='bold'
-              fontSize='clamp(2rem, 2rem, 3.3rem)'
+              fontSize='clamp(1.5rem, 1.5rem, 2rem)'
               lineHeight='1'
               component='div'
               color={dark}
               mb='1rem'
               sx={{
                 flexGrow: 1,
-                '&:hover': {
-                  color: principal,
-                  cursor: 'pointer',
-                },
               }}
             >
               Redes Sociales
             </Typography>
             <Grid container>
-              <Grid item xs={6}>
-                <LinkedInIcon />
+              <Grid item xs={4}>
+                <LinkedInIcon sx={{ fontSize: 60 }} />
               </Grid>
-              <Grid item xs={6}>
-                <GitHubIcon />
+              <Grid item xs={4}>
+                <GitHubIcon sx={{ fontSize: 60 }} />
               </Grid>
-              <Grid item xs={6}>
-                <WhatsAppIcon />
+              <Grid item xs={4}>
+                <WhatsAppIcon sx={{ fontSize: 60 }} />
               </Grid>
-              <Grid item xs={6}>
-                <WhatsAppIcon />
-              </Grid>
+              
             </Grid>
           </Grid>
 
-          <Grid item xs={3}>
+          <Grid item xs={10} sm={3}>
             <Typography
               fontWeight='bold'
-              fontSize='clamp(2rem, 2rem, 3.3rem)'
+              fontSize='clamp(1.5rem, 1.5rem, 2rem)'
               lineHeight='1'
               component='div'
               color={dark}
               mb='1rem'
               sx={{
                 flexGrow: 1,
-                '&:hover': {
-                  color: principal,
-                  cursor: 'pointer',
-                },
               }}
             >
               Mapa
@@ -151,7 +140,7 @@ const Footer = () => {
               {/* //? NAVEGACION POR ITEMS*/}
 
               {navItems.map(item => (
-                <Grid item xs={5} key={item}>
+                <Grid item xs={4} key={item}>
                   <ListItem disablePadding>
                     <ListItemButton
                       sx={{ textAlign: 'center' }}
@@ -170,7 +159,7 @@ const Footer = () => {
                             },
                           }}
                         >
-                          {item}
+                          {capitalize(item) }
                         </Typography>
                       </ListItemText>
                     </ListItemButton>
