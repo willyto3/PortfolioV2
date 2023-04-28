@@ -6,7 +6,6 @@ const Presentacion = () => {
   return (
     <Box>
       <Typography
-        gutterBottom
         variant='h2'
         component='div'
         fontSize={{ xs: '1.5rem', sm: '4rem' }}
@@ -14,7 +13,6 @@ const Presentacion = () => {
         Hola, Mi Nombre es
       </Typography>
       <Typography
-        gutterBottom
         variant='h1'
         component='div'
         fontSize={{ xs: '2.5rem', sm: '8rem' }}
