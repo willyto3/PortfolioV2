@@ -1,5 +1,5 @@
 // Importacion de React Router Dom
-import { createBrowserRouter } from 'react-router-dom'
+import { createHashRouter } from 'react-router-dom'
 
 // Importacion de Paginas
 import LayoutPublic from '../layout/LayoutPublic'
@@ -11,7 +11,7 @@ import Proyectos from '../scenes/proyectos'
 import Estudios from '../scenes/estudios'
 
 // Funcion Router
-export const router = createBrowserRouter([
+export const router = createHashRouter([
   {
     path: '/',
     element: <LayoutPublic />,
