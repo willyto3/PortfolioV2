@@ -2,7 +2,6 @@ import { Close, DarkMode, LightMode } from '@mui/icons-material'
 import {
   AppBar,
   Box,
-  Button,
   Divider,
   Drawer,
   IconButton,
