@@ -1,8 +1,8 @@
-import { Close, DarkMode, LightMode } from '@mui/icons-material'
+import {Close,DarkMode,LightMode} from '@mui/icons-material'
+
 import {
   AppBar,
   Box,
-  Button,
   Divider,
   Drawer,
   IconButton,
@@ -21,24 +21,22 @@ import MenuIcon from '@mui/icons-material/Menu'
 
 import { useState } from 'react'
 
-import { useDispatch } from 'react-redux'
-
-import { setMode } from '../state'
-
 import { useNavigate } from 'react-router-dom'
+
+import { useCVStore } from '../store/store'
 
 const drawerWidth = 425
 const navItems = ['inicio', 'experiencia', 'estudios', 'proyectos', 'contacto']
 
 const NavBar = () => {
+  const setMode = useCVStore(state => state.setMode)
   // Usamos useState para poder asignar si el menu se encuetra visible
   const [mobileOpen, setMobileOpen] = useState(false)
   // Creamos una funcion para cambiar el estado del menu
   const handleDrawerToggle = () => {
     setMobileOpen(prevState => !prevState)
   }
-  // Usamos el Dispatch
-  const dispatch = useDispatch()
+
   // Usamos la navegacion
   const navigate = useNavigate()
   // Uso del Tema
@@ -81,7 +79,6 @@ const NavBar = () => {
       {/* //? NAVEGACION POR ITEMS*/}
       <List>
         {navItems.map(item => (
-          
           <ListItem key={item} disablePadding>
             <ListItemButton
               sx={{ textAlign: 'center' }}
@@ -109,7 +106,7 @@ const NavBar = () => {
       </List>
 
       {/* //? BOTON PARA CAMBIAR EL TEMA */}
-      <IconButton onClick={() => dispatch(setMode())}>
+      <IconButton onClick={() => setMode()}>
         {theme.palette.mode === 'dark' ? (
           <LightMode
             sx={{
@@ -213,7 +210,7 @@ const NavBar = () => {
         </Tabs>
 
         {/* //? BOTON PARA CAMBIAR EL TEMA */}
-        <IconButton onClick={() => dispatch(setMode())}>
+        <IconButton onClick={() => setMode()}>
           {theme.palette.mode === 'dark' ? (
             <LightMode
               sx={{
