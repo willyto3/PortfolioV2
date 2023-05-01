@@ -26,7 +26,7 @@ const CardExperiencia = ({
   const theme = useTheme()
 
   return (
-    <Card sx={{ display: 'flex' }}>
+    <Card sx={{ display: { xs: 'grid', sm: 'flex' } }}>
       <CardMedia
         component='img'
         sx={{ ml: '10px', width: 240, alignSelf: 'center' }}
