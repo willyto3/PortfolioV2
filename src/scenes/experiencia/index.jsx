@@ -1,4 +1,4 @@
-import { Grid, Paper, Typography, useTheme } from '@mui/material'
+import { Grid, Paper, useTheme } from '@mui/material'
 
 import CardExperiencia from './CardExperiencia'
 
@@ -15,7 +15,7 @@ const Experiencia = () => {
       <Paper>
         <Grid
           container
-          mt='5rem'
+          mt='2rem'
           alignContent='center'
           justifyContent='center'
           gap='1rem'
