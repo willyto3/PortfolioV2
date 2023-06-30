@@ -7,9 +7,14 @@ import Typography from '@mui/material/Typography'
 
 const CardEstudio = ({ institucion, estudio, fecha, fondo, grado }) => {
   return (
-    <Card  sx={{ maxWidth: 900, display: 'flex',p:'1rem 2rem' }}>
+    <Card sx={{ maxWidth: 900, display: 'flex', p: '1rem 2rem' }}>
       <CardMedia
-        sx={{ maxWidth: 150}}
+        sx={{
+          ml: '10px',
+          padding: '1em 1em 1em 1em',
+          objectFit: 'contain',
+          alignSelf: 'center',
+        }}
         image={`${fondo}`}
         component='img'
         title='green iguana'
@@ -18,12 +23,8 @@ const CardEstudio = ({ institucion, estudio, fecha, fondo, grado }) => {
         <Typography variant='h2' component='div'>
           {estudio}
         </Typography>
-        <Typography variant='h3' >
-          {grado}
-        </Typography>
-        <Typography variant='h3' >
-          {institucion}
-        </Typography>
+        <Typography variant='h3'>{grado}</Typography>
+        <Typography variant='h3'>{institucion}</Typography>
         <Typography variant='h4' color='text.secondary'>
           {fecha}
         </Typography>

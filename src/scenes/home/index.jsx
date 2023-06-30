@@ -11,22 +11,22 @@ const Home = () => {
         display: 'flex',
         height: 700,
         alignItems: 'center',
-        p: 2,
+        p:5,
         m: '1rem auto',
         maxWidth: 1700,
         flexGrow: 1,
       }}
     >
-      <Grid container spacing={4}>
-        <Grid item xs={4}>
+      <Grid container spacing={2}>
+        <Grid item xs={12} lg={4}>
           <CardMedia
             component='img'
             image='WillyNegro.png'
             alt='Foto Willy Corzo'
-            sx={{ maxWidth: 500 }}
+            sx={{ padding: "1em 1em 1em 1em", objectFit:'contain' }}
           />
         </Grid>
-        <Grid item xs={8}>
+        <Grid item xs={12} lg={8} >
           <Presentacion />
         </Grid>
       </Grid>

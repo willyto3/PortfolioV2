@@ -26,24 +26,33 @@ const CardExperiencia = ({
   const theme = useTheme()
 
   return (
-    <Card sx={{ display: { xs: 'grid', sm: 'flex' } }}>
-      <CardMedia
-        component='img'
-        sx={{ ml: '10px', width: 240, alignSelf: 'center' }}
-        image={image}
-        alt={alt}
-      />
+    <Card>
+      <Typography
+        textTransform='uppercase'
+        component='div'
+        variant='h2'
+        fontWeight='bold'
+        fontSize='max(1.6rem, 1.2vw)'
+        textAlign='center'
+        p='1rem'
+      >
+        {cargo}
+      </Typography>
+      <Box width='15rem' display='flex'>
+        <CardMedia
+          component='img'
+          sx={{
+            ml: '10px',
+            padding: '1em 1em 1em 1em',
+            objectFit: 'contain',
+            alignSelf: 'center',
+          }}
+          image={image}
+          alt={alt}
+        />
+      </Box>
       <Box sx={{ display: 'flex', flexDirection: 'column' }}>
         <CardContent sx={{ flex: '1 0 auto' }}>
-          <Typography
-            textTransform='uppercase'
-            component='div'
-            variant='h2'
-            fontWeight='bold'
-            fontSize='max(1.6rem, 1.2vw)'
-          >
-            {cargo}
-          </Typography>
           <Typography
             variant='subtitle1'
             color='text.secondary'
@@ -70,7 +79,7 @@ const CardExperiencia = ({
               bgcolor: 'background.paper',
               position: 'relative',
               overflow: 'auto',
-              height: 250,
+              height: 350,
               '& ul': { padding: 0 },
             }}
           >

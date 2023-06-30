@@ -21,10 +21,9 @@ export function Carrusel(props) {
     >
       {items.map((item, i) => (
         <Typography
-          gutterBottom
           variant='h2'
           component='div'
-          fontSize={{ xs: '1.5rem', sm: '4.5rem' }}
+          fontSize={{ xs: '1.2rem', sm: '3.5rem' }}
           key={i}
           item={item}
         >

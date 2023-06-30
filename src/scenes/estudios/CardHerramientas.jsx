@@ -9,7 +9,12 @@ const CardHerramientas = ({ titulo, imagen, parrafo, conocimiento }) => {
   return (
     <Card sx={{ maxWidth: 900, display: 'flex', p: '1.5rem 2rem' }}>
       <CardMedia
-        height='200'
+        sx={{
+          ml: '10px',
+          padding: '1em 1em 1em 1em',
+          objectFit: 'contain',
+          alignSelf: 'center',
+        }}
         image={`${imagen}`}
         component='img'
         title='green iguana'
