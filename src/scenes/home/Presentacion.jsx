@@ -23,7 +23,7 @@ const Presentacion = () => {
       <Carrusel />
 
       <Typography
-        gutterBottom
+        
         variant='body'
         component='div'
         align='justify'

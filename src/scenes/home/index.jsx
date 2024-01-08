@@ -18,7 +18,7 @@ const Home = () => {
       }}
     >
       <Grid container spacing={2}>
-        <Grid item>
+        <Grid item xs={12} lg={4}>
           <CardMedia
             component='img'
             image='WillyNegro.png'
@@ -26,7 +26,7 @@ const Home = () => {
             sx={{ maxWidth: 450 }}
           />
         </Grid>
-        <Grid item xs={12} lg container alignContent='center'>
+        <Grid item xs={12} lg={8} >
           <Presentacion />
         </Grid>
       </Grid>

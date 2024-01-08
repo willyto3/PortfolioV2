@@ -1,4 +1,4 @@
-import { Grid, Paper, Typography, useTheme } from '@mui/material'
+import { Grid, Paper, useTheme } from '@mui/material'
 
 import CardExperiencia from './CardExperiencia'
 
