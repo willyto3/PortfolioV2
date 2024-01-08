@@ -8,14 +8,14 @@ const Presentacion = () => {
       <Typography
         variant='h2'
         component='div'
-        fontSize={{ xs: '1.5rem', sm: '4rem' }}
+        fontSize={{ xs: '1.5rem', sm: '3rem' }}
       >
         Hola, Mi Nombre es
       </Typography>
       <Typography
         variant='h1'
         component='div'
-        fontSize={{ xs: '2.5rem', sm: '8rem' }}
+        fontSize={{ xs: '2.5rem', sm: '7rem' }}
       >
         Willy Corzo
       </Typography>
@@ -28,7 +28,7 @@ const Presentacion = () => {
         component='div'
         align='justify'
         width='95%'
-        fontSize={{ xs: '0.75rem', sm: '1.75rem' }}
+        fontSize={{ xs: '0.75rem', sm: '1.5rem' }}
       >
         Soy un Ingeniero Químico con una maestría en Gerencia de proyectos con
         amplia experiencia en el sector de Hidrocarburos. Genero soluciones

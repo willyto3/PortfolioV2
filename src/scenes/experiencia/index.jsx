@@ -16,6 +16,7 @@ const Experiencia = () => {
         <Grid
           container
           mt='5rem'
+          mb='2rem'
           alignContent='center'
           justifyContent='center'
           gap='1rem'

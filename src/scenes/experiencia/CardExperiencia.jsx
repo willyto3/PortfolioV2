@@ -41,6 +41,7 @@ const CardExperiencia = ({
             variant='h2'
             fontWeight='bold'
             fontSize='max(1.6rem, 1.2vw)'
+            mb='15px'
           >
             {cargo}
           </Typography>
@@ -70,7 +71,7 @@ const CardExperiencia = ({
               bgcolor: 'background.paper',
               position: 'relative',
               overflow: 'auto',
-              height: 250,
+              height: 210,
               '& ul': { padding: 0 },
             }}
           >

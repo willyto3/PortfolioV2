@@ -42,6 +42,7 @@ const Footer = () => {
         <Grid
           container
           mt='1rem'
+          pb='1rem'
           spacing={1}
           alignContent='center'
           justifyContent='center'
@@ -51,7 +52,7 @@ const Footer = () => {
           <Grid item xs={10} sm={3}>
             <Typography
               fontWeight='bold'
-              fontSize='clamp(1.5rem, 1.5rem, 2rem)'
+              fontSize='clamp(1rem, 1.25rem, 1.5rem)'
               lineHeight='1'
               component='div'
               color={dark}
@@ -71,7 +72,7 @@ const Footer = () => {
               variant='h4'
               component='div'
               align='justify'
-              fontSize={{ xs: '1rem', sm: '1.5rem' }}
+              fontSize={{ xs: '0.75rem', sm: '1rem' }}
             >
               Ingeniero Químico con 14 años de experiencia en Transferencia en
               Custodia, Medición y Analisis de Hidrocarburos. Orientado a
@@ -82,7 +83,7 @@ const Footer = () => {
           <Grid item xs={10} sm={2}>
             <Typography
               fontWeight='bold'
-              fontSize='clamp(1.5rem, 1.5rem, 2rem)'
+              fontSize='clamp(1rem, 1.25rem, 1.5rem)'
               lineHeight='1'
               component='div'
               color={dark}
@@ -103,7 +104,7 @@ const Footer = () => {
                     )
                   }
                   sx={{
-                    fontSize: 60,
+                    fontSize: 50,
                     flexGrow: 1,
                     '&:hover': {
                       color: '#0e76a8',
@@ -118,7 +119,7 @@ const Footer = () => {
                     window.open('https://github.com/willyto3', '_blank')
                   }
                   sx={{
-                    fontSize: 60,
+                    fontSize: 50,
                     flexGrow: 1,
                     '&:hover': {
                       color: principal,
@@ -136,7 +137,7 @@ const Footer = () => {
                     )
                   }
                   sx={{
-                    fontSize: 60,
+                    fontSize: 50,
                     flexGrow: 1,
                     '&:hover': {
                       color: '#00bb2d',
@@ -147,53 +148,6 @@ const Footer = () => {
               </Grid>
             </Grid>
           </Grid>
-
-          <Grid item xs={10} sm={3}>
-            <Typography
-              fontWeight='bold'
-              fontSize='clamp(1.5rem, 1.5rem, 2rem)'
-              lineHeight='1'
-              component='div'
-              color={dark}
-              mb='1rem'
-              sx={{
-                flexGrow: 1,
-              }}
-            >
-              Mapa
-            </Typography>
-            <Grid container>
-              {/* //? NAVEGACION POR ITEMS*/}
-
-              {navItems.map(item => (
-                <Grid item xs={4} key={item}>
-                  <ListItem disablePadding>
-                    <ListItemButton
-                      sx={{ textAlign: 'center' }}
-                      onClick={() => {
-                        item === 'inicio' ? navigate('/') : navigate(`/${item}`)
-                      }}
-                    >
-                      <ListItemText>
-                        <Typography
-                          fontSize='max(0.9rem, 1.2vw)'
-                          sx={{
-                            flexGrow: 1,
-                            '&:hover': {
-                              color: principal,
-                              cursor: 'pointer',
-                            },
-                          }}
-                        >
-                          {capitalize(item)}
-                        </Typography>
-                      </ListItemText>
-                    </ListItemButton>
-                  </ListItem>
-                </Grid>
-              ))}
-            </Grid>
-          </Grid>
         </Grid>
       </Paper>
 
@@ -202,21 +156,15 @@ const Footer = () => {
         display='flex'
         flexDirection='column'
         alignItems='center'
-        mt='1rem'
+        mt='0.5rem'
         pb='1rem'
       >
         <Typography
           variant='h4'
           component='div'
-          fontSize={{ xs: '0.7rem', sm: '1.1rem' }}
+          fontSize={{ xs: '0.5rem', sm: '1rem' }}
         >
-          Made With 💖 by Black Dog Solutions
-        </Typography>
-        <Typography
-          variant='h4'
-          component='div'
-          fontSize={{ xs: '0.7rem', sm: '1.1rem' }}
-        >
+          Made With 💖 by Black Dog Solutions -{' '}
           {`Todos los derechos reservados. @ ${new Date().getFullYear()}`}
         </Typography>
       </Box>

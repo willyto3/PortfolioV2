@@ -8,11 +8,11 @@ const Home = () => {
     <Paper
       elevation={2}
       sx={{
-        display:'flex',
-        height:850,
-        alignItems:'center',
+        display: 'flex',
+        alignItems: 'center',
         p: 2,
-        margin: 'auto',
+        m: 'auto',
+        mt: 10,
         maxWidth: 1700,
         flexGrow: 1,
       }}
@@ -23,7 +23,7 @@ const Home = () => {
             component='img'
             image='WillyNegro.png'
             alt='Foto Willy Corzo'
-            sx={{maxWidth:550}}
+            sx={{ maxWidth: 450 }}
           />
         </Grid>
         <Grid item xs={12} lg container alignContent='center'>

@@ -7,7 +7,8 @@ export function Carrusel(props) {
     'Master en Gerencia de Proyectos',
     'Ingeniero Químico',
     'Especialista NTC ISO 17025:2017',
-    'Desarrollador Web',
+    'Desarrollador Web Full Stack',
+    'Desarrollador en PowerBi',
     'Experto en Excel - VBA',
   ]
 
@@ -24,7 +25,7 @@ export function Carrusel(props) {
           gutterBottom
           variant='h2'
           component='div'
-          fontSize={{ xs: '1.5rem', sm: '4.5rem' }}
+          fontSize={{ xs: '1.5rem', sm: '3.5rem' }}
           key={i}
           item={item}
         >
