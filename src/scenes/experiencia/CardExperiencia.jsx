@@ -26,18 +26,7 @@ const CardExperiencia = ({
   const theme = useTheme()
 
   return (
-    <Card>
-      <Typography
-        textTransform='uppercase'
-        component='div'
-        variant='h2'
-        fontWeight='bold'
-        fontSize='max(1.6rem, 1.2vw)'
-        textAlign='center'
-        p='1rem'
-      >
-        {cargo}
-      </Typography>
+    <Card sx={{ display: 'flex'}}>
       <Box width='15rem' display='flex'>
         <CardMedia
           component='img'

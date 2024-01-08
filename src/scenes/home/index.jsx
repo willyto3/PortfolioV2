@@ -12,7 +12,7 @@ const Home = () => {
         alignItems: 'center',
         p: 2,
         m: 'auto',
-        mt: 10,
+        mt: '2rem',
         maxWidth: 1700,
         flexGrow: 1,
       }}

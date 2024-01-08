@@ -15,7 +15,7 @@ const Experiencia = () => {
       <Paper>
         <Grid
           container
-          mt='5rem'
+          mt='2rem'
           mb='2rem'
           alignContent='center'
           justifyContent='center'
