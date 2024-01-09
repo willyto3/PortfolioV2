@@ -78,7 +78,7 @@ const CardExperiencia = ({
               bgcolor: 'background.paper',
               position: 'relative',
               overflow: 'auto',
-              height: 210,
+              height: 220,
               '& ul': { padding: 0 },
             }}
           >
