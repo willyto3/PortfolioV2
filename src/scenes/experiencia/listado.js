@@ -1,6 +1,6 @@
 export const experiencia = [
   {
-    image: 'SGS.png',
+    image: 'copco.jpg',
     alt: 'Imagen Corporativa SGS',
     cargo: 'Profesional Semi Senior',
     fecha: 'Diciembre 2023 - Actual',
@@ -16,7 +16,7 @@ export const experiencia = [
     jefe: 'Hernando Rosales - Telefono 314 23852 39',
   },
   {
-    image: 'SGS.png',
+    image: 'sinmediatas.png',
     alt: 'Imagen Corporativa Soluciones Inmediatas',
     cargo: 'Programador Integrador',
     fecha: 'Agosto 2023 - Noviembre 2023',
