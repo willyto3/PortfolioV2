@@ -9,9 +9,9 @@ import CardEstudio from './CardEstudio'
 
 const Estudios = () => {
   return (
-    <Box mt='1rem'>
+    <Box mt='1rem' maxWidth='1800px' alignItems='center'>
       <Grid container>
-        <Grid item xs={7}>
+        <Grid item xs={6}>
           <Typography variant='h2'>Mis Estudios</Typography>
 
           <CardEstudio
@@ -50,7 +50,7 @@ const Estudios = () => {
             grado='Curso'
           />
         </Grid>
-        <Grid item xs={5}>
+        <Grid item xs={6}>
           <Herramientas />
         </Grid>
       </Grid>
