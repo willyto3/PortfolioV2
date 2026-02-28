@@ -2,6 +2,8 @@ import { Box, Divider, useTheme } from '@mui/material'
 import Typography from '@mui/material/Typography'
 import { Carrusel } from './Carrusel'
 
+import { t } from '../../locales'
+
 const Presentacion = () => {
   const theme = useTheme()
   const primary = theme.palette.primary.main
@@ -9,7 +11,7 @@ const Presentacion = () => {
   return (
     <Box sx={{ textAlign: { xs: 'center', lg: 'left' } }}>
       <Typography variant='h2' component='div' color='text.secondary'>
-        Hola, Mi Nombre es
+        {t.home.saludo}
       </Typography>
 
       <Typography
@@ -18,7 +20,7 @@ const Presentacion = () => {
         fontWeight='bold'
         sx={{ color: primary, lineHeight: 1.1 }}
       >
-        Willy Corzo Lubo
+        {t.home.nombre}
       </Typography>
 
       <Divider
@@ -45,12 +47,7 @@ const Presentacion = () => {
           color: 'text.secondary',
         }}
       >
-        Ingeniero Químico con maestría en Gerencia de Proyectos y más de 14
-        años de experiencia en el sector de Hidrocarburos, especializado en
-        Transferencia en Custodia, Medición y Análisis. Me apasiona transformar
-        procesos complejos en soluciones automatizadas y eficientes. Orientado a
-        resultados, trabajo con iniciativa, honestidad y compromiso,
-        adaptándome con facilidad a nuevos retos y entornos.
+        {t.home.bio}
       </Typography>
     </Box>
   )

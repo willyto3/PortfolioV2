@@ -1,14 +1,20 @@
 import Box from '@mui/material/Box'
 import { Grid, Paper, Typography, useTheme } from '@mui/material'
-
-import CardEstudio from './CardEstudio'
+import CardHerramientas from './CardHerramientas'
 
 import { t } from '../../locales'
 
-const formales = t.estudios.tarjetas.filter(c => c.tipo === 'formal')
-const cortos   = t.estudios.tarjetas.filter(c => c.tipo === 'corto')
+// Agrupa items por categoria manteniendo el orden de aparición
+const agrupar = items => {
+  const mapa = new Map()
+  items.forEach(item => {
+    if (!mapa.has(item.categoria)) mapa.set(item.categoria, [])
+    mapa.get(item.categoria).push(item)
+  })
+  return mapa
+}
 
-const SeccionEstudios = ({ titulo, tarjetas }) => {
+const SeccionHerramientas = ({ titulo, items }) => {
   const theme = useTheme()
   const primary = theme.palette.primary.main
 
@@ -35,20 +41,16 @@ const SeccionEstudios = ({ titulo, tarjetas }) => {
 
         {/* Cards */}
         <Grid container gap='1rem' flex={1}>
-          {tarjetas.map(card => (
-            <Grid size={{ xs: 12, lg: 5.8 }} key={card.institucion + card.fecha} sx={{ display: 'flex' }}>
-              <CardEstudio
-                institucion={card.institucion}
-                fecha={card.fecha}
-                estudio={card.estudio}
-                fondo={card.fondo}
-                grado={card.grado}
-                descripcion={card.descripcion}
-                tesis={card.tesis}
-                logros={card.logros}
-                habilidades={card.habilidades}
-                duracion={card.duracion}
-                certificado={card.certificado}
+          {items.map(item => (
+            <Grid size={{ xs: 12, lg: 5.8 }} key={item.titulo} sx={{ display: 'flex' }}>
+              <CardHerramientas
+                titulo={item.titulo}
+                imagen={item.imagen}
+                parrafo={item.parrafo}
+                conocimiento={item.conocimiento}
+                nivel={item.nivel}
+                años={item.años}
+                usos={item.usos}
               />
             </Grid>
           ))}
@@ -59,7 +61,9 @@ const SeccionEstudios = ({ titulo, tarjetas }) => {
   )
 }
 
-const Estudios = () => {
+const Herramientas = () => {
+  const grupos = agrupar(t.estudios.herramientas.items)
+
   return (
     <Paper elevation={0} sx={{ backgroundColor: 'transparent' }}>
       <Grid
@@ -70,10 +74,11 @@ const Estudios = () => {
         justifyContent='center'
         gap='2rem'
       >
-        <SeccionEstudios titulo={t.estudios.tituloFormales} tarjetas={formales} />
-        <SeccionEstudios titulo={t.estudios.tituloCortos}   tarjetas={cortos} />
+        {[...grupos.entries()].map(([categoria, items]) => (
+          <SeccionHerramientas key={categoria} titulo={categoria} items={items} />
+        ))}
       </Grid>
     </Paper>
   )
 }
-export default Estudios
+export default Herramientas

@@ -2,18 +2,13 @@ import Typography from '@mui/material/Typography'
 import Carousel from 'react-material-ui-carousel'
 import { useTheme } from '@mui/material'
 
+import { t } from '../../locales'
+
 export function Carrusel() {
   const theme = useTheme()
   const primary = theme.palette.primary.main
 
-  const items = [
-    'Master en Gerencia de Proyectos',
-    'Ingeniero Químico',
-    'Especialista NTC ISO 17025:2017',
-    'Desarrollador Web Full Stack',
-    'Desarrollador en PowerBi',
-    'Experto en Excel - VBA',
-  ]
+  const items = t.home.roles
 
   return (
     <Carousel

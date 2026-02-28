@@ -3,12 +3,12 @@ import { createHashRouter } from 'react-router-dom'
 
 // Importacion de Paginas
 import LayoutPublic from '../layout/LayoutPublic'
-import Contacto from '../scenes/contacto'
 import Error404 from '../scenes/error404'
 import Experiencia from '../scenes/experiencia'
 import Home from '../scenes/home'
 import Proyectos from '../scenes/proyectos'
 import Estudios from '../scenes/estudios'
+import Herramientas from '../scenes/herramientas'
 
 // Funcion Router
 export const router = createHashRouter([
@@ -33,14 +33,18 @@ export const router = createHashRouter([
         element: <Estudios />,
       },
       {
+        path: '/herramientas',
+        title: 'Herramientas',
+        element: <Herramientas />,
+      },
+      {
         path: '/proyectos',
         title: 'Proyectos',
         element: <Proyectos />,
       },
       {
-        path: '/contacto',
-        title: 'Contacto',
-        element: <Contacto />,
+        path: '*',
+        element: <Error404 />,
       },
     ],
   },

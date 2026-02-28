@@ -20,9 +20,9 @@ import { useState, useEffect } from 'react'
 import { useNavigate, useLocation } from 'react-router-dom'
 
 import { useCVStore } from '../store/store'
+import { t } from '../locales'
 
 const drawerWidth = 280
-const navItems = ['inicio', 'experiencia', 'estudios', 'proyectos', 'contacto']
 
 const NavBar = () => {
   const setMode = useCVStore(state => state.setMode)
@@ -38,7 +38,7 @@ const NavBar = () => {
   const dark = theme.palette.neutral.dark
   const principal = theme.palette.primary.main
 
-  const routeToIndex = { '/': 0, '/experiencia': 1, '/estudios': 2, '/proyectos': 3, '/contacto': 4 }
+  const routeToIndex = Object.fromEntries(t.nav.items.map((item, i) => [item.ruta, i]))
   const [value, setValue] = useState(routeToIndex[location.pathname] ?? 0)
 
   useEffect(() => {
@@ -58,7 +58,7 @@ const NavBar = () => {
           }}
           onClick={() => { navigate('/'); setMobileOpen(false) }}
         >
-          Willy Corzo
+          {t.nav.nombre}
         </Typography>
         <IconButton aria-label='cerrar menú' onClick={handleDrawerToggle}>
           <Close />
@@ -68,14 +68,11 @@ const NavBar = () => {
       <Divider />
 
       <List>
-        {navItems.map(item => (
-          <ListItem key={item} disablePadding>
+        {t.nav.items.map(item => (
+          <ListItem key={item.ruta} disablePadding>
             <ListItemButton
               sx={{ textAlign: 'center' }}
-              onClick={() => {
-                item === 'inicio' ? navigate('/') : navigate(`/${item}`)
-                setMobileOpen(false)
-              }}
+              onClick={() => { navigate(item.ruta); setMobileOpen(false) }}
             >
               <ListItemText>
                 <Typography
@@ -85,7 +82,7 @@ const NavBar = () => {
                     '&:hover': { color: principal, cursor: 'pointer' },
                   }}
                 >
-                  {item}
+                  {item.label}
                 </Typography>
               </ListItemText>
             </ListItemButton>
@@ -135,7 +132,7 @@ const NavBar = () => {
           }}
           onClick={() => navigate('/')}
         >
-          Willy Corzo
+          {t.nav.nombre}
         </Typography>
 
         {/* //? BOTON HAMBURGUESA - solo mobile */}
@@ -154,13 +151,11 @@ const NavBar = () => {
           value={value}
           sx={{ display: { xs: 'none', sm: 'flex' } }}
         >
-          {navItems.map(item => (
+          {t.nav.items.map(item => (
             <Tab
-              label={item}
-              key={item}
-              onClick={() => {
-                item === 'inicio' ? navigate('/') : navigate(`/${item}`)
-              }}
+              label={item.label}
+              key={item.ruta}
+              onClick={() => navigate(item.ruta)}
               sx={{
                 height: 65,
                 color: dark,

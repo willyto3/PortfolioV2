@@ -2,7 +2,7 @@ import { Grid, Paper } from '@mui/material'
 
 import CardExperiencia from './CardExperiencia'
 
-import { experiencia } from './listado'
+import { t } from '../../locales'
 
 const Experiencia = () => {
   return (
@@ -16,7 +16,7 @@ const Experiencia = () => {
           justifyContent='center'
           gap='1rem'
         >
-          {experiencia.map(card => (
+          {t.experiencia.map(card => (
             <Grid size={{ xs: 10, xl: 5.5 }} key={card.alt} sx={{ display: 'flex' }}>
               <CardExperiencia
                 image={card.image}
