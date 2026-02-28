@@ -23,7 +23,7 @@ const Experiencia = () => {
           sx={{ backgroundColor: neutralLigth }}
         >
           {experiencia.map(card => (
-            <Grid item xs={10} md={5.5} key={card.alt}>
+            <Grid size={{ xs: 10, md: 5.5 }} key={card.alt}>
               <CardExperiencia
                 image={card.image}
                 alt={card.alt}

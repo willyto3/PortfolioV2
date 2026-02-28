@@ -11,7 +11,7 @@ const Estudios = () => {
   return (
     <Box mt='1rem' maxWidth='1800px' alignItems='center'>
       <Grid container>
-        <Grid item xs={6}>
+        <Grid size={{ xs: 12, md: 6 }}>
           <Typography variant='h2'>Mis Estudios</Typography>
 
           <CardEstudio
@@ -50,7 +50,7 @@ const Estudios = () => {
             grado='Curso'
           />
         </Grid>
-        <Grid item xs={6}>
+        <Grid size={{ xs: 12, md: 6 }}>
           <Herramientas />
         </Grid>
       </Grid>

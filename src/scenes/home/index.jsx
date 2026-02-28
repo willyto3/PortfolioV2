@@ -11,22 +11,22 @@ const Home = () => {
         display: 'flex',
         alignItems: 'center',
         p: 2,
-        m: 'auto',
+        mx: 'auto',
         mt: '2rem',
         maxWidth: 1700,
         flexGrow: 1,
       }}
     >
       <Grid container spacing={2}>
-        <Grid item xs={12} lg={4}>
+        <Grid size={{ xs: 12, lg: 4 }} sx={{ display: 'flex', justifyContent: { xs: 'center', lg: 'flex-start' } }}>
           <CardMedia
             component='img'
             image='WillyNegro.png'
             alt='Foto Willy Corzo'
-            sx={{ maxWidth: 450 }}
+            sx={{ maxWidth: { xs: 200, sm: 280, md: 360, lg: 450 }, width: '100%' }}
           />
         </Grid>
-        <Grid item xs={12} lg={8} >
+        <Grid size={{ xs: 12, lg: 8 }}>
           <Presentacion />
         </Grid>
       </Grid>

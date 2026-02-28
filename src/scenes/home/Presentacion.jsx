@@ -4,31 +4,22 @@ import { Carrusel } from './Carrusel'
 
 const Presentacion = () => {
   return (
-    <Box>
-      <Typography
-        variant='h2'
-        component='div'
-        fontSize={{ xs: '1.5rem', sm: '3rem' }}
-      >
+    <Box sx={{ textAlign: { xs: 'center', lg: 'left' } }}>
+      <Typography variant='h2' component='div'>
         Hola, Mi Nombre es
       </Typography>
-      <Typography
-        variant='h1'
-        component='div'
-        fontSize={{ xs: '2.5rem', sm: '7rem' }}
-      >
+      <Typography variant='h1' component='div'>
         Willy Corzo
       </Typography>
 
       <Carrusel />
 
       <Typography
-        
-        variant='body'
+        variant='body1'
         component='div'
-        align='justify'
+        align='inherit'
         width='95%'
-        fontSize={{ xs: '0.75rem', sm: '1.5rem' }}
+        sx={{ mx: { xs: 'auto', lg: 0 } }}
       >
         Soy un Ingeniero Químico con una maestría en Gerencia de proyectos con
         amplia experiencia en el sector de Hidrocarburos. Genero soluciones

@@ -5,36 +5,20 @@ import {
   Box,
   Divider,
   Grid,
-  ListItem,
-  ListItemButton,
-  ListItemText,
+  IconButton,
   Paper,
   Typography,
-  capitalize,
   useTheme,
 } from '@mui/material'
 
-import { useState } from 'react'
-
 import { useNavigate } from 'react-router-dom'
 
-const navItems = ['inicio', 'experiencia', 'estudios', 'proyectos', 'contacto']
-
 const Footer = () => {
-  // Usamos la navegacion
   const navigate = useNavigate()
-  // Uso del Tema
   const theme = useTheme()
-  // Creamos constantes para los colores
   const neutralLigth = theme.palette.neutral.light
   const dark = theme.palette.neutral.dark
   const principal = theme.palette.primary.main
-
-  const [value, setValue] = useState(0)
-
-  const handleChange = (event, newValue) => {
-    setValue(newValue)
-  }
 
   return (
     <>
@@ -43,110 +27,96 @@ const Footer = () => {
           container
           mt='1rem'
           pb='1rem'
-          spacing={1}
-          alignContent='center'
+          spacing={2}
+          alignItems='stretch'
           justifyContent='center'
-          gap='2rem'
-          sx={{ backgroundColor: neutralLigth }}
+          sx={{ backgroundColor: neutralLigth, px: { xs: '1rem', sm: '2rem' } }}
         >
-          <Grid item xs={10} sm={3}>
+          {/* Columna 1 / Fila 1 izq: Nombre */}
+          <Grid
+            size={{ xs: 6, md: 3 }}
+            sx={{
+              display: 'flex',
+              alignItems: 'center',
+              justifyContent: { xs: 'flex-start', md: 'center' },
+              order: { xs: 1, md: 1 },
+            }}
+          >
             <Typography
               fontWeight='bold'
-              fontSize='clamp(1rem, 1.25rem, 1.5rem)'
-              lineHeight='1'
+              fontSize='clamp(1.8rem, 3vw, 2.8rem)'
+              lineHeight='1.1'
               component='div'
               color={dark}
-              mb='1rem'
+              textAlign={{ xs: 'left', md: 'center' }}
               sx={{
-                flexGrow: 1,
-                '&:hover': {
-                  color: principal,
-                  cursor: 'pointer',
-                },
+                '&:hover': { color: principal, cursor: 'pointer' },
               }}
               onClick={() => navigate('/')}
             >
               Willy Corzo
             </Typography>
-            <Typography
-              variant='h4'
-              component='div'
-              align='justify'
-              fontSize={{ xs: '0.75rem', sm: '1rem' }}
-            >
+          </Grid>
+
+          {/* Columna 2 / Fila 2: Descripción */}
+          <Grid
+            size={{ xs: 12, md: 5 }}
+            sx={{ order: { xs: 3, md: 2 } }}
+          >
+            <Typography variant='h4' component='div' mt={{ xs: 0, md: '1rem' }}>
               Ingeniero Químico con 14 años de experiencia en Transferencia en
-              Custodia, Medición y Analisis de Hidrocarburos. Orientado a
+              Custodia, Medición y Análisis de Hidrocarburos. Orientado a
               resultados y a crear soluciones automatizadas.
             </Typography>
           </Grid>
 
-          <Grid item xs={10} sm={2}>
-            <Typography
-              fontWeight='bold'
-              fontSize='clamp(1rem, 1.25rem, 1.5rem)'
-              lineHeight='1'
-              component='div'
-              color={dark}
-              mb='1rem'
-              sx={{
-                flexGrow: 1,
-              }}
-            >
-              Redes Sociales
-            </Typography>
-            <Grid container>
-              <Grid item xs={4}>
-                <LinkedInIcon
-                  onClick={() =>
-                    window.open(
-                      'https://www.linkedin.com/in/ing-quimico-willy-corzo/',
-                      '_blank'
-                    )
-                  }
-                  sx={{
-                    fontSize: 50,
-                    flexGrow: 1,
-                    '&:hover': {
-                      color: '#0e76a8',
-                      cursor: 'pointer',
-                    },
-                  }}
-                />
-              </Grid>
-              <Grid item xs={4}>
-                <GitHubIcon
-                  onClick={() =>
-                    window.open('https://github.com/willyto3', '_blank')
-                  }
-                  sx={{
-                    fontSize: 50,
-                    flexGrow: 1,
-                    '&:hover': {
-                      color: principal,
-                      cursor: 'pointer',
-                    },
-                  }}
-                />
-              </Grid>
-              <Grid item xs={4}>
-                <WhatsAppIcon
-                  onClick={() =>
-                    window.open(
-                      'https://api.whatsapp.com/send?phone=573017893883&text=Me%20interesa%20Saber%20m%C3%A1s%20sobre%20tu%20Hoja%20de%20Vida',
-                      '_blank'
-                    )
-                  }
-                  sx={{
-                    fontSize: 50,
-                    flexGrow: 1,
-                    '&:hover': {
-                      color: '#00bb2d',
-                      cursor: 'pointer',
-                    },
-                  }}
-                />
-              </Grid>
-            </Grid>
+          {/* Columna 3 / Fila 1 der: Redes Sociales */}
+          <Grid
+            size={{ xs: 6, md: 3 }}
+            sx={{
+              display: 'flex',
+              alignItems: 'center',
+              justifyContent: { xs: 'flex-end', md: 'center' },
+              order: { xs: 2, md: 3 },
+            }}
+          >
+            <Box display='flex' gap='0.25rem'>
+              <IconButton
+                aria-label='LinkedIn'
+                onClick={() =>
+                  window.open(
+                    'https://www.linkedin.com/in/ing-quimico-willy-corzo/',
+                    '_blank'
+                  )
+                }
+                sx={{ '&:hover': { color: '#0e76a8' } }}
+              >
+                <LinkedInIcon sx={{ fontSize: { xs: 36, sm: 40 } }} />
+              </IconButton>
+
+              <IconButton
+                aria-label='GitHub'
+                onClick={() =>
+                  window.open('https://github.com/willyto3', '_blank')
+                }
+                sx={{ '&:hover': { color: principal } }}
+              >
+                <GitHubIcon sx={{ fontSize: { xs: 36, sm: 40 } }} />
+              </IconButton>
+
+              <IconButton
+                aria-label='WhatsApp'
+                onClick={() =>
+                  window.open(
+                    'https://api.whatsapp.com/send?phone=573017893883&text=Me%20interesa%20Saber%20m%C3%A1s%20sobre%20tu%20Hoja%20de%20Vida',
+                    '_blank'
+                  )
+                }
+                sx={{ '&:hover': { color: '#00bb2d' } }}
+              >
+                <WhatsAppIcon sx={{ fontSize: { xs: 36, sm: 40 } }} />
+              </IconButton>
+            </Box>
           </Grid>
         </Grid>
       </Paper>
@@ -162,7 +132,8 @@ const Footer = () => {
         <Typography
           variant='h4'
           component='div'
-          fontSize={{ xs: '0.5rem', sm: '1rem' }}
+          fontSize={{ xs: '0.6rem', sm: '0.75rem' }}
+          textAlign='center'
         >
           Made With 💖 by Black Dog Solutions -{' '}
           {`Todos los derechos reservados. @ ${new Date().getFullYear()}`}

@@ -61,7 +61,6 @@ export const experiencia = [
     ],
     jefe: 'Cristhian Moreno – Teléfono: 314 238 52 39',
   },
-  ,
   {
     image: 'OTI.jpg',
     alt: 'Imagen Corporativa OTI',
@@ -77,7 +76,6 @@ export const experiencia = [
     ],
     jefe: 'Jorge Santander – Teléfono: 316 223 09 55',
   },
-  ,
   {
     image: 'BV.jpg',
     alt: 'Imagen Corporativa BV',

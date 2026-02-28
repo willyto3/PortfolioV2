@@ -79,19 +79,19 @@ export const themeSettings = mode => {
       fontSize: 12,
       h1: {
         fontFamily: ['Fira Sans', 'sans-serif'].join(','),
-        fontSize: 40,
+        fontSize: 'clamp(2.5rem, 8vw, 7rem)',
       },
       h2: {
         fontFamily: ['Fira Sans', 'sans-serif'].join(','),
-        fontSize: 32,
+        fontSize: 'clamp(1.5rem, 4vw, 3rem)',
       },
       h3: {
         fontFamily: ['Fira Sans', 'sans-serif'].join(','),
-        fontSize: 24,
+        fontSize: 'clamp(1rem, 2.5vw, 1.5rem)',
       },
       h4: {
         fontFamily: ['Fira Sans', 'sans-serif'].join(','),
-        fontSize: 20,
+        fontSize: 'clamp(0.85rem, 1.7vw, 1.25rem)',
       },
       h5: {
         fontFamily: ['Fira Sans', 'sans-serif'].join(','),
@@ -100,6 +100,9 @@ export const themeSettings = mode => {
       h6: {
         fontFamily: ['Fira Sans', 'sans-serif'].join(','),
         fontSize: 14,
+      },
+      body1: {
+        fontSize: 'clamp(0.75rem, 1.5vw, 1.5rem)',
       },
     },
   }

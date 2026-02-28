@@ -1,9 +1,8 @@
 import Typography from '@mui/material/Typography'
-import React from 'react'
 import Carousel from 'react-material-ui-carousel'
 
-export function Carrusel(props) {
-  var items = [
+export function Carrusel() {
+  const items = [
     'Master en Gerencia de Proyectos',
     'Ingeniero Químico',
     'Especialista NTC ISO 17025:2017',
@@ -24,9 +23,8 @@ export function Carrusel(props) {
         <Typography
           variant='h2'
           component='div'
-          fontSize={{ xs: '1.5rem', sm: '3.5rem' }}
+          fontSize='clamp(1.5rem, 4.5vw, 3.5rem)'
           key={i}
-          item={item}
         >
           {item}
         </Typography>

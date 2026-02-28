@@ -3,7 +3,6 @@ import Card from '@mui/material/Card'
 import CardContent from '@mui/material/CardContent'
 import CardMedia from '@mui/material/CardMedia'
 import Typography from '@mui/material/Typography'
-import { useTheme } from '@mui/material/styles'
 
 import List from '@mui/material/List'
 import ListItem from '@mui/material/ListItem'
@@ -23,16 +22,20 @@ const CardExperiencia = ({
   actividades,
   jefe,
 }) => {
-  const theme = useTheme()
-
   return (
-    <Card sx={{ display: 'flex'}}>
-      <Box width='15rem' display='flex'>
+    <Card sx={{ display: 'flex', flexDirection: { xs: 'column', sm: 'row' } }}>
+      <Box
+        width={{ xs: '100%', sm: '12rem', md: '15rem' }}
+        maxHeight={{ xs: '10rem', sm: 'none' }}
+        display='flex'
+        justifyContent='center'
+        flexShrink={0}
+      >
         <CardMedia
           component='img'
           sx={{
-            ml: '10px',
-            padding: '1em 1em 1em 1em',
+            ml: { xs: 0, sm: '10px' },
+            padding: { xs: '0.5em', sm: '1em' },
             objectFit: 'contain',
             alignSelf: 'center',
           }}
@@ -47,8 +50,8 @@ const CardExperiencia = ({
             component='div'
             variant='h2'
             fontWeight='bold'
-            fontSize='max(1.6rem, 1.2vw)'
-            mb='15px'
+            fontSize='clamp(1rem, 2vw, 1.6rem)'
+            mb={{ xs: '8px', sm: '15px' }}
           >
             {cargo}
           </Typography>
@@ -57,38 +60,44 @@ const CardExperiencia = ({
             color='text.secondary'
             component='div'
             display='flex'
-            alignContent='center'
+            alignItems='center'
+            gap='4px'
           >
-            <DateRangeIcon /> {fecha}
+            <DateRangeIcon fontSize='small' /> {fecha}
           </Typography>
           <Typography
             variant='subtitle1'
             color='text.secondary'
             component='div'
             display='flex'
-            alignContent='center'
+            alignItems='center'
+            gap='4px'
           >
-            <PlaceIcon /> {lugar}
+            <PlaceIcon fontSize='small' /> {lugar}
           </Typography>
 
           <List
             sx={{
               width: '100%',
-              maxWidth: 700,
               bgcolor: 'background.paper',
               position: 'relative',
               overflow: 'auto',
-              height: 220,
+              height: { xs: 160, sm: 190, md: 220 },
               '& ul': { padding: 0 },
             }}
           >
             {actividades.map(item => (
               <li key={`section-${item}`}>
-                <ul p='0'>
+                <ul>
                   <ListItem key={`item-${item}`} sx={{ p: '0' }}>
                     <ListItemText>
-                      <Typography display='flex' alignContent='center'>
-                        <CheckIcon /> {item}
+                      <Typography
+                        display='flex'
+                        alignItems='center'
+                        gap='4px'
+                        fontSize='clamp(0.8rem, 1.5vw, 1rem)'
+                      >
+                        <CheckIcon fontSize='small' /> {item}
                       </Typography>
                     </ListItemText>
                   </ListItem>
@@ -102,12 +111,13 @@ const CardExperiencia = ({
             color='text.secondary'
             component='div'
             display='flex'
-            alignContent='center'
+            alignItems='center'
+            gap='4px'
+            fontSize='clamp(0.8rem, 1.5vw, 1rem)'
           >
-            <BusinessCenterOutlinedIcon /> {jefe}
+            <BusinessCenterOutlinedIcon fontSize='small' /> {jefe}
           </Typography>
         </CardContent>
-        <Box sx={{ display: 'flex', alignItems: 'center', pl: 1, pb: 1 }}></Box>
       </Box>
     </Card>
   )

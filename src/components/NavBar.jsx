@@ -15,64 +15,58 @@ import Toolbar from '@mui/material/Toolbar'
 import Typography from '@mui/material/Typography'
 import { Tab, Tabs, useTheme } from '@mui/material'
 
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 
-import { useNavigate } from 'react-router-dom'
+import { useNavigate, useLocation } from 'react-router-dom'
 
 import { useCVStore } from '../store/store'
 
-const drawerWidth = 425
+const drawerWidth = 280
 const navItems = ['inicio', 'experiencia', 'estudios', 'proyectos', 'contacto']
 
 const NavBar = () => {
   const setMode = useCVStore(state => state.setMode)
-  // Usamos useState para poder asignar si el menu se encuetra visible
   const [mobileOpen, setMobileOpen] = useState(false)
-  // Creamos una funcion para cambiar el estado del menu
+
   const handleDrawerToggle = () => {
     setMobileOpen(prevState => !prevState)
   }
 
-  // Usamos la navegacion
   const navigate = useNavigate()
-  // Uso del Tema
+  const location = useLocation()
   const theme = useTheme()
-  // Creamos constantes para los colores
-  const neutralLigth = theme.palette.neutral.light
   const dark = theme.palette.neutral.dark
   const principal = theme.palette.primary.main
 
-  const [value, setValue] = useState(0)
+  const routeToIndex = { '/': 0, '/experiencia': 1, '/estudios': 2, '/proyectos': 3, '/contacto': 4 }
+  const [value, setValue] = useState(routeToIndex[location.pathname] ?? 0)
 
-  const handleChange = (event, newValue) => {
-    setValue(newValue)
-  }
+  useEffect(() => {
+    setValue(routeToIndex[location.pathname] ?? 0)
+  }, [location.pathname])
 
   const drawer = (
-    <Box onClick={handleDrawerToggle} sx={{ textAlign: 'center' }}>
-      <Box display='flex' justifyContent='space-evenly'>
+    <Box sx={{ textAlign: 'center' }}>
+      <Box display='flex' justifyContent='space-between' alignItems='center' px={1}>
         <Typography
           fontWeight='bold'
-          fontSize='max(2rem, 1.2vw)'
+          fontSize='1.5rem'
           sx={{
             my: 2,
-            '&:hover': {
-              color: principal,
-              cursor: 'pointer',
-            },
+            ml: 1,
+            '&:hover': { color: principal, cursor: 'pointer' },
           }}
+          onClick={() => { navigate('/'); setMobileOpen(false) }}
         >
           Willy Corzo
         </Typography>
-        {/* //? ICONO PARA CERRAR */}
-        <IconButton>
+        <IconButton aria-label='cerrar menú' onClick={handleDrawerToggle}>
           <Close />
         </IconButton>
       </Box>
 
       <Divider />
 
-      {/* //? NAVEGACION POR ITEMS*/}
       <List>
         {navItems.map(item => (
           <ListItem key={item} disablePadding>
@@ -80,17 +74,15 @@ const NavBar = () => {
               sx={{ textAlign: 'center' }}
               onClick={() => {
                 item === 'inicio' ? navigate('/') : navigate(`/${item}`)
+                setMobileOpen(false)
               }}
             >
               <ListItemText>
                 <Typography
-                  fontSize='max(0.9rem, 1.2vw)'
+                  fontSize='1rem'
                   sx={{
-                    flexGrow: 1,
-                    '&:hover': {
-                      color: principal,
-                      cursor: 'pointer',
-                    },
+                    textTransform: 'capitalize',
+                    '&:hover': { color: principal, cursor: 'pointer' },
                   }}
                 >
                   {item}
@@ -101,29 +93,11 @@ const NavBar = () => {
         ))}
       </List>
 
-      {/* //? BOTON PARA CAMBIAR EL TEMA */}
-      <IconButton onClick={() => setMode()}>
+      <IconButton aria-label='cambiar tema' onClick={() => setMode()}>
         {theme.palette.mode === 'dark' ? (
-          <LightMode
-            sx={{
-              color: dark,
-              fontSize: '20px',
-              '&:hover': {
-                color: '#f39f18',
-                cursor: 'pointer',
-              },
-            }}
-          />
+          <LightMode sx={{ color: dark, fontSize: '1.5rem' }} />
         ) : (
-          <DarkMode
-            sx={{
-              fontSize: '20px',
-              '&:hover': {
-                color: '#3c688e',
-                cursor: 'pointer',
-              },
-            }}
-          />
+          <DarkMode sx={{ fontSize: '1.5rem' }} />
         )}
       </IconButton>
     </Box>
@@ -132,14 +106,12 @@ const NavBar = () => {
   return (
     <AppBar component='nav' sx={{ position: 'static', background: 'none' }}>
       <Toolbar sx={{ justifyContent: 'space-between' }}>
-        {/* //? MENU DESPLEGABLE */}
+        {/* //? MENU DESPLEGABLE MOBILE */}
         <Drawer
           variant='temporary'
           open={mobileOpen}
           onClose={handleDrawerToggle}
-          ModalProps={{
-            keepMounted: true,
-          }}
+          ModalProps={{ keepMounted: true }}
           sx={{
             display: { xs: 'block', sm: 'none' },
             '& .MuiDrawer-paper': {
@@ -153,36 +125,33 @@ const NavBar = () => {
 
         <Typography
           fontWeight='bold'
-          fontSize='clamp(2rem, 2rem, 3.3rem)'
+          fontSize='clamp(1.5rem, 2.5vw, 3.3rem)'
           lineHeight='1'
           component='div'
           color={dark}
           sx={{
             flexGrow: 1,
-            '&:hover': {
-              color: principal,
-              cursor: 'pointer',
-            },
+            '&:hover': { color: principal, cursor: 'pointer' },
           }}
           onClick={() => navigate('/')}
         >
           Willy Corzo
         </Typography>
 
+        {/* //? BOTON HAMBURGUESA - solo mobile */}
         <IconButton
           color='inherit'
-          aria-label='open drawer'
+          aria-label='abrir menú'
           edge='start'
           onClick={handleDrawerToggle}
-          sx={{ mr: 2, display: { sm: 'none' } }}
+          sx={{ mr: 1, display: { sm: 'none' } }}
         >
           <MenuIcon />
         </IconButton>
 
-        {/* //? NAVEGACION POR ITEMS*/}
+        {/* //? TABS - solo desktop */}
         <Tabs
           value={value}
-          onChange={handleChange}
           sx={{ display: { xs: 'none', sm: 'flex' } }}
         >
           {navItems.map(item => (
@@ -195,37 +164,30 @@ const NavBar = () => {
               sx={{
                 height: 65,
                 color: dark,
-                fontSize: 25,
+                fontSize: '1rem',
+                textTransform: 'capitalize',
                 flexGrow: 1,
-                '&:hover': {
-                  color: principal,
-                },
+                '&:hover': { color: principal },
               }}
-            ></Tab>
+            />
           ))}
         </Tabs>
 
-        {/* //? BOTON PARA CAMBIAR EL TEMA */}
-        <IconButton onClick={() => setMode()}>
+        {/* //? BOTON TEMA */}
+        <IconButton aria-label='cambiar tema' onClick={() => setMode()}>
           {theme.palette.mode === 'dark' ? (
             <LightMode
               sx={{
                 color: dark,
-                fontSize: '25px',
-                '&:hover': {
-                  color: '#f39f18',
-                  cursor: 'pointer',
-                },
+                fontSize: '1.5rem',
+                '&:hover': { color: '#f39f18', cursor: 'pointer' },
               }}
             />
           ) : (
             <DarkMode
               sx={{
-                fontSize: '25px',
-                '&:hover': {
-                  color: '#3c688e',
-                  cursor: 'pointer',
-                },
+                fontSize: '1.5rem',
+                '&:hover': { color: '#3c688e', cursor: 'pointer' },
               }}
             />
           )}

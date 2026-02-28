@@ -17,14 +17,16 @@ const LayoutPublic = () => {
   const mode = useCVStore(state => state.mode)
   const theme = useMemo(() => createTheme(themeSettings(mode)), [mode])
   return (
-    <main>
-      <ThemeProvider theme={theme}>
-        <CssBaseline />
+    <ThemeProvider theme={theme}>
+      <CssBaseline />
+      <main style={{ display: 'flex', flexDirection: 'column', minHeight: '100vh' }}>
         <NavBar />
-        <Outlet />
+        <div style={{ flex: 1 }}>
+          <Outlet />
+        </div>
         <Footer />
-      </ThemeProvider>
-    </main>
+      </main>
+    </ThemeProvider>
   )
 }
 export default LayoutPublic
