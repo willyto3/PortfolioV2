@@ -3,7 +3,6 @@ import LinkedInIcon from '@mui/icons-material/LinkedIn'
 import WhatsAppIcon from '@mui/icons-material/WhatsApp'
 import {
   Box,
-  Divider,
   Grid,
   IconButton,
   Paper,
@@ -25,7 +24,8 @@ const Footer = () => {
       <Paper>
         <Grid
           container
-          mt='1rem'
+          mt='0'
+          pt='1rem'
           pb='1rem'
           spacing={2}
           alignItems='stretch'
@@ -75,8 +75,9 @@ const Footer = () => {
             size={{ xs: 6, md: 3 }}
             sx={{
               display: 'flex',
-              alignItems: 'center',
-              justifyContent: { xs: 'flex-end', md: 'center' },
+              flexDirection: 'column',
+              alignItems: { xs: 'flex-end', md: 'center' },
+              justifyContent: 'center',
               order: { xs: 2, md: 3 },
             }}
           >
@@ -117,28 +118,17 @@ const Footer = () => {
                 <WhatsAppIcon sx={{ fontSize: { xs: 36, sm: 40 } }} />
               </IconButton>
             </Box>
+            <Typography
+              component='div'
+              fontSize={{ xs: '0.6rem', sm: '0.75rem' }}
+              textAlign={{ xs: 'right', md: 'center' }}
+              mt='0.5rem'
+            >
+              {`Made With 💖 by Black Dog Solutions @ ${new Date().getFullYear()}`}
+            </Typography>
           </Grid>
         </Grid>
       </Paper>
-
-      <Divider />
-      <Box
-        display='flex'
-        flexDirection='column'
-        alignItems='center'
-        mt='0.5rem'
-        pb='1rem'
-      >
-        <Typography
-          variant='h4'
-          component='div'
-          fontSize={{ xs: '0.6rem', sm: '0.75rem' }}
-          textAlign='center'
-        >
-          Made With 💖 by Black Dog Solutions -{' '}
-          {`Todos los derechos reservados. @ ${new Date().getFullYear()}`}
-        </Typography>
-      </Box>
     </>
   )
 }

@@ -21,7 +21,7 @@ const LayoutPublic = () => {
       <CssBaseline />
       <main style={{ display: 'flex', flexDirection: 'column', minHeight: '100vh' }}>
         <NavBar />
-        <div style={{ flex: 1 }}>
+        <div style={{ flex: 1, display: 'flex', flexDirection: 'column' }}>
           <Outlet />
         </div>
         <Footer />

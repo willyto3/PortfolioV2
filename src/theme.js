@@ -16,16 +16,16 @@ export const colorTokens = {
     1000: '#000000',
   },
   primary: {
-    50: '#E6FBFF',
-    100: '#CCF7FE',
-    200: '#99EEFD',
-    300: '#66E6FC',
-    400: '#33DDFB',
-    500: '#00D5FA',
-    600: '#00A0BC',
-    700: '#006B7D',
-    800: '#00353F',
-    900: '#001519',
+    50: '#FFF3E0',
+    100: '#FFE0B2',
+    200: '#FFCC80',
+    300: '#FFB74D',
+    400: '#FFA726',
+    500: '#FF9800',
+    600: '#FB8C00',
+    700: '#F57C00',
+    800: '#E65100',
+    900: '#BF360C',
   },
 }
 
@@ -50,8 +50,8 @@ export const themeSettings = mode => {
               light: colorTokens.grey[700],
             },
             background: {
-              default: colorTokens.grey[900],
-              alt: colorTokens.grey[800],
+              default: '#111827',
+              alt: '#1F2937',
             },
           }
         : {
@@ -69,8 +69,8 @@ export const themeSettings = mode => {
               light: colorTokens.grey[50],
             },
             background: {
-              default: colorTokens.grey[10],
-              alt: colorTokens.grey[0],
+              default: '#F9FAFB',
+              alt: '#FFFFFF',
             },
           }),
     },

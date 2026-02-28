@@ -1,10 +1,11 @@
-import { CardMedia } from '@mui/material'
+import { Box, CardMedia } from '@mui/material'
 import Grid from '@mui/material/Grid'
 import Paper from '@mui/material/Paper'
 import Presentacion from './Presentacion'
 
 const Home = () => {
   return (
+    <Box sx={{ flex: 1, display: 'flex', alignItems: 'center', justifyContent: 'center', p: 2 }}>
     <Paper
       elevation={2}
       sx={{
@@ -12,9 +13,8 @@ const Home = () => {
         alignItems: 'center',
         p: 2,
         mx: 'auto',
-        mt: '2rem',
         maxWidth: 1700,
-        flexGrow: 1,
+        width: '100%',
       }}
     >
       <Grid container spacing={2}>
@@ -31,6 +31,7 @@ const Home = () => {
         </Grid>
       </Grid>
     </Paper>
+    </Box>
   )
 }
 export default Home

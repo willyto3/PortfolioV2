@@ -1,18 +1,13 @@
-import { Grid, Paper, useTheme } from '@mui/material'
+import { Grid, Paper } from '@mui/material'
 
 import CardExperiencia from './CardExperiencia'
 
 import { experiencia } from './listado'
 
 const Experiencia = () => {
-  // Uso del Tema
-  const theme = useTheme()
-  // Creamos constantes para los colores
-  const neutralLigth = theme.palette.neutral.light
-
   return (
     <>
-      <Paper>
+      <Paper elevation={0} sx={{ backgroundColor: 'transparent' }}>
         <Grid
           container
           mt='2rem'
@@ -20,10 +15,9 @@ const Experiencia = () => {
           alignContent='center'
           justifyContent='center'
           gap='1rem'
-          sx={{ backgroundColor: neutralLigth }}
         >
           {experiencia.map(card => (
-            <Grid size={{ xs: 10, md: 5.5 }} key={card.alt}>
+            <Grid size={{ xs: 10, xl: 5.5 }} key={card.alt} sx={{ display: 'flex' }}>
               <CardExperiencia
                 image={card.image}
                 alt={card.alt}
