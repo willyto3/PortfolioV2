@@ -1,4 +1,4 @@
-import { Box, Divider, useTheme } from '@mui/material'
+import { Box, Chip, Divider, useTheme } from '@mui/material'
 import Typography from '@mui/material/Typography'
 import { Carrusel } from './Carrusel'
 
@@ -49,6 +49,29 @@ const Presentacion = () => {
       >
         {t.home.bio}
       </Typography>
+
+      <Box
+        display='flex'
+        flexWrap='wrap'
+        gap='0.5rem'
+        mt='1rem'
+        justifyContent={{ xs: 'center', lg: 'flex-start' }}
+      >
+        {t.home.habilidadesBlandas.map(habilidad => (
+          <Chip
+            key={habilidad}
+            label={habilidad}
+            size='small'
+            sx={{
+              border: `1px solid ${primary}`,
+              color: primary,
+              fontWeight: 'bold',
+              fontSize: 'clamp(0.7rem, 1.1vw, 0.85rem)',
+            }}
+            variant='outlined'
+          />
+        ))}
+      </Box>
     </Box>
   )
 }

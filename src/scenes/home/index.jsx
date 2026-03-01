@@ -21,7 +21,7 @@ const Home = () => {
         <Grid size={{ xs: 12, lg: 4 }} sx={{ display: 'flex', justifyContent: { xs: 'center', lg: 'flex-start' } }}>
           <CardMedia
             component='img'
-            image='WillyNegro.png'
+            image='WillyNegro.webp'
             alt='Foto Willy Corzo'
             sx={{ maxWidth: { xs: 200, sm: 280, md: 360, lg: 450 }, width: '100%' }}
           />

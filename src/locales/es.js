@@ -24,6 +24,16 @@ export const es = {
       'Experto en Excel - VBA',
     ],
     bio: 'Ingeniero Químico con maestría en Gerencia de Proyectos y más de 15 años de experiencia en el sector de Hidrocarburos, especializado en Transferencia en Custodia, Medición y Análisis. Me apasiona transformar procesos complejos en soluciones automatizadas y eficientes. Orientado a resultados, trabajo con iniciativa, honestidad y compromiso, adaptándome con facilidad a nuevos retos y entornos.',
+    habilidadesBlandas: [
+      'Liderazgo',
+      'Trabajo en equipo',
+      'Comunicación efectiva',
+      'Orientado a resultados',
+      'Pensamiento crítico',
+      'Adaptabilidad',
+      'Iniciativa',
+      'Honestidad',
+    ],
   },
 
   // ─── Página de Experiencia ────────────────────────────────────────────────
