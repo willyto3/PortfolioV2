@@ -13,19 +13,25 @@ export function Carrusel() {
   return (
     <Carousel
       animation='fade'
-      interval={3000}
+      interval={5000}
       duration={800}
       indicators={false}
       navButtonsAlwaysInvisible
+      sx={{ py: '0.25rem' }}
     >
       {items.map((item, i) => (
         <Typography
           variant='h2'
           component='div'
-          fontSize='clamp(1.5rem, 4.5vw, 3.5rem)'
+          fontSize={{ xs: 'clamp(1.1rem, 3.5vw, 1.4rem)', md: 'clamp(1.5rem, 4.5vw, 3.5rem)' }}
           fontWeight='bold'
           key={i}
-          sx={{ color: primary }}
+          sx={{
+            color: primary,
+            display: 'flex',
+            alignItems: 'center',
+            justifyContent: { xs: 'center', lg: 'flex-start' },
+          }}
         >
           {item}
         </Typography>
