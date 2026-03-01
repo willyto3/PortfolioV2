@@ -2,9 +2,10 @@ import { Box, Chip, Divider, useTheme } from '@mui/material'
 import Typography from '@mui/material/Typography'
 import { Carrusel } from './Carrusel'
 
-import { t } from '../../locales'
+import { useT } from '../../locales/useT'
 
 const Presentacion = () => {
+  const t = useT()
   const theme = useTheme()
   const primary = theme.palette.primary.main
 

@@ -14,9 +14,10 @@ import {
 
 import { useLocation, useNavigate } from 'react-router-dom'
 
-import { t } from '../locales'
+import { useT } from '../locales/useT'
 
 const Footer = () => {
+  const t = useT()
   const navigate = useNavigate()
   const { pathname } = useLocation()
   const theme = useTheme()

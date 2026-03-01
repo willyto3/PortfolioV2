@@ -2,9 +2,10 @@ import { Grid, Paper } from '@mui/material'
 
 import CardExperiencia from './CardExperiencia'
 
-import { t } from '../../locales'
+import { useT } from '../../locales/useT'
 
 const Experiencia = () => {
+  const t = useT()
   return (
     <>
       <Paper elevation={0} sx={{ backgroundColor: 'transparent' }}>

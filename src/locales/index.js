@@ -1,14 +1,9 @@
 import { es } from './es'
+import { en } from './en'
 
-// Para agregar un idioma:
-// 1. Crear el archivo src/locales/en.js con la misma estructura
-// 2. Importarlo aquí: import { en } from './en'
-// 3. Agregarlo al objeto locales: locales = { es, en }
-// 4. Cambiar defaultLocale al idioma deseado
-
-export const locales = { es }
+export const locales = { es, en }
 
 export const defaultLocale = 'es'
 
-// t = textos del idioma activo
+// t estático — solo para compatibilidad, usar useT() en componentes
 export const t = locales[defaultLocale]

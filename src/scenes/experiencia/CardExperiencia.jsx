@@ -104,8 +104,8 @@ const CardExperiencia = ({
               p: 0,
             }}
           >
-            {actividades.map(item => (
-              <ListItem key={item} sx={{ p: '2px 0' }}>
+            {actividades.map((item, i) => (
+              <ListItem key={i} sx={{ p: '2px 0' }}>
                 <ListItemText>
                   <Typography
                     display='flex'

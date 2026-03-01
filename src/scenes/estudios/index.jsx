@@ -3,10 +3,7 @@ import { Grid, Paper, Typography, useTheme } from '@mui/material'
 
 import CardEstudio from './CardEstudio'
 
-import { t } from '../../locales'
-
-const formales = t.estudios.tarjetas.filter(c => c.tipo === 'formal')
-const cortos   = t.estudios.tarjetas.filter(c => c.tipo === 'corto')
+import { useT } from '../../locales/useT'
 
 const SeccionEstudios = ({ titulo, tarjetas }) => {
   const theme = useTheme()
@@ -68,6 +65,10 @@ const SeccionEstudios = ({ titulo, tarjetas }) => {
 }
 
 const Estudios = () => {
+  const t = useT()
+  const formales = t.estudios.tarjetas.filter(c => c.tipo === 'formal')
+  const cortos   = t.estudios.tarjetas.filter(c => c.tipo === 'corto')
+
   return (
     <Paper elevation={0} sx={{ backgroundColor: 'transparent' }}>
       <Grid

@@ -2,9 +2,10 @@ import Typography from '@mui/material/Typography'
 import Carousel from 'react-material-ui-carousel'
 import { useTheme } from '@mui/material'
 
-import { t } from '../../locales'
+import { useT } from '../../locales/useT'
 
 export function Carrusel() {
+  const t = useT()
   const theme = useTheme()
   const primary = theme.palette.primary.main
 

@@ -40,7 +40,7 @@ export const es = {
   experiencia: [
     {
       image: 'copco.jpg',
-      alt: 'Imagen Corporativa Copco',
+      alt: 'Imagen Corporativa Copco - Líder de Medición',
       cargo: 'Líder de Medición',
       fecha: 'Febrero 2025 - Actual',
       lugar: 'Santa Fe de Bogotá DC',
@@ -55,7 +55,7 @@ export const es = {
     },
     {
       image: 'copco.jpg',
-      alt: 'Imagen Corporativa Copco',
+      alt: 'Imagen Corporativa Copco - Profesional Semi Senior',
       cargo: 'Profesional Semi Senior',
       fecha: 'Diciembre 2023 - Diciembre 2024',
       lugar: 'Santa Fe de Bogotá DC',

@@ -2,7 +2,7 @@ import Box from '@mui/material/Box'
 import { Grid, Paper, Typography, useTheme } from '@mui/material'
 import CardProyecto from './CardProyecto'
 
-import { t } from '../../locales'
+import { useT } from '../../locales/useT'
 
 const agrupar = items => {
   const mapa = new Map()
@@ -66,6 +66,7 @@ const SeccionProyectos = ({ titulo, items }) => {
 }
 
 const Proyectos = () => {
+  const t = useT()
   const grupos = agrupar(t.proyectos.items)
 
   return (

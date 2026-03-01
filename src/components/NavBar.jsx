@@ -20,12 +20,15 @@ import { useState, useEffect } from 'react'
 import { useNavigate, useLocation } from 'react-router-dom'
 
 import { useCVStore } from '../store/store'
-import { t } from '../locales'
+import { useT } from '../locales/useT'
 
 const drawerWidth = 280
 
 const NavBar = () => {
+  const t = useT()
   const setMode = useCVStore(state => state.setMode)
+  const language = useCVStore(state => state.language)
+  const setLanguage = useCVStore(state => state.setLanguage)
   const [mobileOpen, setMobileOpen] = useState(false)
 
   const handleDrawerToggle = () => {
@@ -44,6 +47,20 @@ const NavBar = () => {
   useEffect(() => {
     setValue(routeToIndex[location.pathname] ?? 0)
   }, [location.pathname])
+
+  const langButtons = (
+    <IconButton
+      aria-label='cambiar idioma'
+      onClick={() => setLanguage(language === 'es' ? 'en' : 'es')}
+      title={language === 'es' ? 'Switch to English' : 'Cambiar a Español'}
+    >
+      {language === 'es' ? (
+        <span className='fi fi-us' style={{ fontSize: '1.4rem', borderRadius: '3px' }} />
+      ) : (
+        <span className='fi fi-co' style={{ fontSize: '1.4rem', borderRadius: '3px' }} />
+      )}
+    </IconButton>
+  )
 
   const drawer = (
     <Box sx={{ textAlign: 'center' }}>
@@ -90,13 +107,16 @@ const NavBar = () => {
         ))}
       </List>
 
-      <IconButton aria-label='cambiar tema' onClick={() => setMode()}>
-        {theme.palette.mode === 'dark' ? (
-          <LightMode sx={{ color: dark, fontSize: '1.5rem' }} />
-        ) : (
-          <DarkMode sx={{ fontSize: '1.5rem' }} />
-        )}
-      </IconButton>
+      <Box display='flex' justifyContent='center' alignItems='center' gap='0.5rem' mb={1}>
+        <IconButton aria-label='cambiar tema' onClick={() => setMode()}>
+          {theme.palette.mode === 'dark' ? (
+            <LightMode sx={{ color: dark, fontSize: '1.5rem' }} />
+          ) : (
+            <DarkMode sx={{ fontSize: '1.5rem' }} />
+          )}
+        </IconButton>
+        {langButtons}
+      </Box>
     </Box>
   )
 
@@ -169,25 +189,28 @@ const NavBar = () => {
           ))}
         </Tabs>
 
-        {/* //? BOTON TEMA */}
-        <IconButton aria-label='cambiar tema' onClick={() => setMode()}>
-          {theme.palette.mode === 'dark' ? (
-            <LightMode
-              sx={{
-                color: dark,
-                fontSize: '1.5rem',
-                '&:hover': { color: '#f39f18', cursor: 'pointer' },
-              }}
-            />
-          ) : (
-            <DarkMode
-              sx={{
-                fontSize: '1.5rem',
-                '&:hover': { color: '#3c688e', cursor: 'pointer' },
-              }}
-            />
-          )}
-        </IconButton>
+        {/* //? SELECTOR DE IDIOMA + BOTON TEMA */}
+        <Box display='flex' alignItems='center'>
+          {langButtons}
+          <IconButton aria-label='cambiar tema' onClick={() => setMode()}>
+            {theme.palette.mode === 'dark' ? (
+              <LightMode
+                sx={{
+                  color: dark,
+                  fontSize: '1.5rem',
+                  '&:hover': { color: '#f39f18', cursor: 'pointer' },
+                }}
+              />
+            ) : (
+              <DarkMode
+                sx={{
+                  fontSize: '1.5rem',
+                  '&:hover': { color: '#3c688e', cursor: 'pointer' },
+                }}
+              />
+            )}
+          </IconButton>
+        </Box>
       </Toolbar>
     </AppBar>
   )

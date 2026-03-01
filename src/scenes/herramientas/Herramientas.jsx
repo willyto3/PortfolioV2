@@ -2,7 +2,7 @@ import Box from '@mui/material/Box'
 import { Grid, Paper, Typography, useTheme } from '@mui/material'
 import CardHerramientas from './CardHerramientas'
 
-import { t } from '../../locales'
+import { useT } from '../../locales/useT'
 
 // Agrupa items por categoria manteniendo el orden de aparición
 const agrupar = items => {
@@ -70,6 +70,7 @@ const SeccionHerramientas = ({ titulo, items }) => {
 }
 
 const Herramientas = () => {
+  const t = useT()
   const grupos = agrupar(t.estudios.herramientas.items)
 
   return (

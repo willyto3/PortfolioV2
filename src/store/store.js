@@ -7,6 +7,8 @@ export const useCVStore = create(
       mode: 'dark',
       setMode: () =>
         set(state => ({ mode: state.mode === 'dark' ? 'light' : 'dark' })),
+      language: 'es',
+      setLanguage: lang => set({ language: lang }),
     }),
     { name: 'cv' }
   )
