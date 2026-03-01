@@ -318,9 +318,36 @@ export const es = {
     },
   },
 
+  // ─── Página de Proyectos ──────────────────────────────────────────────────
+  proyectos: {
+    items: [
+      {
+        nombre: 'Sin Mediatas',
+        imagen: 'sinmediatas.png',
+        descripcion: 'Plataforma web para la gestión y seguimiento de proyectos de inspección de hidrocarburos, con módulos de reportes automáticos y control de calidad.',
+        tecnologias: ['React', 'Node.js', 'SQL'],
+        categoria: 'Desarrollo Web',
+      },
+      {
+        nombre: 'Programador Digital Prodigio',
+        imagen: 'excel.png',
+        descripcion: 'Herramienta en Excel-VBA con 5 módulos para la programación, control y automatización de operaciones de transferencia en custodia de hidrocarburos.',
+        tecnologias: ['Excel', 'VBA', 'SQL'],
+        categoria: 'Automatización',
+      },
+      {
+        nombre: 'Tablero Escenarios Refinados',
+        imagen: 'piton.png',
+        descripcion: 'Dashboard para el control y análisis de escenarios proyectados de refinación, con visualización de datos en tiempo real y generación de reportes.',
+        tecnologias: ['Python', 'Excel'],
+        categoria: 'Automatización',
+      },
+    ],
+  },
+
   // ─── Contacto ─────────────────────────────────────────────────────────────
   contacto: {
-    email: 'correo@ejemplo.com', // TODO: reemplazar con email real
+    email: 'ing.willy.corzo@gmail.com', 
     telefono: '+57 301 789 3883',
     whatsapp: 'https://api.whatsapp.com/send?phone=573017893883&text=Me%20interesa%20Saber%20m%C3%A1s%20sobre%20tu%20Hoja%20de%20Vida',
     linkedin: 'https://www.linkedin.com/in/ing-quimico-willy-corzo/',

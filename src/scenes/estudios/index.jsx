@@ -14,23 +14,31 @@ const SeccionEstudios = ({ titulo, tarjetas }) => {
 
   return (
     <Grid size={{ xs: 10 }}>
-      <Box display='flex' alignItems='stretch' gap='1rem'>
+      <Box display='flex' flexDirection={{ xs: 'column', lg: 'row' }} alignItems={{ xs: 'flex-start', lg: 'stretch' }} gap='1rem'>
 
-        {/* Título vertical + línea */}
-        <Box display='flex' alignItems='center' gap='0.75rem' flexShrink={0}>
+        {/* Título + línea */}
+        <Box display='flex' alignItems='center' gap='0.75rem' flexShrink={0}
+          flexDirection={{ xs: 'column', lg: 'row' }}
+          width={{ xs: '100%', lg: 'auto' }}
+        >
           <Typography
             variant='h3'
             color='primary'
             sx={{
-              writingMode: 'vertical-rl',
-              transform: 'rotate(180deg)',
+              writingMode: { xs: 'horizontal-tb', lg: 'vertical-rl' },
+              transform: { xs: 'none', lg: 'rotate(180deg)' },
               letterSpacing: '0.1em',
               whiteSpace: 'nowrap',
             }}
           >
             {titulo}
           </Typography>
-          <Box sx={{ borderLeft: `3px solid ${primary}`, alignSelf: 'stretch' }} />
+          <Box sx={{
+            borderLeft: { xs: 'none', lg: `3px solid ${primary}` },
+            borderBottom: { xs: `3px solid ${primary}`, lg: 'none' },
+            alignSelf: 'stretch',
+            width: { xs: '100%', lg: 'auto' },
+          }} />
         </Box>
 
         {/* Cards */}

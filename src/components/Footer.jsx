@@ -12,12 +12,13 @@ import {
   useTheme,
 } from '@mui/material'
 
-import { useNavigate } from 'react-router-dom'
+import { useLocation, useNavigate } from 'react-router-dom'
 
 import { t } from '../locales'
 
 const Footer = () => {
   const navigate = useNavigate()
+  const { pathname } = useLocation()
   const theme = useTheme()
   const neutralLigth = theme.palette.neutral.light
   const dark = theme.palette.neutral.dark
@@ -36,13 +37,14 @@ const Footer = () => {
           justifyContent='center'
           sx={{ backgroundColor: neutralLigth, px: { xs: '1rem', sm: '2rem' } }}
         >
-          {/* Columna 1 / Fila 1 izq: Nombre */}
+          {/* Columna 1 / Fila 1 izq: Nombre + Contacto */}
           <Grid
             size={{ xs: 6, md: 3 }}
             sx={{
               display: 'flex',
-              alignItems: 'center',
-              justifyContent: { xs: 'flex-start', md: 'center' },
+              flexDirection: 'column',
+              alignItems: { xs: 'flex-start', md: 'center' },
+              justifyContent: 'center',
               order: { xs: 1, md: 1 },
             }}
           >
@@ -60,17 +62,41 @@ const Footer = () => {
             >
               {t.nav.nombre}
             </Typography>
+
+            {/* Teléfono y Email */}
+            <Box display='flex' flexDirection='column' alignItems={{ xs: 'flex-start', md: 'center' }} gap='0.2rem' mt='0.4rem'>
+              <Box display='flex' alignItems='center' gap='0.3rem'>
+                <PhoneIcon sx={{ fontSize: '1rem', color: principal }} />
+                <Typography component='a' href={`tel:${t.contacto.telefono}`}
+                  fontSize='clamp(0.7rem, 1.2vw, 0.85rem)'
+                  sx={{ color: 'inherit', textDecoration: 'none', '&:hover': { color: principal } }}
+                >
+                  {t.contacto.telefono}
+                </Typography>
+              </Box>
+              <Box display='flex' alignItems='center' gap='0.3rem'>
+                <EmailIcon sx={{ fontSize: '1rem', color: principal }} />
+                <Typography component='a' href={`mailto:${t.contacto.email}`}
+                  fontSize='clamp(0.7rem, 1.2vw, 0.85rem)'
+                  sx={{ color: 'inherit', textDecoration: 'none', '&:hover': { color: principal } }}
+                >
+                  {t.contacto.email}
+                </Typography>
+              </Box>
+            </Box>
           </Grid>
 
           {/* Columna 2 / Fila 2: Descripción */}
-          <Grid
-            size={{ xs: 12, md: 5 }}
-            sx={{ order: { xs: 3, md: 2 } }}
-          >
-            <Typography variant='h4' component='div' mt={{ xs: 0, md: '1rem' }}>
-              {t.footer.descripcion}
-            </Typography>
-          </Grid>
+          {pathname !== '/' && (
+            <Grid
+              size={{ xs: 12, md: 5 }}
+              sx={{ order: { xs: 3, md: 2 } }}
+            >
+              <Typography variant='h4' component='div' mt={{ xs: 0, md: '1rem' }} textAlign={{ xs: 'center', md: 'left' }}>
+                {t.footer.descripcion}
+              </Typography>
+            </Grid>
+          )}
 
           {/* Columna 3 / Fila 1 der: Contacto + Redes */}
           <Grid
@@ -108,28 +134,6 @@ const Footer = () => {
               >
                 <WhatsAppIcon sx={{ fontSize: { xs: 36, sm: 40 } }} />
               </IconButton>
-            </Box>
-
-            {/* Teléfono y Email */}
-            <Box display='flex' flexDirection='column' alignItems={{ xs: 'flex-end', md: 'center' }} gap='0.2rem' mt='0.4rem'>
-              <Box display='flex' alignItems='center' gap='0.3rem'>
-                <PhoneIcon sx={{ fontSize: '1rem', color: principal }} />
-                <Typography component='a' href={`tel:${t.contacto.telefono}`}
-                  fontSize='clamp(0.7rem, 1.2vw, 0.85rem)'
-                  sx={{ color: 'inherit', textDecoration: 'none', '&:hover': { color: principal } }}
-                >
-                  {t.contacto.telefono}
-                </Typography>
-              </Box>
-              <Box display='flex' alignItems='center' gap='0.3rem'>
-                <EmailIcon sx={{ fontSize: '1rem', color: principal }} />
-                <Typography component='a' href={`mailto:${t.contacto.email}`}
-                  fontSize='clamp(0.7rem, 1.2vw, 0.85rem)'
-                  sx={{ color: 'inherit', textDecoration: 'none', '&:hover': { color: principal } }}
-                >
-                  {t.contacto.email}
-                </Typography>
-              </Box>
             </Box>
 
             <Typography

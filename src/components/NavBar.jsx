@@ -120,6 +120,17 @@ const NavBar = () => {
           {drawer}
         </Drawer>
 
+        {/* //? BOTON HAMBURGUESA - solo mobile */}
+        <IconButton
+          color='inherit'
+          aria-label='abrir menú'
+          edge='start'
+          onClick={handleDrawerToggle}
+          sx={{ display: { xs: 'flex', sm: 'none' } }}
+        >
+          <MenuIcon />
+        </IconButton>
+
         <Typography
           fontWeight='bold'
           fontSize='clamp(1.5rem, 2.5vw, 3.3rem)'
@@ -128,23 +139,13 @@ const NavBar = () => {
           color={dark}
           sx={{
             flexGrow: 1,
+            textAlign: { xs: 'center', sm: 'left' },
             '&:hover': { color: principal, cursor: 'pointer' },
           }}
           onClick={() => navigate('/')}
         >
           {t.nav.nombre}
         </Typography>
-
-        {/* //? BOTON HAMBURGUESA - solo mobile */}
-        <IconButton
-          color='inherit'
-          aria-label='abrir menú'
-          edge='start'
-          onClick={handleDrawerToggle}
-          sx={{ mr: 1, display: { sm: 'none' } }}
-        >
-          <MenuIcon />
-        </IconButton>
 
         {/* //? TABS - solo desktop */}
         <Tabs
