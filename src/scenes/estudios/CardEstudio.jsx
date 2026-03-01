@@ -85,15 +85,15 @@ const CardEstudio = ({
         )}
 
         {tesis && (
-          <Typography variant='h4' fontSize='clamp(0.85rem, 1.5vw, 1.25rem)' mt='0.5rem'>
-            <Box component='span' fontWeight='bold' color={primary}>Tesis: </Box>
+          <Typography variant='h4' fontSize='clamp(0.8rem, 1.3vw, 1.1rem)' mt='0.5rem' color='text.secondary' fontStyle='italic'>
+            <Box component='span' fontWeight='bold' fontStyle='normal'>Tesis: </Box>
             {tesis}
           </Typography>
         )}
 
         {logros?.length > 0 && (
           <>
-            <Typography variant='h4' fontWeight='bold' color={primary} mt='0.5rem' fontSize='clamp(0.85rem, 1.5vw, 1.25rem)'>
+            <Typography variant='h4' color='text.secondary' mt='0.5rem' fontSize='clamp(0.8rem, 1.3vw, 1.1rem)' fontWeight='bold'>
               Logros
             </Typography>
             <List dense disablePadding>
@@ -102,7 +102,7 @@ const CardEstudio = ({
                   <FiberManualRecordIcon sx={{ fontSize: '0.5rem', mt: '0.55rem', mr: '0.5rem', color: primary, flexShrink: 0 }} />
                   <ListItemText
                     primary={logro}
-                    slotProps={{ primary: { fontSize: 'clamp(0.85rem, 1.5vw, 1.25rem)' } }}
+                    slotProps={{ primary: { fontSize: 'clamp(0.8rem, 1.3vw, 1.1rem)', color: 'text.secondary' } }}
                   />
                 </ListItem>
               ))}
