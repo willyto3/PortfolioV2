@@ -46,6 +46,7 @@ const CardHerramientas = ({ titulo, imagen, parrafo, conocimiento, nivel, años,
           component='img'
           alt={titulo}
           title={titulo}
+          loading='lazy'
         />
       </Box>
 

@@ -24,6 +24,7 @@ const CardProyecto = ({ nombre, imagen, descripcion, tecnologias }) => {
         component='img'
         image={imagen}
         alt={nombre}
+        loading='lazy'
         sx={{
           height: '180px',
           objectFit: 'contain',

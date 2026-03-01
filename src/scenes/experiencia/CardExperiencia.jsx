@@ -54,6 +54,7 @@ const CardExperiencia = ({
           }}
           image={image}
           alt={alt}
+          loading='lazy'
         />
       </Box>
 

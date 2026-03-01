@@ -53,6 +53,7 @@ const CardEstudio = ({
           component='img'
           alt={institucion}
           title={institucion}
+          loading='lazy'
         />
       </Box>
 
