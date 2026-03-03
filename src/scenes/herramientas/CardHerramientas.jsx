@@ -10,7 +10,7 @@ import Typography from '@mui/material/Typography'
 import FiberManualRecordIcon from '@mui/icons-material/FiberManualRecord'
 import { useTheme } from '@mui/material'
 
-const CardHerramientas = ({ titulo, imagen, parrafo, conocimiento, nivel, años, usos }) => {
+const CardHerramientas = ({ titulo, imagen, parrafo, conocimiento, nivel, anios, usos }) => {
   const theme = useTheme()
   const primary = theme.palette.primary.main
 
@@ -55,14 +55,14 @@ const CardHerramientas = ({ titulo, imagen, parrafo, conocimiento, nivel, años,
           {titulo}
         </Typography>
 
-        {/* Nivel + años */}
+        {/* Nivel + anios */}
         <Box display='flex' alignItems='center' justifyContent='space-between' mt='0.4rem' mb='0.2rem'>
           <Typography variant='h4' fontSize='clamp(0.85rem, 1.5vw, 1.25rem)'>
             {conocimiento}
           </Typography>
-          {años && (
+          {anios && (
             <Typography variant='h4' color='text.secondary' fontSize='clamp(0.75rem, 1.2vw, 1rem)'>
-              {años} {años === 1 ? 'año' : 'años'}
+              {anios} {anios === 1 ? 'a\u00f1o' : 'a\u00f1os'}
             </Typography>
           )}
         </Box>

@@ -121,7 +121,15 @@ const NavBar = () => {
   )
 
   return (
-    <AppBar component='nav' sx={{ position: 'static', background: 'none' }}>
+    <AppBar
+      component='nav'
+      sx={{
+        position: 'sticky',
+        top: 0,
+        zIndex: theme => theme.zIndex.drawer + 1,
+        backgroundColor: 'background.paper',
+      }}
+    >
       <Toolbar sx={{ justifyContent: 'space-between' }}>
         {/* //? MENU DESPLEGABLE MOBILE */}
         <Drawer

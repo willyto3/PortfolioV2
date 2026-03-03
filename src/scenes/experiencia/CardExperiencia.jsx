@@ -8,16 +8,26 @@ import ListItem from '@mui/material/ListItem'
 import ListItemText from '@mui/material/ListItemText'
 
 import BusinessCenterOutlinedIcon from '@mui/icons-material/BusinessCenterOutlined'
+import BusinessOutlinedIcon from '@mui/icons-material/BusinessOutlined'
 import CheckIcon from '@mui/icons-material/Check'
 import DateRangeIcon from '@mui/icons-material/DateRange'
 import PlaceIcon from '@mui/icons-material/Place'
 
 import { useTheme } from '@mui/material'
+import { useCVStore } from '../../store/store'
 
 const CardExperiencia = ({
   image,
+  imageLight,
+  imageDark,
+  clientImage,
+  clientImageLight,
+  clientImageDark,
+  clientAlt,
   alt,
   cargo,
+  empresa,
+  cliente,
   fecha,
   lugar,
   actividades,
@@ -25,6 +35,13 @@ const CardExperiencia = ({
 }) => {
   const theme = useTheme()
   const primary = theme.palette.primary.main
+  const language = useCVStore(state => state.language)
+  const imageByTheme = theme.palette.mode === 'dark' ? (imageDark || imageLight || image) : (imageLight || imageDark || image)
+  const clientImageByTheme = theme.palette.mode === 'dark'
+    ? (clientImageDark || clientImageLight || clientImage)
+    : (clientImageLight || clientImageDark || clientImage)
+  const contractorLabel = language === 'es' ? 'Empresa contratante' : 'Contractor'
+  const clientLabel = language === 'es' ? 'Servicio para' : 'Service for'
 
   return (
     <Card
@@ -52,7 +69,7 @@ const CardExperiencia = ({
             height: '100%',
             maxWidth: { xs: '9rem', lg: '100%' },
           }}
-          image={image}
+          image={imageByTheme}
           alt={alt}
           loading='lazy'
         />
@@ -71,6 +88,67 @@ const CardExperiencia = ({
           >
             {cargo}
           </Typography>
+
+          {(empresa || cliente) && (
+            <Box
+              mb={{ xs: '8px', sm: '12px' }}
+              display='flex'
+              alignItems='center'
+              justifyContent='flex-start'
+              gap='50px'
+              flexWrap='wrap'
+            >
+              <Box flex='1 1 240px'>
+                {empresa && (
+                  <Typography
+                    variant='subtitle1'
+                    color='text.secondary'
+                    component='div'
+                    display='flex'
+                    alignItems='center'
+                    gap='4px'
+                    fontSize='clamp(0.8rem, 1.5vw, 1rem)'
+                  >
+                    <BusinessOutlinedIcon fontSize='small' sx={{ color: primary }} />
+                    {contractorLabel}: {empresa}
+                  </Typography>
+                )}
+                {cliente && (
+                  <Typography
+                    variant='subtitle1'
+                    color='text.secondary'
+                    component='div'
+                    display='flex'
+                    alignItems='center'
+                    gap='4px'
+                    fontSize='clamp(0.8rem, 1.5vw, 1rem)'
+                  >
+                    <BusinessCenterOutlinedIcon fontSize='small' sx={{ color: primary }} />
+                    {clientLabel}: {cliente}
+                  </Typography>
+                )}
+              </Box>
+              {clientImageByTheme && (
+                <Box
+                  component='img'
+                  src={clientImageByTheme}
+                  alt={clientAlt || cliente || 'Client logo'}
+                  loading='lazy'
+                  onError={event => {
+                    event.currentTarget.style.display = 'none'
+                  }}
+                  sx={{
+                    height: '36px',
+                    width: 'auto',
+                    objectFit: 'contain',
+                    maxWidth: '180px',
+                    flexShrink: 0,
+                    ml: 0,
+                  }}
+                />
+              )}
+            </Box>
+          )}
 
           <Box display='flex' alignItems='center' gap='1rem' flexWrap='wrap'>
             <Typography

@@ -4,7 +4,7 @@ import CardHerramientas from './CardHerramientas'
 
 import { useT } from '../../locales/useT'
 
-// Agrupa items por categoria manteniendo el orden de aparición
+// Agrupa items por categoria manteniendo el orden de apariciÃ³n
 const agrupar = items => {
   const mapa = new Map()
   items.forEach(item => {
@@ -22,7 +22,7 @@ const SeccionHerramientas = ({ titulo, items }) => {
     <Grid size={{ xs: 10 }}>
       <Box display='flex' flexDirection={{ xs: 'column', lg: 'row' }} alignItems={{ xs: 'flex-start', lg: 'stretch' }} gap='1rem'>
 
-        {/* Título + línea */}
+        {/* TÃ­tulo + lÃ­nea */}
         <Box display='flex' alignItems='center' gap='0.75rem' flexShrink={0}
           flexDirection={{ xs: 'column', lg: 'row' }}
           width={{ xs: '100%', lg: 'auto' }}
@@ -57,7 +57,7 @@ const SeccionHerramientas = ({ titulo, items }) => {
                 parrafo={item.parrafo}
                 conocimiento={item.conocimiento}
                 nivel={item.nivel}
-                años={item.años}
+                anios={item.anios}
                 usos={item.usos}
               />
             </Grid>

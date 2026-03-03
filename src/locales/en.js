@@ -1,19 +1,27 @@
+const digitalEcopetrolActivities = [
+  'Design, implement, and maintain operational digital tools using Python, SQL, Power BI, and Power Automate.',
+  'Automate operational processes with Robot JAVI, Robot CIEG, and the Fuel Supply Module.',
+  'Manage and optimize the Supply Chain Center SQL Database to ensure data traceability and availability.',
+  'Provide cross-functional support for the Digital Programmer Prodigio tool across its 5 modules.',
+  'Develop control dashboards (Refined Scenarios, GIP Management, and Energy and Gas Information Center) for operational and management follow-up.',
+]
+
 export const en = {
-  // ─── Navigation ───────────────────────────────────────────────────────────
+  // Navigation
   nav: {
     nombre: 'Willy Corzo',
     items: [
-      { label: 'Home',       ruta: '/' },
+      { label: 'Home', ruta: '/' },
       { label: 'Experience', ruta: '/experiencia' },
-      { label: 'Education',  ruta: '/estudios' },
-      { label: 'Tools',      ruta: '/herramientas' },
-      { label: 'Projects',   ruta: '/proyectos' },
+      { label: 'Education', ruta: '/estudios' },
+      { label: 'Tools', ruta: '/herramientas' },
+      { label: 'Projects', ruta: '/proyectos' },
     ],
   },
 
-  // ─── Home Page ────────────────────────────────────────────────────────────
+  // Home Page
   home: {
-    saludo: "Hi, My Name is",
+    saludo: 'Hi, My Name is',
     nombre: 'Willy Corzo Lubo',
     roles: [
       'Master in Project Management',
@@ -23,7 +31,7 @@ export const en = {
       'Power BI Developer',
       'Excel - VBA Expert',
     ],
-    bio: 'Chemical Engineer with a Master\'s degree in Project Management and over 15 years of experience in the Hydrocarbons sector, specializing in Custody Transfer, Measurement, and Analysis. I am passionate about transforming complex processes into automated and efficient solutions. Results-oriented, I work with initiative, honesty, and commitment, easily adapting to new challenges and environments.',
+    bio: "Chemical Engineer with a Master's degree in Project Management and over 15 years of experience in the Hydrocarbons sector, specializing in Custody Transfer, Measurement, and Analysis. I am passionate about transforming complex processes into automated and efficient solutions. Results-oriented, I work with initiative, honesty, and commitment, easily adapting to new challenges and environments.",
     habilidadesBlandas: [
       'Leadership',
       'Teamwork',
@@ -36,117 +44,129 @@ export const en = {
     ],
   },
 
-  // ─── Experience Page ──────────────────────────────────────────────────────
+  // Experience Page
   experiencia: [
     {
-      image: 'copco.jpg',
-      alt: 'Imagen Corporativa Copco - Líder de Medición',
+      image: 'Applus.W.png',
+      imageLight: 'Applus.W.png',
+      imageDark: 'Applus.B.png',
+      alt: 'Applus corporate image - Measurement Leader',
       cargo: 'Measurement Leader',
+      empresa: 'Applus+',
+      cliente: 'Frontera Energy',
+      clientImageLight: 'Frontera.W.png',
+      clientImageDark: 'Frontera.B.png',
+      clientAlt: 'Frontera Energy logo',
       fecha: 'February 2025 - Present',
-      lugar: 'Bogotá D.C., Colombia',
+      lugar: 'Bogota D.C., Colombia',
       actividades: [
-        'Develop projects in multiple programming languages.',
-        'Provide cross-functional support for the Digital Programmer Prodigio tool across its 5 modules.',
-        'Develop the Refined Scenarios Dashboard to track different projected scenarios.',
-        'Develop the GIP Management Dashboards to show progress on management milestones.',
-        'Develop the Energy and Gas Information Center Dashboard to monitor energy production and self-consumption in national refineries.',
+        'Lead the hydrocarbon measurement process at custody transfer points.',
+        'Ensure calibration and verification of meters, tanks, and laboratory equipment.',
+        'Validate daily and monthly balances, analyzing volume and quality deviations.',
+        'Ensure compliance with technical standards (API, ASTM, and ISO 17025).',
+        'Coordinate audits, inspections, and improvement plans for measurement systems.',
+        'Prepare technical reports and dashboards for management follow-up.',
       ],
       jefe: 'Julieth Zapata - Phone 313 435 35 99',
     },
     {
       image: 'copco.jpg',
-      alt: 'Imagen Corporativa Copco - Profesional Semi Senior',
+      alt: 'Copco corporate image - Semi-Senior Professional',
       cargo: 'Semi-Senior Professional',
+      empresa: 'Copco',
+      cliente: 'Ecopetrol S.A.',
+      clientImageLight: 'Ecopetrol.W.png',
+      clientImageDark: 'Ecopetrol.B.png',
+      clientAlt: 'Ecopetrol logo',
       fecha: 'December 2023 - December 2024',
-      lugar: 'Bogotá D.C., Colombia',
-      actividades: [
-        'Develop projects in multiple programming languages.',
-        'Provide cross-functional support for the Digital Programmer Prodigio tool across its 5 modules.',
-        'Develop the Refined Scenarios Dashboard to track different projected scenarios.',
-        'Develop the GIP Management Dashboards to show progress on management milestones.',
-        'Develop the Energy and Gas Information Center Dashboard to monitor energy production and self-consumption in national refineries.',
-      ],
-      jefe: 'Hernando Rosales - Phone 314 238 52 39',
+      lugar: 'Temporary assignment at Ecopetrol S.A. - Bogota D.C.',
+      actividades: digitalEcopetrolActivities,
+      jefe: 'Johanna Orjuela - Phone 311 887 03 64',
     },
     {
       image: 'sinmediatas.png',
-      alt: 'Imagen Corporativa Soluciones Inmediatas',
+      alt: 'Soluciones Inmediatas corporate image',
       cargo: 'Integration Programmer',
+      empresa: 'Soluciones Inmediatas',
+      cliente: 'Ecopetrol S.A.',
+      clientImageLight: 'Ecopetrol.W.png',
+      clientImageDark: 'Ecopetrol.B.png',
+      clientAlt: 'Ecopetrol logo',
       fecha: 'August 2023 - November 2023',
-      lugar: 'Bogotá D.C., Colombia',
-      actividades: [
-        'Develop projects in multiple programming languages.',
-        'Provide cross-functional support for the Digital Programmer Prodigio tool across its 5 modules.',
-        'Develop the Refined Scenarios Dashboard to track different projected scenarios.',
-        'Develop the GIP Management Dashboards to show progress on management milestones.',
-        'Develop the Energy and Gas Information Center Dashboard to monitor energy production and self-consumption in national refineries.',
-      ],
-      jefe: 'Hernando Rosales - Phone 314 238 52 39',
+      lugar: 'Bogota D.C., Colombia',
+      actividades: digitalEcopetrolActivities,
+      jefe: 'Johanna Orjuela - Phone 311 887 03 64',
     },
     {
       image: 'SGS.png',
-      alt: 'Imagen Corporativa SGS',
+      imageLight: 'SGS.W.png',
+      imageDark: 'SGS.B.png',
+      alt: 'SGS corporate image',
       cargo: 'Professional Inspector',
-      fecha: 'July 2021 - Present',
-      lugar: 'Apiay Cenit - Villavicencio, Meta',
+      fecha: 'July 2021 - July 2023',
+      lugar: 'Apiay Cenit Station - Villavicencio, Meta',
       actividades: [
         'Certify the quality and quantity of hydrocarbons and refined products.',
-        'Monitor received and dispatched tank trucks.',
+        'Monitor inbound and outbound tank trucks.',
         'Prepare daily and monthly reports.',
-        'Implement and maintain ISO 17025 – 2017 Standard.',
-        'Developed the Balance program to calculate daily and monthly balances.',
-        'Developed the LabCal program to perform analysis calculations.',
+        'Implement and maintain the ISO 17025:2017 standard.',
+        'Develop the Balance program to calculate daily and monthly balances.',
+        'Develop the LabCal program to perform analysis calculations.',
       ],
-      jefe: 'Hernando Rosales - Phone 314 238 52 39',
+      jefe: 'Hernando Rosales - Phone 310 318 45 25',
     },
     {
       image: 'Intertek.png',
-      alt: 'Imagen Corporativa Intertek',
+      imageLight: 'Intertek.W.png',
+      imageDark: 'Intertek.B.png',
+      alt: 'Intertek corporate image',
       cargo: 'Administrative Contract Coordinator',
-      fecha: 'June 2019 – June 2021',
-      lugar: 'Bogotá D.C., Colombia',
+      fecha: 'June 2019 - June 2021',
+      lugar: 'Bogota D.C., Colombia',
       actividades: [
         'Coordinate 6 hydrocarbon inspection projects.',
         'Lead a team of 50 people.',
         'Plan and execute audits of hydrocarbon transportation systems.',
         'Manage the procurement of goods and services.',
-        'Implemented strategies for the development and monitoring of corporate and performance indicators.',
-        'Developed the Payroll program to calculate surcharges and overtime.',
+        'Implement strategies for the development and monitoring of corporate and performance indicators.',
+        'Develop the Payroll program to calculate surcharges and overtime.',
       ],
-      jefe: 'Cristhian Moreno – Phone: 314 238 52 39',
+      jefe: 'Cristhian Moreno - Phone 314 238 52 39',
     },
     {
       image: 'OTI.jpg',
-      alt: 'Imagen Corporativa OTI',
+      alt: 'OTI corporate image',
       cargo: 'Hydrocarbon Inspector',
-      fecha: 'February 2017 – June 2019',
-      lugar: 'Rubiales CPF1 & CPF2 - Puerto Gaitán, Meta',
+      fecha: 'February 2017 - June 2019',
+      lugar: 'Rubiales CPF1 & CPF2 - Puerto Gaitan, Meta',
       actividades: [
         'Certify the quality and quantity of hydrocarbons.',
         'Monitor tank trucks.',
         'Prepare daily and monthly reports.',
-        'Implement and maintain ISO 17025 – 2017 Standard.',
-        'Developed the Analito program to perform analysis and daily/monthly balance calculations.',
+        'Implement and maintain the ISO 17025:2017 standard.',
+        'Develop the Analito program to perform analysis and daily/monthly balance calculations.',
       ],
-      jefe: 'Jorge Santander – Phone: 316 223 09 55',
+      jefe: 'Jorge Santander - Phone 316 223 09 55',
     },
     {
       image: 'BV.jpg',
-      alt: 'Imagen Corporativa BV',
+      imageLight: 'BV.W.png',
+      imageDark: 'BV.B.png',
+      alt: 'Bureau Veritas corporate image',
       cargo: 'Quality and Quantity Inspector',
-      fecha: 'June 2008 – July 2016',
-      lugar: 'Ocensa Coveñas - Coveñas, Sucre',
+      fecha: 'June 2008 - July 2016',
+      lugar: 'Ocensa Covenas - Covenas, Sucre',
       actividades: [
         'Certify the quality and quantity of hydrocarbons.',
         'Prepare daily and monthly reports.',
-        'Implement and maintain ISO 17025 – 2017 Standard.',
+        'Implement and maintain the ISO 17025:2017 standard.',
         'Conduct volume inspections on tanker ships.',
       ],
-      jefe: 'Cornelio Toledo – Phone: 300 404 81 66',
+      jefe: 'Cornelio Toledo - Phone 300 404 81 66',
     },
   ],
 
-  // ─── Education Page ───────────────────────────────────────────────────────
+  // Education Page
   estudios: {
     tituloFormales: 'Academic Education',
     tituloCortos: 'Complementary Training',
@@ -156,7 +176,7 @@ export const en = {
         fecha: 'Madrid, Spain - 2020',
         estudio: 'Project Management',
         fondo: 'isabel.png',
-        grado: 'Master\'s Degree',
+        grado: "Master's Degree",
         tipo: 'formal',
         descripcion: 'Postgraduate program focused on project direction and management under the PMI framework, with emphasis on team leadership, strategic planning, and cost control in complex environments.',
         tesis: 'Methodology for Risk Management in Oil & Gas Infrastructure Projects in Colombia',
@@ -170,7 +190,7 @@ export const en = {
         fecha: 'Barranquilla - 2007',
         estudio: 'Chemical Engineering',
         fondo: 'ua.png',
-        grado: 'Bachelor\'s Degree',
+        grado: "Bachelor's Degree",
         tipo: 'formal',
         descripcion: 'Degree focused on the design and optimization of industrial processes, with a solid foundation in physical chemistry, thermodynamics, unit operations, and materials analysis applied to the Hydrocarbons sector.',
         tesis: 'Optimization of the Custody Transfer Process of Hydrocarbons at Maritime Terminals',
@@ -181,7 +201,7 @@ export const en = {
       },
       {
         institucion: 'Servicio Nacional de Aprendizaje - SENA',
-        fecha: 'Bogotá - 2018',
+        fecha: 'Bogota - 2018',
         estudio: 'Management of Testing and Calibration Laboratories - ISO/IEC 17025 Standard',
         fondo: 'sena.png',
         grado: 'Technical Specialization',
@@ -203,7 +223,7 @@ export const en = {
       },
       {
         institucion: 'Servicio Nacional de Aprendizaje - SENA',
-        fecha: 'Bogotá - 2016',
+        fecha: 'Bogota - 2016',
         estudio: 'Microsoft Excel Tools',
         fondo: 'sena.png',
         grado: 'Course',
@@ -220,14 +240,14 @@ export const en = {
         {
           titulo: 'Excel',
           imagen: 'excel.png',
-          parrafo: 'Spreadsheet application for manipulating numerical and text data, with automation capabilities through Macros and VBA.',
+          parrafo: 'Spreadsheet application for manipulating numerical and text data, with automation capabilities through macros and VBA.',
           conocimiento: 'Advanced',
           nivel: 90,
-          años: 15,
+          anios: 15,
           categoria: 'Office Suite',
           usos: [
             'Hydrocarbon production and measurement balances.',
-            'Report automation with Macros and VBA.',
+            'Report automation with macros and VBA.',
             'Data analysis with pivot tables and Power Query.',
           ],
         },
@@ -237,7 +257,7 @@ export const en = {
           parrafo: 'Markup language that defines the structure and meaning of web content.',
           conocimiento: 'Advanced',
           nivel: 85,
-          años: 4,
+          anios: 4,
           categoria: 'Web Development',
           usos: [
             'Semantic layout of web interfaces.',
@@ -250,7 +270,7 @@ export const en = {
           parrafo: 'Style language for defining the visual presentation of HTML documents.',
           conocimiento: 'Intermediate',
           nivel: 65,
-          años: 3,
+          anios: 3,
           categoria: 'Web Development',
           usos: [
             'Responsive and mobile-first design.',
@@ -263,7 +283,7 @@ export const en = {
           parrafo: 'Programming language that enables logic and interactivity in web applications.',
           conocimiento: 'Intermediate',
           nivel: 70,
-          años: 3,
+          anios: 3,
           categoria: 'Web Development',
           usos: [
             'Web application logic.',
@@ -276,7 +296,7 @@ export const en = {
           parrafo: 'JavaScript library for building user interfaces based on reusable components.',
           conocimiento: 'Intermediate',
           nivel: 70,
-          años: 2,
+          anios: 2,
           categoria: 'Web Development',
           usos: [
             'SPA application development.',
@@ -289,7 +309,7 @@ export const en = {
           parrafo: 'Code hosting platform with Git version control for collaboration and deployment.',
           conocimiento: 'Intermediate',
           nivel: 65,
-          años: 3,
+          anios: 3,
           categoria: 'Web Development',
           usos: [
             'Project version control.',
@@ -302,7 +322,7 @@ export const en = {
           parrafo: 'Word processor for creating, editing, and formatting professional documents with advanced writing tools.',
           conocimiento: 'Advanced',
           nivel: 90,
-          años: 15,
+          anios: 15,
           categoria: 'Office Suite',
           usos: [
             'Writing technical reports and inspection reports.',
@@ -316,7 +336,7 @@ export const en = {
           parrafo: 'Standard language for querying, inserting, updating, and managing data in relational databases.',
           conocimiento: 'Intermediate',
           nivel: 75,
-          años: 5,
+          anios: 5,
           categoria: 'Databases',
           usos: [
             'Production data queries and analysis.',
@@ -328,7 +348,7 @@ export const en = {
     },
   },
 
-  // ─── Projects Page ────────────────────────────────────────────────────────
+  // Projects Page
   proyectos: {
     items: [
       {
@@ -355,7 +375,7 @@ export const en = {
     ],
   },
 
-  // ─── Contact ──────────────────────────────────────────────────────────────
+  // Contact
   contacto: {
     email: 'ing.willy.corzo@gmail.com',
     telefono: '+57 301 789 3883',
@@ -364,9 +384,9 @@ export const en = {
     github: 'https://github.com/willyto3',
   },
 
-  // ─── Footer ───────────────────────────────────────────────────────────────
+  // Footer
   footer: {
-    descripcion: 'Chemical Engineer with 15 years of experience, specializing in Hydrocarbons and development of digital tools for process automation.',
-    hechoCon: 'Made With 💖 by Black Dog Solutions',
+    descripcion: 'Chemical Engineer with 15 years of experience, specializing in hydrocarbons and development of digital tools for process automation.',
+    hechoCon: 'Made with love by Black Dog Solutions',
   },
 }

@@ -21,8 +21,16 @@ const Experiencia = () => {
             <Grid size={{ xs: 10, xl: 5.5 }} key={card.alt} sx={{ display: 'flex' }}>
               <CardExperiencia
                 image={card.image}
+                imageLight={card.imageLight}
+                imageDark={card.imageDark}
+                clientImage={card.clientImage}
+                clientImageLight={card.clientImageLight}
+                clientImageDark={card.clientImageDark}
+                clientAlt={card.clientAlt}
                 alt={card.alt}
                 cargo={card.cargo}
+                empresa={card.empresa}
+                cliente={card.cliente}
                 actividades={card.actividades}
                 fecha={card.fecha}
                 lugar={card.lugar}
