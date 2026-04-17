@@ -40,11 +40,12 @@ const NavBar = () => {
   const theme = useTheme()
   const dark = theme.palette.neutral.dark
   const principal = theme.palette.primary.main
+  const isDark = theme.palette.mode === 'dark'
 
   const routeToIndex = Object.fromEntries(t.nav.items.map((item, i) => [item.ruta, i]))
   const value = routeToIndex[location.pathname] ?? 0
 
-  const langButtons = (
+  const langButton = (
     <IconButton
       aria-label='cambiar idioma'
       onClick={() => setLanguage(language === 'es' ? 'en' : 'es')}
@@ -54,6 +55,28 @@ const NavBar = () => {
         <span className='fi fi-us' style={{ fontSize: '1.4rem', borderRadius: '3px' }} />
       ) : (
         <span className='fi fi-co' style={{ fontSize: '1.4rem', borderRadius: '3px' }} />
+      )}
+    </IconButton>
+  )
+
+  const themeButton = (
+    <IconButton aria-label='cambiar tema' onClick={setMode}>
+      {isDark ? (
+        <LightMode
+          sx={{
+            color: dark,
+            fontSize: '1.5rem',
+            '&:hover': { color: principal, cursor: 'pointer' },
+          }}
+        />
+      ) : (
+        <DarkMode
+          sx={{
+            color: dark,
+            fontSize: '1.5rem',
+            '&:hover': { color: principal, cursor: 'pointer' },
+          }}
+        />
       )}
     </IconButton>
   )
@@ -74,7 +97,7 @@ const NavBar = () => {
           {t.nav.nombre}
         </Typography>
         <IconButton aria-label='cerrar menú' onClick={handleDrawerToggle}>
-          <Close />
+          <Close sx={{ color: dark }} />
         </IconButton>
       </Box>
 
@@ -104,14 +127,8 @@ const NavBar = () => {
       </List>
 
       <Box display='flex' justifyContent='center' alignItems='center' gap='0.5rem' mb={1}>
-        <IconButton aria-label='cambiar tema' onClick={() => setMode()}>
-          {theme.palette.mode === 'dark' ? (
-            <LightMode sx={{ color: dark, fontSize: '1.5rem' }} />
-          ) : (
-            <DarkMode sx={{ fontSize: '1.5rem' }} />
-          )}
-        </IconButton>
-        {langButtons}
+        {themeButton}
+        {langButton}
       </Box>
     </Box>
   )
@@ -146,23 +163,23 @@ const NavBar = () => {
 
         {/* //? BOTON HAMBURGUESA - solo mobile */}
         <IconButton
-          color='inherit'
           aria-label='abrir menú'
           edge='start'
           onClick={handleDrawerToggle}
-          sx={{ display: { xs: 'flex', sm: 'none' } }}
+          sx={{ display: { xs: 'flex', sm: 'none' }, color: dark }}
         >
           <MenuIcon />
         </IconButton>
 
         <Typography
+          variant='h1'
+          component='h1'
           fontWeight='bold'
           fontSize='clamp(1.5rem, 2.5vw, 3.3rem)'
-          lineHeight='1'
-          component='div'
           color={dark}
           sx={{
             flexGrow: 1,
+            lineHeight: 1.2,
             textAlign: { xs: 'center', sm: 'left' },
             '&:hover': { color: principal, cursor: 'pointer' },
           }}
@@ -184,7 +201,7 @@ const NavBar = () => {
               sx={{
                 height: 65,
                 color: dark,
-                fontSize: '1rem',
+                fontSize: 'clamp(0.875rem, 1vw, 1rem)',
                 textTransform: 'capitalize',
                 flexGrow: 1,
                 '&:hover': { color: principal },
@@ -195,25 +212,8 @@ const NavBar = () => {
 
         {/* //? SELECTOR DE IDIOMA + BOTON TEMA */}
         <Box display='flex' alignItems='center'>
-          {langButtons}
-          <IconButton aria-label='cambiar tema' onClick={() => setMode()}>
-            {theme.palette.mode === 'dark' ? (
-              <LightMode
-                sx={{
-                  color: dark,
-                  fontSize: '1.5rem',
-                  '&:hover': { color: '#f39f18', cursor: 'pointer' },
-                }}
-              />
-            ) : (
-              <DarkMode
-                sx={{
-                  fontSize: '1.5rem',
-                  '&:hover': { color: '#3c688e', cursor: 'pointer' },
-                }}
-              />
-            )}
-          </IconButton>
+          {langButton}
+          {themeButton}
         </Box>
       </Toolbar>
     </AppBar>
