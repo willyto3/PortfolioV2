@@ -49,6 +49,14 @@ export const en = {
   },
 
   // Experience Page
+  experienciaUI: {
+    titulo: 'Professional Experience',
+    labels: {
+      contratante: 'Contractor',
+      servicioPara: 'Service for',
+      jefe: 'Direct supervisor',
+    },
+  },
   experiencia: [
     {
       image: 'Applus.W.png',

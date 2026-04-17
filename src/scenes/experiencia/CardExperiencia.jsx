@@ -3,18 +3,37 @@ import Card from '@mui/material/Card'
 import CardContent from '@mui/material/CardContent'
 import CardMedia from '@mui/material/CardMedia'
 import Typography from '@mui/material/Typography'
-import List from '@mui/material/List'
-import ListItem from '@mui/material/ListItem'
-import ListItemText from '@mui/material/ListItemText'
 
-import BusinessCenterOutlinedIcon from '@mui/icons-material/BusinessCenterOutlined'
 import BusinessOutlinedIcon from '@mui/icons-material/BusinessOutlined'
+import BusinessCenterOutlinedIcon from '@mui/icons-material/BusinessCenterOutlined'
 import CheckIcon from '@mui/icons-material/Check'
 import DateRangeIcon from '@mui/icons-material/DateRange'
+import PersonOutlineOutlinedIcon from '@mui/icons-material/PersonOutlineOutlined'
 import PlaceIcon from '@mui/icons-material/Place'
 
 import { useTheme } from '@mui/material'
-import { useCVStore } from '../../store/store'
+import { useT } from '../../locales/useT'
+
+const pickByTheme = (mode, light, dark, fallback) =>
+  mode === 'dark' ? (dark || light || fallback) : (light || dark || fallback)
+
+const InfoRow = ({ icon: Icon, children, color }) => (
+  <Box
+    display='flex'
+    alignItems='flex-start'
+    gap='6px'
+    sx={{ color: 'text.secondary' }}
+  >
+    <Icon fontSize='small' sx={{ color, mt: '2px', flexShrink: 0 }} />
+    <Typography
+      component='span'
+      fontSize='clamp(0.85rem, 1.3vw, 1rem)'
+      lineHeight={1.5}
+    >
+      {children}
+    </Typography>
+  </Box>
+)
 
 const CardExperiencia = ({
   image,
@@ -33,15 +52,13 @@ const CardExperiencia = ({
   actividades,
   jefe,
 }) => {
+  const t = useT()
   const theme = useTheme()
   const primary = theme.palette.primary.main
-  const language = useCVStore(state => state.language)
-  const imageByTheme = theme.palette.mode === 'dark' ? (imageDark || imageLight || image) : (imageLight || imageDark || image)
-  const clientImageByTheme = theme.palette.mode === 'dark'
-    ? (clientImageDark || clientImageLight || clientImage)
-    : (clientImageLight || clientImageDark || clientImage)
-  const contractorLabel = language === 'es' ? 'Empresa contratante' : 'Contractor'
-  const clientLabel = language === 'es' ? 'Servicio para' : 'Service for'
+  const labels = t.experienciaUI.labels
+
+  const imageByTheme = pickByTheme(theme.palette.mode, imageLight, imageDark, image)
+  const clientImageByTheme = pickByTheme(theme.palette.mode, clientImageLight, clientImageDark, clientImage)
 
   return (
     <Card
@@ -51,6 +68,11 @@ const CardExperiencia = ({
         borderTop: `4px solid ${primary}`,
         width: '100%',
         height: '100%',
+        transition: 'box-shadow 0.2s ease, transform 0.2s ease',
+        '&:hover': {
+          boxShadow: 6,
+          transform: 'translateY(-2px)',
+        },
       }}
     >
       <Box
@@ -75,15 +97,16 @@ const CardExperiencia = ({
         />
       </Box>
 
-      <Box sx={{ display: 'flex', flexDirection: 'column' }}>
+      <Box sx={{ display: 'flex', flexDirection: 'column', flex: 1 }}>
         <CardContent sx={{ flex: '1 0 auto' }}>
           <Typography
+            variant='h3'
+            component='h3'
             textTransform='uppercase'
-            component='div'
-            variant='h2'
             fontWeight='bold'
-            fontSize='clamp(1rem, 2vw, 1.6rem)'
-            mb={{ xs: '8px', sm: '15px' }}
+            fontSize='clamp(1.05rem, 2vw, 1.6rem)'
+            lineHeight={1.25}
+            mb={{ xs: '8px', sm: '12px' }}
             sx={{ color: primary }}
           >
             {cargo}
@@ -95,37 +118,19 @@ const CardExperiencia = ({
               display='flex'
               alignItems='center'
               justifyContent='flex-start'
-              gap='50px'
+              gap={{ xs: 1, md: 5 }}
               flexWrap='wrap'
             >
-              <Box flex='1 1 240px'>
+              <Box flex='1 1 240px' display='flex' flexDirection='column' gap='4px'>
                 {empresa && (
-                  <Typography
-                    variant='subtitle1'
-                    color='text.secondary'
-                    component='div'
-                    display='flex'
-                    alignItems='center'
-                    gap='4px'
-                    fontSize='clamp(0.8rem, 1.5vw, 1rem)'
-                  >
-                    <BusinessOutlinedIcon fontSize='small' sx={{ color: primary }} />
-                    {contractorLabel}: {empresa}
-                  </Typography>
+                  <InfoRow icon={BusinessOutlinedIcon} color={primary}>
+                    {labels.contratante}: {empresa}
+                  </InfoRow>
                 )}
                 {cliente && (
-                  <Typography
-                    variant='subtitle1'
-                    color='text.secondary'
-                    component='div'
-                    display='flex'
-                    alignItems='center'
-                    gap='4px'
-                    fontSize='clamp(0.8rem, 1.5vw, 1rem)'
-                  >
-                    <BusinessCenterOutlinedIcon fontSize='small' sx={{ color: primary }} />
-                    {clientLabel}: {cliente}
-                  </Typography>
+                  <InfoRow icon={BusinessCenterOutlinedIcon} color={primary}>
+                    {labels.servicioPara}: {cliente}
+                  </InfoRow>
                 )}
               </Box>
               {clientImageByTheme && (
@@ -143,73 +148,30 @@ const CardExperiencia = ({
                     objectFit: 'contain',
                     maxWidth: '180px',
                     flexShrink: 0,
-                    ml: 0,
                   }}
                 />
               )}
             </Box>
           )}
 
-          <Box display='flex' alignItems='center' gap='1rem' flexWrap='wrap'>
-            <Typography
-              variant='subtitle1'
-              color='text.secondary'
-              component='div'
-              display='flex'
-              alignItems='center'
-              gap='4px'
-              fontSize='clamp(0.8rem, 1.5vw, 1rem)'
-            >
-              <DateRangeIcon fontSize='small' sx={{ color: primary }} /> {fecha}
-            </Typography>
-
-            <Typography
-              variant='subtitle1'
-              color='text.secondary'
-              component='div'
-              display='flex'
-              alignItems='center'
-              gap='4px'
-              fontSize='clamp(0.8rem, 1.5vw, 1rem)'
-            >
-              <PlaceIcon fontSize='small' sx={{ color: primary }} /> {lugar}
-            </Typography>
+          <Box display='flex' alignItems='center' gap='1rem' flexWrap='wrap' mb='4px'>
+            <InfoRow icon={DateRangeIcon} color={primary}>{fecha}</InfoRow>
+            <InfoRow icon={PlaceIcon} color={primary}>{lugar}</InfoRow>
           </Box>
 
-          <List
-            sx={{
-              width: '100%',
-              p: 0,
-            }}
-          >
-            {actividades.map((item, i) => (
-              <ListItem key={i} sx={{ p: '2px 0' }}>
-                <ListItemText>
-                  <Typography
-                    display='flex'
-                    alignItems='center'
-                    gap='4px'
-                    fontSize='clamp(0.8rem, 1.5vw, 1rem)'
-                  >
-                    <CheckIcon fontSize='small' sx={{ color: primary, flexShrink: 0 }} />
-                    {item}
-                  </Typography>
-                </ListItemText>
-              </ListItem>
+          <Box component='ul' sx={{ listStyle: 'none', p: 0, m: 0, my: '6px' }}>
+            {actividades.map(item => (
+              <Box component='li' key={item} sx={{ py: '2px' }}>
+                <InfoRow icon={CheckIcon} color={primary}>{item}</InfoRow>
+              </Box>
             ))}
-          </List>
+          </Box>
 
-          <Typography
-            variant='subtitle1'
-            color='text.secondary'
-            component='div'
-            display='flex'
-            alignItems='center'
-            gap='4px'
-            fontSize='clamp(0.8rem, 1.5vw, 1rem)'
-          >
-            <BusinessCenterOutlinedIcon fontSize='small' sx={{ color: primary }} /> {jefe}
-          </Typography>
+          {jefe && (
+            <InfoRow icon={PersonOutlineOutlinedIcon} color={primary}>
+              {labels.jefe}: {jefe}
+            </InfoRow>
+          )}
         </CardContent>
       </Box>
     </Card>
