@@ -23,6 +23,7 @@ export const es = {
   home: {
     saludo: 'Hola, Mi Nombre es',
     nombre: 'Willy Corzo Lubo',
+    altFoto: 'Foto de Willy Corzo',
     roles: [
       'Máster en Gerencia de Proyectos',
       'Ingeniero Químico',
@@ -31,7 +32,10 @@ export const es = {
       'Desarrollador en Power BI',
       'Experto en Excel - VBA',
     ],
-    bio: 'Ingeniero Químico con maestría en Gerencia de Proyectos y más de 15 años de experiencia en el sector de Hidrocarburos, especializado en Transferencia en Custodia, Medición y Análisis. Me apasiona transformar procesos complejos en soluciones automatizadas y eficientes. Orientado a resultados, trabajo con iniciativa, honestidad y compromiso, adaptándome con facilidad a nuevos retos y entornos.',
+    bio: [
+      'Ingeniero Químico con maestría en Gerencia de Proyectos y más de 15 años de experiencia en el sector de Hidrocarburos, especializado en Transferencia en Custodia, Medición y Análisis.',
+      'Me apasiona transformar procesos complejos en soluciones automatizadas y eficientes. Orientado a resultados, trabajo con iniciativa, honestidad y compromiso, adaptándome con facilidad a nuevos retos y entornos.',
+    ],
     habilidadesBlandas: [
       'Liderazgo',
       'Trabajo en equipo',

@@ -36,20 +36,31 @@ const Presentacion = () => {
 
       <RotadorRoles />
 
-      <Typography
-        variant='body1'
-        component='div'
-        width='95%'
+      <Box
         sx={{
+          width: '95%',
+          maxWidth: '72ch',
           mx: { xs: 'auto', lg: 0 },
           mt: '1.5rem',
           borderLeft: { xs: 'none', lg: `4px solid ${primary}` },
           pl: { xs: 0, lg: '1rem' },
-          color: 'text.secondary',
         }}
       >
-        {t.home.bio}
-      </Typography>
+        {t.home.bio.map((parrafo, i) => (
+          <Typography
+            key={i}
+            variant='body1'
+            component='p'
+            sx={{
+              color: 'text.secondary',
+              mt: i === 0 ? 0 : '0.75rem',
+              mb: 0,
+            }}
+          >
+            {parrafo}
+          </Typography>
+        ))}
+      </Box>
 
       <Box
         display='flex'
@@ -67,7 +78,7 @@ const Presentacion = () => {
               border: `1px solid ${primary}`,
               color: primary,
               fontWeight: 'bold',
-              fontSize: 'clamp(0.7rem, 1.1vw, 0.85rem)',
+              fontSize: 'clamp(0.8rem, 1vw, 0.95rem)',
             }}
             variant='outlined'
           />

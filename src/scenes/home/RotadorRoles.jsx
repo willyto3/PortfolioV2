@@ -29,15 +29,16 @@ export function RotadorRoles() {
   }, [items.length])
 
   return (
-    <Box sx={{ py: '0.25rem', minHeight: '1.5em' }}>
+    <Box sx={{ py: '0.25rem', minHeight: { xs: '2.25rem', md: '3.25rem' } }}>
       <Fade in={visible} timeout={FADE_MS}>
         <Typography
           variant='h2'
           component='div'
-          fontSize={{ xs: 'clamp(1.1rem, 3.5vw, 1.4rem)', md: 'clamp(1.5rem, 4.5vw, 3.5rem)' }}
+          fontSize='clamp(1.25rem, 3.5vw, 2.5rem)'
           fontWeight='bold'
           sx={{
             color: primary,
+            lineHeight: 1.2,
             display: 'flex',
             alignItems: 'center',
             justifyContent: { xs: 'center', lg: 'flex-start' },

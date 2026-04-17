@@ -23,6 +23,7 @@ export const en = {
   home: {
     saludo: 'Hi, My Name is',
     nombre: 'Willy Corzo Lubo',
+    altFoto: 'Photo of Willy Corzo',
     roles: [
       'Master in Project Management',
       'Chemical Engineer',
@@ -31,7 +32,10 @@ export const en = {
       'Power BI Developer',
       'Excel - VBA Expert',
     ],
-    bio: "Chemical Engineer with a Master's degree in Project Management and over 15 years of experience in the Hydrocarbons sector, specializing in Custody Transfer, Measurement, and Analysis. I am passionate about transforming complex processes into automated and efficient solutions. Results-oriented, I work with initiative, honesty, and commitment, easily adapting to new challenges and environments.",
+    bio: [
+      "Chemical Engineer with a Master's degree in Project Management and over 15 years of experience in the Hydrocarbons sector, specializing in Custody Transfer, Measurement, and Analysis.",
+      'I am passionate about transforming complex processes into automated and efficient solutions. Results-oriented, I work with initiative, honesty, and commitment, easily adapting to new challenges and environments.',
+    ],
     habilidadesBlandas: [
       'Leadership',
       'Teamwork',
