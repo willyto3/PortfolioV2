@@ -19,27 +19,22 @@ export const router = createHashRouter([
     children: [
       {
         index: true,
-        title: 'Inicio',
         element: <Home />,
       },
       {
         path: '/experiencia',
-        title: 'Experiencia',
         element: <Experiencia />,
       },
       {
         path: '/estudios',
-        title: 'Estudios',
         element: <Estudios />,
       },
       {
         path: '/herramientas',
-        title: 'Herramientas',
         element: <Herramientas />,
       },
       {
         path: '/proyectos',
-        title: 'Proyectos',
         element: <Proyectos />,
       },
       {
