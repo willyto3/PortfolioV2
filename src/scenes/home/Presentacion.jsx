@@ -1,6 +1,6 @@
 import { Box, Chip, Divider, useTheme } from '@mui/material'
 import Typography from '@mui/material/Typography'
-import { Carrusel } from './Carrusel'
+import { RotadorRoles } from './RotadorRoles'
 
 import { useT } from '../../locales/useT'
 
@@ -34,7 +34,7 @@ const Presentacion = () => {
         }}
       />
 
-      <Carrusel />
+      <RotadorRoles />
 
       <Typography
         variant='body1'
