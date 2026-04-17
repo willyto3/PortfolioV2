@@ -15,7 +15,7 @@ import Toolbar from '@mui/material/Toolbar'
 import Typography from '@mui/material/Typography'
 import { Tab, Tabs, useTheme } from '@mui/material'
 
-import { useState, useEffect } from 'react'
+import { useState } from 'react'
 
 import { useNavigate, useLocation } from 'react-router-dom'
 
@@ -42,11 +42,7 @@ const NavBar = () => {
   const principal = theme.palette.primary.main
 
   const routeToIndex = Object.fromEntries(t.nav.items.map((item, i) => [item.ruta, i]))
-  const [value, setValue] = useState(routeToIndex[location.pathname] ?? 0)
-
-  useEffect(() => {
-    setValue(routeToIndex[location.pathname] ?? 0)
-  }, [location.pathname])
+  const value = routeToIndex[location.pathname] ?? 0
 
   const langButtons = (
     <IconButton
