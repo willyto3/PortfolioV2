@@ -392,5 +392,12 @@ export const en = {
   footer: {
     descripcion: 'Chemical Engineer with 15 years of experience, specializing in hydrocarbons and development of digital tools for process automation.',
     hechoCon: 'Made with love by Black Dog Solutions',
+    aria: {
+      telefono: 'Call phone number',
+      email: 'Send email',
+      linkedin: 'Open LinkedIn profile',
+      github: 'Open GitHub profile',
+      whatsapp: 'Open WhatsApp',
+    },
   },
 }

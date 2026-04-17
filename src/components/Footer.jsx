@@ -16,139 +16,183 @@ import { useLocation, useNavigate } from 'react-router-dom'
 
 import { useT } from '../locales/useT'
 
+const SOCIAL_COLORS = {
+  linkedin: '#0e76a8',
+  whatsapp: '#25D366',
+}
+
+const openExternal = url => window.open(url, '_blank', 'noopener,noreferrer')
+
 const Footer = () => {
   const t = useT()
   const navigate = useNavigate()
   const { pathname } = useLocation()
   const theme = useTheme()
-  const neutralLigth = theme.palette.neutral.light
+  const neutralLight = theme.palette.neutral.light
   const dark = theme.palette.neutral.dark
   const principal = theme.palette.primary.main
 
+  const isHome = pathname === '/'
+
+  const contactos = [
+    {
+      key: 'tel',
+      icon: PhoneIcon,
+      href: `tel:${t.contacto.telefono}`,
+      label: t.contacto.telefono,
+      aria: t.footer.aria.telefono,
+    },
+    {
+      key: 'mail',
+      icon: EmailIcon,
+      href: `mailto:${t.contacto.email}`,
+      label: t.contacto.email,
+      aria: t.footer.aria.email,
+    },
+  ]
+
+  const redes = [
+    {
+      key: 'linkedin',
+      icon: LinkedInIcon,
+      url: t.contacto.linkedin,
+      hover: SOCIAL_COLORS.linkedin,
+      aria: t.footer.aria.linkedin,
+    },
+    {
+      key: 'github',
+      icon: GitHubIcon,
+      url: t.contacto.github,
+      hover: principal,
+      aria: t.footer.aria.github,
+    },
+    {
+      key: 'whatsapp',
+      icon: WhatsAppIcon,
+      url: t.contacto.whatsapp,
+      hover: SOCIAL_COLORS.whatsapp,
+      aria: t.footer.aria.whatsapp,
+    },
+  ]
+
   return (
-    <>
-      <Paper>
+    <Paper>
+      <Grid
+        container
+        mt={0}
+        pt='1rem'
+        pb='1rem'
+        spacing={2}
+        alignItems='stretch'
+        justifyContent='center'
+        sx={{ backgroundColor: neutralLight, px: { xs: '1rem', sm: '2rem' } }}
+      >
+        {/* Columna 1 / Fila 1 izq: Nombre + Contacto */}
         <Grid
-          container
-          mt='0'
-          pt='1rem'
-          pb='1rem'
-          spacing={2}
-          alignItems='stretch'
-          justifyContent='center'
-          sx={{ backgroundColor: neutralLigth, px: { xs: '1rem', sm: '2rem' } }}
+          size={{ xs: 6, md: isHome ? 6 : 3 }}
+          sx={{
+            display: 'flex',
+            flexDirection: 'column',
+            alignItems: { xs: 'flex-start', md: 'center' },
+            justifyContent: 'center',
+            order: { xs: 1, md: 1 },
+          }}
         >
-          {/* Columna 1 / Fila 1 izq: Nombre + Contacto */}
-          <Grid
-            size={{ xs: 6, md: 3 }}
+          <Typography
+            component='p'
+            fontWeight='bold'
+            fontSize='clamp(1.8rem, 3vw, 2.8rem)'
+            lineHeight={1.15}
+            color={dark}
+            textAlign={{ xs: 'left', md: 'center' }}
             sx={{
-              display: 'flex',
-              flexDirection: 'column',
-              alignItems: { xs: 'flex-start', md: 'center' },
-              justifyContent: 'center',
-              order: { xs: 1, md: 1 },
+              m: 0,
+              '&:hover': { color: principal, cursor: 'pointer' },
             }}
+            onClick={() => navigate('/')}
           >
-            <Typography
-              fontWeight='bold'
-              fontSize='clamp(1.8rem, 3vw, 2.8rem)'
-              lineHeight='1.1'
-              component='div'
-              color={dark}
-              textAlign={{ xs: 'left', md: 'center' }}
-              sx={{
-                '&:hover': { color: principal, cursor: 'pointer' },
-              }}
-              onClick={() => navigate('/')}
-            >
-              {t.nav.nombre}
-            </Typography>
+            {t.nav.nombre}
+          </Typography>
 
-            {/* Teléfono y Email */}
-            <Box display='flex' flexDirection='column' alignItems={{ xs: 'flex-start', md: 'center' }} gap='0.2rem' mt='0.4rem'>
-              <Box display='flex' alignItems='center' gap='0.3rem'>
-                <PhoneIcon sx={{ fontSize: '1rem', color: principal }} />
-                <Typography component='a' href={`tel:${t.contacto.telefono}`}
-                  fontSize='clamp(0.7rem, 1.2vw, 0.85rem)'
-                  sx={{ color: 'inherit', textDecoration: 'none', '&:hover': { color: principal } }}
+          {/* Teléfono y Email */}
+          <Box
+            display='flex'
+            flexDirection='column'
+            alignItems={{ xs: 'flex-start', md: 'center' }}
+            gap='0.3rem'
+            mt='0.4rem'
+          >
+            {contactos.map(({ key, icon: Icon, href, label, aria }) => (
+              <Box key={key} display='flex' alignItems='center' gap='0.4rem'>
+                <Icon sx={{ fontSize: '1rem', color: principal }} />
+                <Typography
+                  component='a'
+                  href={href}
+                  aria-label={aria}
+                  fontSize='clamp(0.8rem, 1.2vw, 0.95rem)'
+                  sx={{
+                    color: 'inherit',
+                    textDecoration: 'none',
+                    '&:hover': { color: principal, textDecoration: 'underline' },
+                  }}
                 >
-                  {t.contacto.telefono}
+                  {label}
                 </Typography>
               </Box>
-              <Box display='flex' alignItems='center' gap='0.3rem'>
-                <EmailIcon sx={{ fontSize: '1rem', color: principal }} />
-                <Typography component='a' href={`mailto:${t.contacto.email}`}
-                  fontSize='clamp(0.7rem, 1.2vw, 0.85rem)'
-                  sx={{ color: 'inherit', textDecoration: 'none', '&:hover': { color: principal } }}
-                >
-                  {t.contacto.email}
-                </Typography>
-              </Box>
-            </Box>
-          </Grid>
-
-          {/* Columna 2 / Fila 2: Descripción */}
-          {pathname !== '/' && (
-            <Grid
-              size={{ xs: 12, md: 5 }}
-              sx={{ order: { xs: 3, md: 2 } }}
-            >
-              <Typography variant='h4' component='div' mt={{ xs: 0, md: '1rem' }} textAlign={{ xs: 'center', md: 'left' }}>
-                {t.footer.descripcion}
-              </Typography>
-            </Grid>
-          )}
-
-          {/* Columna 3 / Fila 1 der: Contacto + Redes */}
-          <Grid
-            size={{ xs: 6, md: 3 }}
-            sx={{
-              display: 'flex',
-              flexDirection: 'column',
-              alignItems: { xs: 'flex-end', md: 'center' },
-              justifyContent: 'center',
-              order: { xs: 2, md: 3 },
-            }}
-          >
-            {/* Iconos de redes sociales */}
-            <Box display='flex' gap='0.25rem'>
-              <IconButton
-                aria-label='LinkedIn'
-                onClick={() => window.open(t.contacto.linkedin, '_blank')}
-                sx={{ '&:hover': { color: '#0e76a8' } }}
-              >
-                <LinkedInIcon sx={{ fontSize: { xs: 36, sm: 40 } }} />
-              </IconButton>
-
-              <IconButton
-                aria-label='GitHub'
-                onClick={() => window.open(t.contacto.github, '_blank')}
-                sx={{ '&:hover': { color: principal } }}
-              >
-                <GitHubIcon sx={{ fontSize: { xs: 36, sm: 40 } }} />
-              </IconButton>
-
-              <IconButton
-                aria-label='WhatsApp'
-                onClick={() => window.open(t.contacto.whatsapp, '_blank')}
-                sx={{ '&:hover': { color: '#00bb2d' } }}
-              >
-                <WhatsAppIcon sx={{ fontSize: { xs: 36, sm: 40 } }} />
-              </IconButton>
-            </Box>
-
-            <Typography
-              component='div'
-              fontSize={{ xs: '0.6rem', sm: '0.75rem' }}
-              textAlign={{ xs: 'right', md: 'center' }}
-              mt='0.5rem'
-            >
-              {`${t.footer.hechoCon} @ ${new Date().getFullYear()}`}
-            </Typography>
-          </Grid>
+            ))}
+          </Box>
         </Grid>
-      </Paper>
-    </>
+
+        {/* Columna 2 / Fila 2: Descripción */}
+        {!isHome && (
+          <Grid size={{ xs: 12, md: 6 }} sx={{ order: { xs: 3, md: 2 } }}>
+            <Typography
+              variant='h4'
+              component='p'
+              mt={{ xs: 0, md: '1rem' }}
+              textAlign={{ xs: 'center', md: 'left' }}
+            >
+              {t.footer.descripcion}
+            </Typography>
+          </Grid>
+        )}
+
+        {/* Columna 3 / Fila 1 der: Redes + Copyright */}
+        <Grid
+          size={{ xs: 6, md: isHome ? 6 : 3 }}
+          sx={{
+            display: 'flex',
+            flexDirection: 'column',
+            alignItems: { xs: 'flex-end', md: 'center' },
+            justifyContent: 'center',
+            order: { xs: 2, md: 3 },
+          }}
+        >
+          <Box display='flex' gap='0.25rem'>
+            {redes.map(({ key, icon: Icon, url, hover, aria }) => (
+              <IconButton
+                key={key}
+                aria-label={aria}
+                onClick={() => openExternal(url)}
+                sx={{ color: dark, '&:hover': { color: hover } }}
+              >
+                <Icon sx={{ fontSize: { xs: 36, sm: 40 } }} />
+              </IconButton>
+            ))}
+          </Box>
+
+          <Typography
+            component='p'
+            fontSize={{ xs: '0.75rem', sm: '0.8rem' }}
+            textAlign={{ xs: 'right', md: 'center' }}
+            mt='0.5rem'
+            mb={0}
+          >
+            {`${t.footer.hechoCon} @ ${new Date().getFullYear()}`}
+          </Typography>
+        </Grid>
+      </Grid>
+    </Paper>
   )
 }
 export default Footer
