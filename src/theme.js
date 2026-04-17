@@ -76,22 +76,26 @@ export const themeSettings = mode => {
     },
     typography: {
       fontFamily: ['Fira Sans', 'sans-serif'].join(','),
-      fontSize: 12,
+      fontSize: 14,
       h1: {
         fontFamily: ['Fira Sans', 'sans-serif'].join(','),
-        fontSize: 'clamp(2.5rem, 8vw, 7rem)',
+        fontSize: 'clamp(2.25rem, 5vw, 5rem)',
+        lineHeight: 1.15,
       },
       h2: {
         fontFamily: ['Fira Sans', 'sans-serif'].join(','),
-        fontSize: 'clamp(1.5rem, 4vw, 3rem)',
+        fontSize: 'clamp(1.375rem, 2.75vw, 2.25rem)',
+        lineHeight: 1.2,
       },
       h3: {
         fontFamily: ['Fira Sans', 'sans-serif'].join(','),
         fontSize: 'clamp(1rem, 2.5vw, 1.5rem)',
+        lineHeight: 1.3,
       },
       h4: {
         fontFamily: ['Fira Sans', 'sans-serif'].join(','),
-        fontSize: 'clamp(0.85rem, 1.7vw, 1.25rem)',
+        fontSize: 'clamp(0.9rem, 1.4vw, 1.15rem)',
+        lineHeight: 1.35,
       },
       h5: {
         fontFamily: ['Fira Sans', 'sans-serif'].join(','),
@@ -102,7 +106,8 @@ export const themeSettings = mode => {
         fontSize: 14,
       },
       body1: {
-        fontSize: 'clamp(0.75rem, 1.5vw, 1.5rem)',
+        fontSize: 'clamp(0.95rem, 1vw, 1.125rem)',
+        lineHeight: 1.6,
       },
     },
   }
