@@ -17,7 +17,7 @@ import { Tab, Tabs, useTheme } from '@mui/material'
 
 import { useState } from 'react'
 
-import { useNavigate, useLocation } from 'react-router-dom'
+import { Link as RouterLink, useNavigate, useLocation } from 'react-router-dom'
 
 import BanderaIcono from './BanderaIcono'
 import { useCVStore } from '../store/store'
@@ -44,7 +44,8 @@ const NavBar = () => {
   const isDark = theme.palette.mode === 'dark'
 
   const routeToIndex = Object.fromEntries(t.nav.items.map((item, i) => [item.ruta, i]))
-  const value = routeToIndex[location.pathname] ?? 0
+  // false = ninguna pestaña marcada, para rutas que no estan en el menu (404)
+  const value = routeToIndex[location.pathname] ?? false
 
   const langButton = (
     <IconButton
@@ -82,14 +83,18 @@ const NavBar = () => {
     <Box sx={{ textAlign: 'center' }}>
       <Box display='flex' justifyContent='space-between' alignItems='center' px={1}>
         <Typography
+          component={RouterLink}
+          to='/'
           fontWeight='bold'
           fontSize='1.5rem'
           sx={{
             my: 2,
             ml: 1,
-            '&:hover': { color: principal, cursor: 'pointer' },
+            color: 'inherit',
+            textDecoration: 'none',
+            '&:hover': { color: principal },
           }}
-          onClick={() => { navigate('/'); setMobileOpen(false) }}
+          onClick={() => setMobileOpen(false)}
         >
           {t.nav.nombre}
         </Typography>
@@ -173,16 +178,24 @@ const NavBar = () => {
           component='h1'
           fontWeight='bold'
           fontSize='clamp(1.5rem, 2.5vw, 3.3rem)'
-          color={dark}
           sx={{
             flexGrow: 1,
             lineHeight: 1.2,
             textAlign: { xs: 'center', sm: 'left' },
-            '&:hover': { color: principal, cursor: 'pointer' },
+            m: 0,
           }}
-          onClick={() => navigate('/')}
         >
-          {t.nav.nombre}
+          <Box
+            component={RouterLink}
+            to='/'
+            sx={{
+              color: dark,
+              textDecoration: 'none',
+              '&:hover': { color: principal },
+            }}
+          >
+            {t.nav.nombre}
+          </Box>
         </Typography>
 
         {/* //? TABS - solo desktop */}

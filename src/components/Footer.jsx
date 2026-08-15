@@ -12,7 +12,7 @@ import {
   useTheme,
 } from '@mui/material'
 
-import { useLocation, useNavigate } from 'react-router-dom'
+import { Link as RouterLink, useLocation } from 'react-router-dom'
 
 import { useT } from '../locales/useT'
 
@@ -21,11 +21,8 @@ const SOCIAL_COLORS = {
   whatsapp: '#25D366',
 }
 
-const openExternal = url => window.open(url, '_blank', 'noopener,noreferrer')
-
 const Footer = () => {
   const t = useT()
-  const navigate = useNavigate()
   const { pathname } = useLocation()
   const theme = useTheme()
   const neutralLight = theme.palette.neutral.light
@@ -76,7 +73,7 @@ const Footer = () => {
   ]
 
   return (
-    <Paper>
+    <Paper component='footer'>
       <Grid
         container
         mt={0}
@@ -99,7 +96,8 @@ const Footer = () => {
           }}
         >
           <Typography
-            component='p'
+            component={RouterLink}
+            to='/'
             fontWeight='bold'
             fontSize='clamp(1.8rem, 3vw, 2.8rem)'
             lineHeight={1.15}
@@ -107,9 +105,9 @@ const Footer = () => {
             textAlign={{ xs: 'left', md: 'center' }}
             sx={{
               m: 0,
-              '&:hover': { color: principal, cursor: 'pointer' },
+              textDecoration: 'none',
+              '&:hover': { color: principal },
             }}
-            onClick={() => navigate('/')}
           >
             {t.nav.nombre}
           </Typography>
@@ -172,8 +170,11 @@ const Footer = () => {
             {redes.map(({ key, icon: Icon, url, hover, aria }) => (
               <IconButton
                 key={key}
+                component='a'
+                href={url}
+                target='_blank'
+                rel='noopener noreferrer'
                 aria-label={aria}
-                onClick={() => openExternal(url)}
                 sx={{ color: dark, '&:hover': { color: hover } }}
               >
                 <Icon sx={{ fontSize: { xs: 36, sm: 40 } }} />

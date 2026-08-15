@@ -3,7 +3,7 @@ import { Outlet } from 'react-router-dom'
 // Importamos useMemo de React
 import { useMemo } from 'react'
 // Importamos CssBaseLine, Theme Provider y createTheme de mui Material
-import { CssBaseline, ThemeProvider, createTheme } from '@mui/material'
+import { Box, CssBaseline, ThemeProvider, createTheme } from '@mui/material'
 // Importamos themeSettings del arhivo theme
 import NavBar from '../components/NavBar'
 import { themeSettings } from '../theme'
@@ -19,13 +19,13 @@ const LayoutPublic = () => {
   return (
     <ThemeProvider theme={theme}>
       <CssBaseline />
-      <main style={{ display: 'flex', flexDirection: 'column', minHeight: '100vh' }}>
+      <Box sx={{ display: 'flex', flexDirection: 'column', minHeight: '100vh' }}>
         <NavBar />
-        <div style={{ flex: 1, display: 'flex', flexDirection: 'column' }}>
+        <Box component='main' sx={{ flex: 1, display: 'flex', flexDirection: 'column' }}>
           <Outlet />
-        </div>
+        </Box>
         <Footer />
-      </main>
+      </Box>
     </ThemeProvider>
   )
 }
