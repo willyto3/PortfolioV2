@@ -7,7 +7,7 @@ import { Box, CssBaseline, ThemeProvider, createTheme } from '@mui/material'
 // Importamos themeSettings del arhivo theme
 import NavBar from '../components/NavBar'
 import { themeSettings } from '../theme'
-import Footer from '../components/Footer'
+import Footer, { ALTURA_FOOTER } from '../components/Footer'
 // ? IMPORTACION DE MODULOS
 import { useCVStore } from '../store/store'
 // Importacion de Componentes
@@ -21,7 +21,11 @@ const LayoutPublic = () => {
       <CssBaseline />
       <Box sx={{ display: 'flex', flexDirection: 'column', minHeight: '100vh' }}>
         <NavBar />
-        <Box component='main' sx={{ flex: 1, display: 'flex', flexDirection: 'column' }}>
+        {/* pb reserva la altura del footer fijo, que ya no ocupa sitio en el flujo */}
+        <Box
+          component='main'
+          sx={{ flex: 1, display: 'flex', flexDirection: 'column', pb: ALTURA_FOOTER }}
+        >
           <Outlet />
         </Box>
         <Footer />
