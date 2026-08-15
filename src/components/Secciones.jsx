@@ -1,20 +1,17 @@
 import Box from '@mui/material/Box'
 import { Grid, Paper, Typography, useTheme } from '@mui/material'
-import CardHerramientas from './CardHerramientas'
 
-import { useT } from '../../locales/useT'
-
-// Agrupa items por categoria manteniendo el orden de apariciÃ³n
-const agrupar = items => {
+// Agrupa por categoria manteniendo el orden de aparicion
+export const agruparPorCategoria = items => {
   const mapa = new Map()
   items.forEach(item => {
     if (!mapa.has(item.categoria)) mapa.set(item.categoria, [])
     mapa.get(item.categoria).push(item)
   })
-  return mapa
+  return [...mapa].map(([titulo, items]) => ({ titulo, items }))
 }
 
-const SeccionHerramientas = ({ titulo, items }) => {
+const Seccion = ({ titulo, items, Tarjeta, getKey, anchoTarjeta }) => {
   const theme = useTheme()
   const primary = theme.palette.primary.main
 
@@ -22,7 +19,7 @@ const SeccionHerramientas = ({ titulo, items }) => {
     <Grid size={{ xs: 10 }}>
       <Box display='flex' flexDirection={{ xs: 'column', lg: 'row' }} alignItems={{ xs: 'flex-start', lg: 'stretch' }} gap='1rem'>
 
-        {/* TÃ­tulo + lÃ­nea */}
+        {/* Título + línea */}
         <Box display='flex' alignItems='center' gap='0.75rem' flexShrink={0}
           flexDirection={{ xs: 'column', lg: 'row' }}
           width={{ xs: '100%', lg: 'auto' }}
@@ -50,16 +47,8 @@ const SeccionHerramientas = ({ titulo, items }) => {
         {/* Cards */}
         <Grid container gap='1rem' flex={1}>
           {items.map(item => (
-            <Grid size={{ xs: 12, lg: 5.8 }} key={item.titulo} sx={{ display: 'flex' }}>
-              <CardHerramientas
-                titulo={item.titulo}
-                imagen={item.imagen}
-                parrafo={item.parrafo}
-                conocimiento={item.conocimiento}
-                nivel={item.nivel}
-                anios={item.anios}
-                usos={item.usos}
-              />
+            <Grid size={anchoTarjeta} key={getKey(item)} sx={{ display: 'flex' }}>
+              <Tarjeta {...item} />
             </Grid>
           ))}
         </Grid>
@@ -69,25 +58,29 @@ const SeccionHerramientas = ({ titulo, items }) => {
   )
 }
 
-const Herramientas = () => {
-  const t = useT()
-  const grupos = agrupar(t.estudios.herramientas.items)
-
-  return (
-    <Paper elevation={0} sx={{ backgroundColor: 'transparent' }}>
-      <Grid
-        container
-        mt='2rem'
-        mb='2rem'
-        alignContent='center'
-        justifyContent='center'
-        gap='2rem'
-      >
-        {[...grupos.entries()].map(([categoria, items]) => (
-          <SeccionHerramientas key={categoria} titulo={categoria} items={items} />
-        ))}
-      </Grid>
-    </Paper>
-  )
-}
-export default Herramientas
+// Layout compartido por Estudios, Herramientas y Proyectos: una lista de
+// secciones, cada una con su titulo lateral y su rejilla de tarjetas.
+const Secciones = ({ grupos, Tarjeta, getKey, anchoTarjeta = { xs: 12, lg: 5.8 } }) => (
+  <Paper elevation={0} sx={{ backgroundColor: 'transparent' }}>
+    <Grid
+      container
+      mt='2rem'
+      mb='2rem'
+      alignContent='center'
+      justifyContent='center'
+      gap='2rem'
+    >
+      {grupos.map(({ titulo, items }) => (
+        <Seccion
+          key={titulo}
+          titulo={titulo}
+          items={items}
+          Tarjeta={Tarjeta}
+          getKey={getKey}
+          anchoTarjeta={anchoTarjeta}
+        />
+      ))}
+    </Grid>
+  </Paper>
+)
+export default Secciones
