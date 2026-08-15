@@ -17,6 +17,14 @@ export const es = {
       { label: 'Herramientas', ruta: '/herramientas' },
       { label: 'Proyectos', ruta: '/proyectos' },
     ],
+    aria: {
+      abrirMenu: 'Abrir menú',
+      cerrarMenu: 'Cerrar menú',
+      cambiarTema: 'Cambiar tema',
+      cambiarIdioma: 'Cambiar idioma',
+    },
+    // Se muestra en el idioma al que se va a cambiar, no en el actual
+    cambiarIdiomaTitulo: 'Switch to English',
   },
 
   // Página de Inicio
@@ -55,6 +63,7 @@ export const es = {
       contratante: 'Empresa contratante',
       servicioPara: 'Servicio para',
       jefe: 'Jefe inmediato',
+      logoCliente: 'Logo del cliente',
     },
   },
   experiencia: [
@@ -179,6 +188,20 @@ export const es = {
   ],
 
   // Página de Estudios
+  estudiosUI: {
+    labels: {
+      tesis: 'Tesis',
+      logros: 'Logros',
+      verCertificado: 'Ver certificado',
+    },
+  },
+
+  // Página de Herramientas
+  herramientasUI: {
+    anio: 'año',
+    anios: 'años',
+  },
+
   estudios: {
     tituloFormales: 'Formación Académica',
     tituloCortos: 'Formación Complementaria',
@@ -385,6 +408,14 @@ export const es = {
         categoria: 'Automatización',
       },
     ],
+  },
+
+  // Página 404
+  error404: {
+    subtitulo: 'Página no encontrada',
+    descripcion:
+      'La dirección que buscas no existe o fue movida. Regresa al inicio y sigue explorando.',
+    boton: 'Volver al Inicio',
   },
 
   // Contacto

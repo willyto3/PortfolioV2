@@ -48,16 +48,16 @@ const NavBar = () => {
 
   const langButton = (
     <IconButton
-      aria-label='cambiar idioma'
+      aria-label={t.nav.aria.cambiarIdioma}
       onClick={() => setLanguage(language === 'es' ? 'en' : 'es')}
-      title={language === 'es' ? 'Switch to English' : 'Cambiar a Español'}
+      title={t.nav.cambiarIdiomaTitulo}
     >
       <BanderaIcono code={language === 'es' ? 'us' : 'co'} />
     </IconButton>
   )
 
   const themeButton = (
-    <IconButton aria-label='cambiar tema' onClick={setMode}>
+    <IconButton aria-label={t.nav.aria.cambiarTema} onClick={setMode}>
       {isDark ? (
         <LightMode
           sx={{
@@ -93,7 +93,7 @@ const NavBar = () => {
         >
           {t.nav.nombre}
         </Typography>
-        <IconButton aria-label='cerrar menú' onClick={handleDrawerToggle}>
+        <IconButton aria-label={t.nav.aria.cerrarMenu} onClick={handleDrawerToggle}>
           <Close sx={{ color: dark }} />
         </IconButton>
       </Box>
@@ -160,7 +160,7 @@ const NavBar = () => {
 
         {/* //? BOTON HAMBURGUESA - solo mobile */}
         <IconButton
-          aria-label='abrir menú'
+          aria-label={t.nav.aria.abrirMenu}
           edge='start'
           onClick={handleDrawerToggle}
           sx={{ display: { xs: 'flex', sm: 'none' }, color: dark }}

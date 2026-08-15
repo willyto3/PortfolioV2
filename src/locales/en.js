@@ -17,6 +17,14 @@ export const en = {
       { label: 'Tools', ruta: '/herramientas' },
       { label: 'Projects', ruta: '/proyectos' },
     ],
+    aria: {
+      abrirMenu: 'Open menu',
+      cerrarMenu: 'Close menu',
+      cambiarTema: 'Toggle theme',
+      cambiarIdioma: 'Change language',
+    },
+    // Shown in the language being switched to, not the current one
+    cambiarIdiomaTitulo: 'Cambiar a Español',
   },
 
   // Home Page
@@ -55,6 +63,7 @@ export const en = {
       contratante: 'Contractor',
       servicioPara: 'Service for',
       jefe: 'Direct supervisor',
+      logoCliente: 'Client logo',
     },
   },
   experiencia: [
@@ -179,6 +188,20 @@ export const en = {
   ],
 
   // Education Page
+  estudiosUI: {
+    labels: {
+      tesis: 'Thesis',
+      logros: 'Achievements',
+      verCertificado: 'View certificate',
+    },
+  },
+
+  // Tools Page
+  herramientasUI: {
+    anio: 'year',
+    anios: 'years',
+  },
+
   estudios: {
     tituloFormales: 'Academic Education',
     tituloCortos: 'Complementary Training',
@@ -385,6 +408,14 @@ export const en = {
         categoria: 'Automation',
       },
     ],
+  },
+
+  // 404 Page
+  error404: {
+    subtitulo: 'Page not found',
+    descripcion:
+      'The address you are looking for does not exist or has been moved. Head back home and keep exploring.',
+    boton: 'Back to Home',
   },
 
   // Contact

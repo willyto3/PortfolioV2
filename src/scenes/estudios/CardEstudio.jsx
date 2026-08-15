@@ -12,14 +12,17 @@ import AccessTimeIcon from '@mui/icons-material/AccessTime'
 import FiberManualRecordIcon from '@mui/icons-material/FiberManualRecord'
 import OpenInNewIcon from '@mui/icons-material/OpenInNew'
 import { useTheme } from '@mui/material'
+import { useT } from '../../locales/useT'
 
 const CardEstudio = ({
   institucion, estudio, fecha, fondo, grado,
   descripcion, tesis, logros,
   habilidades, duracion, certificado,
 }) => {
+  const t = useT()
   const theme = useTheme()
   const primary = theme.palette.primary.main
+  const labels = t.estudiosUI.labels
 
   return (
     <Card
@@ -86,7 +89,7 @@ const CardEstudio = ({
 
         {tesis && (
           <Typography variant='h4' fontSize='clamp(0.8rem, 1.3vw, 1.1rem)' mt='0.5rem' color='text.secondary' fontStyle='italic'>
-            <Box component='span' fontWeight='bold' fontStyle='normal'>Tesis: </Box>
+            <Box component='span' fontWeight='bold' fontStyle='normal'>{labels.tesis}: </Box>
             {tesis}
           </Typography>
         )}
@@ -94,7 +97,7 @@ const CardEstudio = ({
         {logros?.length > 0 && (
           <>
             <Typography variant='h4' color='text.secondary' mt='0.5rem' fontSize='clamp(0.8rem, 1.3vw, 1.1rem)' fontWeight='bold'>
-              Logros
+              {labels.logros}
             </Typography>
             <List dense disablePadding>
               {logros.map((logro, i) => (
@@ -138,7 +141,7 @@ const CardEstudio = ({
             rel='noopener noreferrer'
             sx={{ mt: '0.75rem', fontSize: 'clamp(0.75rem, 1.2vw, 0.9rem)' }}
           >
-            Ver certificado
+            {labels.verCertificado}
           </Button>
         )}
       </CardContent>

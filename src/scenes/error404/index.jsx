@@ -3,8 +3,12 @@ import Typography from '@mui/material/Typography'
 import Button from '@mui/material/Button'
 import { useNavigate } from 'react-router-dom'
 
+import { useT } from '../../locales/useT'
+
 const Error404 = () => {
+  const t = useT()
   const navigate = useNavigate()
+
   return (
     <Box
       display='flex'
@@ -25,12 +29,11 @@ const Error404 = () => {
       </Typography>
 
       <Typography variant='h2' mt='1rem'>
-        Página no encontrada
+        {t.error404.subtitulo}
       </Typography>
 
       <Typography variant='h4' color='text.secondary' mt='1rem' maxWidth='480px'>
-        La dirección que buscas no existe o fue movida. Regresa al inicio y
-        sigue explorando.
+        {t.error404.descripcion}
       </Typography>
 
       <Button
@@ -39,7 +42,7 @@ const Error404 = () => {
         onClick={() => navigate('/')}
         sx={{ mt: '2rem', px: '2rem', py: '0.75rem', fontSize: '1rem' }}
       >
-        Volver al Inicio
+        {t.error404.boton}
       </Button>
     </Box>
   )

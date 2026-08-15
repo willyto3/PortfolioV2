@@ -9,8 +9,10 @@ import ListItemText from '@mui/material/ListItemText'
 import Typography from '@mui/material/Typography'
 import FiberManualRecordIcon from '@mui/icons-material/FiberManualRecord'
 import { useTheme } from '@mui/material'
+import { useT } from '../../locales/useT'
 
 const CardHerramientas = ({ titulo, imagen, parrafo, conocimiento, nivel, anios, usos }) => {
+  const t = useT()
   const theme = useTheme()
   const primary = theme.palette.primary.main
 
@@ -62,7 +64,7 @@ const CardHerramientas = ({ titulo, imagen, parrafo, conocimiento, nivel, anios,
           </Typography>
           {anios && (
             <Typography variant='h4' color='text.secondary' fontSize='clamp(0.75rem, 1.2vw, 1rem)'>
-              {anios} {anios === 1 ? 'a\u00f1o' : 'a\u00f1os'}
+              {anios} {anios === 1 ? t.herramientasUI.anio : t.herramientasUI.anios}
             </Typography>
           )}
         </Box>

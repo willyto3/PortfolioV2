@@ -137,7 +137,7 @@ const CardExperiencia = ({
                 <Box
                   component='img'
                   src={clientImageByTheme}
-                  alt={clientAlt || cliente || 'Client logo'}
+                  alt={clientAlt || cliente || labels.logoCliente}
                   loading='lazy'
                   onError={event => {
                     event.currentTarget.style.display = 'none'
