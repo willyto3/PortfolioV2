@@ -317,7 +317,7 @@ export const en = {
         },
         {
           titulo: 'Git Hub',
-          imagen: 'github.png',
+          imagen: 'github.svg',
           parrafo: 'Code hosting platform with Git version control for collaboration and deployment.',
           conocimiento: 'Intermediate',
           nivel: 65,
@@ -330,7 +330,7 @@ export const en = {
         },
         {
           titulo: 'Word',
-          imagen: 'word.png',
+          imagen: 'word.svg',
           parrafo: 'Word processor for creating, editing, and formatting professional documents with advanced writing tools.',
           conocimiento: 'Advanced',
           nivel: 90,
@@ -344,7 +344,7 @@ export const en = {
         },
         {
           titulo: 'SQL',
-          imagen: 'sql.png',
+          imagen: 'sql.svg',
           parrafo: 'Standard language for querying, inserting, updating, and managing data in relational databases.',
           conocimiento: 'Intermediate',
           nivel: 75,

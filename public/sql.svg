@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" role="img" aria-label="SQL">
+  <path d="M4 5.5 V18.5 C4 22.5 20 22.5 20 18.5 V5.5 Z" fill="#2D8CB0"/>
+  <path d="M4 10.5 C4 14.5 20 14.5 20 10.5" fill="none" stroke="#FFFFFF" stroke-opacity="0.55" stroke-width="1.2"/>
+  <path d="M4 14.5 C4 18.5 20 18.5 20 14.5" fill="none" stroke="#FFFFFF" stroke-opacity="0.55" stroke-width="1.2"/>
+  <ellipse cx="12" cy="5.5" rx="8" ry="3" fill="#4FB3D9"/>
+</svg>
