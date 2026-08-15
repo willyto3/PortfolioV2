@@ -19,6 +19,7 @@ import { useState } from 'react'
 
 import { useNavigate, useLocation } from 'react-router-dom'
 
+import BanderaIcono from './BanderaIcono'
 import { useCVStore } from '../store/store'
 import { useT } from '../locales/useT'
 
@@ -51,11 +52,7 @@ const NavBar = () => {
       onClick={() => setLanguage(language === 'es' ? 'en' : 'es')}
       title={language === 'es' ? 'Switch to English' : 'Cambiar a Español'}
     >
-      {language === 'es' ? (
-        <span className='fi fi-us' style={{ fontSize: '1.4rem', borderRadius: '3px' }} />
-      ) : (
-        <span className='fi fi-co' style={{ fontSize: '1.4rem', borderRadius: '3px' }} />
-      )}
+      <BanderaIcono code={language === 'es' ? 'us' : 'co'} />
     </IconButton>
   )
 
