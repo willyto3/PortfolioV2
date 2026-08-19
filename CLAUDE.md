@@ -20,7 +20,7 @@ No test script is configured.
 
 ## Architecture
 
-**Stack:** React 19, MUI v7, React Router v6 (hash), Zustand v5, Vite 5.
+**Stack:** React 19, MUI v7, React Router v7 (hash), Zustand v5, Vite 8.
 
 **Entry flow:** `main.jsx` → `RouterProvider` → `LayoutPublic` (wraps every page with NavBar + Footer + MUI ThemeProvider) → page-level scene component via `<Outlet>`.
 
@@ -93,7 +93,7 @@ Proyectos deliberately wraps at `md` while the other two wrap at `lg`, which is 
 
 ### Routing
 
-Hash router — no server configuration needed (deploys to Render as a static site at domain root, no `base` path needed in Vite). Routes: `/`, `/experiencia`, `/estudios`, `/herramientas`, `/proyectos`, and a wildcard `*` for 404. Router v7 future flags are enabled in `src/router/index.jsx`.
+Hash router — no server configuration needed (deploys to Render as a static site at domain root, no `base` path needed in Vite). Routes: `/`, `/experiencia`, `/estudios`, `/herramientas`, `/proyectos`, and a wildcard `*` for 404.
 
 `Error404` is used both as the wildcard route and as the root `errorElement`, so a render error anywhere in the tree falls through to it.
 
