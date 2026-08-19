@@ -121,8 +121,9 @@ const CardEstudio = ({
                 label={h}
                 size='small'
                 sx={{
-                  backgroundColor: theme.palette.primary.light,
-                  color: primary,
+                  backgroundColor: theme.palette.primary.soft,
+                  border: `1px solid ${theme.palette.primary.softBorder}`,
+                  color: theme.palette.primary.onSoft,
                   fontWeight: 'bold',
                   fontSize: 'clamp(0.7rem, 1.2vw, 0.85rem)',
                 }}

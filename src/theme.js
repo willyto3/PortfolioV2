@@ -29,6 +29,27 @@ export const colorTokens = {
   },
 }
 
+// El naranja de marca (#FF9800) solo alcanza 2.06:1 sobre el fondo claro,
+// muy por debajo del 4.5:1 que exige WCAG AA. Sobre fondo oscuro da 8.23:1,
+// asi que el acento se define por modo en vez de compartir un unico valor.
+const NARANJA_SOBRE_CLARO = '#C2410C' // 5.18:1 sobre #FFFFFF
+
+// MUI usa primary.dark para el hover de los botones contained. Con el acento
+// en #C2410C, el antiguo primary[700] (#F57C00) era mas CLARO que main: el
+// boton se aclaraba al pasar el raton y caia a 2.70:1.
+const NARANJA_HOVER_CLARO = '#9A3412' // 7.31:1 sobre #FFFFFF
+
+// Fondo tenue para chips y pistas de progreso en modo oscuro: 15% de
+// #FF9800 mezclado sobre background.paper. Sustituye a primary[800], que
+// dejaba el texto del chip en 1.76:1.
+const NARANJA_TENUE_OSCURO = '#413A2F'
+
+// La tarjeta y la barra rellena solo distan 6.81:1, asi que ninguna pista de
+// color plano puede estar a 3:1 de ambas a la vez. Se prioriza que la barra
+// destaque (5.21:1) y la extension de la pista se marca con este borde.
+const BORDE_TENUE_OSCURO = '#6B7280' // 3.04:1 sobre #1F2937
+const BORDE_TENUE_CLARO = '#767676' // 4.54:1 sobre #FFFFFF
+
 // mui theme settings
 export const themeSettings = mode => {
   return {
@@ -41,6 +62,9 @@ export const themeSettings = mode => {
               dark: colorTokens.primary[200],
               main: colorTokens.primary[500],
               light: colorTokens.primary[800],
+              soft: NARANJA_TENUE_OSCURO,
+              onSoft: colorTokens.primary[300],
+              softBorder: BORDE_TENUE_OSCURO,
             },
             neutral: {
               dark: colorTokens.grey[100],
@@ -52,14 +76,20 @@ export const themeSettings = mode => {
             background: {
               default: '#111827',
               alt: '#1F2937',
+              // Sin esto MUI usa su #121212, que contra el #111827 de la
+              // pagina da 1.06:1 y deja la barra de navegacion invisible.
+              paper: '#1F2937',
             },
           }
         : {
             // palette values for light mode
             primary: {
-              dark: colorTokens.primary[700],
-              main: colorTokens.primary[500],
+              dark: NARANJA_HOVER_CLARO,
+              main: NARANJA_SOBRE_CLARO,
               light: colorTokens.primary[50],
+              soft: colorTokens.primary[50],
+              onSoft: NARANJA_SOBRE_CLARO,
+              softBorder: BORDE_TENUE_CLARO,
             },
             neutral: {
               dark: colorTokens.grey[700],
@@ -71,6 +101,7 @@ export const themeSettings = mode => {
             background: {
               default: '#F9FAFB',
               alt: '#FFFFFF',
+              paper: '#FFFFFF',
             },
           }),
     },

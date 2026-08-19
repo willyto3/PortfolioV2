@@ -138,6 +138,7 @@ const NavBar = () => {
   return (
     <AppBar
       component='nav'
+      color='inherit'
       sx={{
         position: 'sticky',
         top: 0,

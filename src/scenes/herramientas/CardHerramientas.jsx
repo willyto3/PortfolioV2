@@ -78,7 +78,8 @@ const CardHerramientas = ({ titulo, imagen, parrafo, conocimiento, nivel, anios,
               height: 6,
               borderRadius: 3,
               mb: '0.5rem',
-              backgroundColor: theme.palette.primary.light,
+              backgroundColor: theme.palette.primary.soft,
+              border: `1px solid ${theme.palette.primary.softBorder}`,
               '& .MuiLinearProgress-bar': { backgroundColor: primary, borderRadius: 3 },
             }}
           />
