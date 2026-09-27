@@ -49,7 +49,7 @@ const NavBar = () => {
 
   const langButton = (
     <IconButton
-      aria-label={t.nav.aria.cambiarIdioma}
+      aria-label={t.nav.aria.cambiarIdiomaA}
       onClick={() => setLanguage(language === 'es' ? 'en' : 'es')}
       title={t.nav.cambiarIdiomaTitulo}
     >
@@ -58,7 +58,10 @@ const NavBar = () => {
   )
 
   const themeButton = (
-    <IconButton aria-label={t.nav.aria.cambiarTema} onClick={setMode}>
+    <IconButton
+      aria-label={isDark ? t.nav.aria.temaAClaro : t.nav.aria.temaAOscuro}
+      onClick={setMode}
+    >
       {isDark ? (
         <LightMode
           sx={{

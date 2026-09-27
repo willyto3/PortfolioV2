@@ -20,8 +20,11 @@ export const en = {
     aria: {
       abrirMenu: 'Open menu',
       cerrarMenu: 'Close menu',
-      cambiarTema: 'Toggle theme',
-      cambiarIdioma: 'Change language',
+      // They name the concrete action rather than a generic one, so a screen
+      // reader also reveals which theme and language the page is in.
+      temaAOscuro: 'Switch to dark mode',
+      temaAClaro: 'Switch to light mode',
+      cambiarIdiomaA: 'Switch language to Spanish',
       navegacion: 'Main navigation',
       saltarContenido: 'Skip to content',
       cargando: 'Loading',

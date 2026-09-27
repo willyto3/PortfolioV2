@@ -20,8 +20,11 @@ export const es = {
     aria: {
       abrirMenu: 'Abrir menú',
       cerrarMenu: 'Cerrar menú',
-      cambiarTema: 'Cambiar tema',
-      cambiarIdioma: 'Cambiar idioma',
+      // Dicen la accion concreta, no una generica: asi un lector de pantalla
+      // revela de paso en que tema e idioma esta la pagina ahora mismo.
+      temaAOscuro: 'Cambiar a modo oscuro',
+      temaAClaro: 'Cambiar a modo claro',
+      cambiarIdiomaA: 'Cambiar idioma a inglés',
       navegacion: 'Navegación principal',
       saltarContenido: 'Saltar al contenido',
       cargando: 'Cargando',
