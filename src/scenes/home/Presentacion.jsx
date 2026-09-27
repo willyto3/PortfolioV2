@@ -11,7 +11,7 @@ const Presentacion = () => {
 
   return (
     <Box sx={{ textAlign: { xs: 'center', lg: 'left' } }}>
-      <Typography variant='h2' component='div' color='text.secondary'>
+      <Typography variant='h2' component='p' color='text.secondary' sx={{ m: 0 }}>
         {t.home.saludo}
       </Typography>
 
@@ -38,7 +38,8 @@ const Presentacion = () => {
 
       <Box
         sx={{
-          width: '95%',
+          // El ancho lo fijan ya maxWidth y el padding de los contenedores; el
+          // 95% anterior solo restaba un margen derecho asimetrico.
           maxWidth: '72ch',
           mx: { xs: 'auto', lg: 0 },
           mt: '1.5rem',
@@ -66,7 +67,7 @@ const Presentacion = () => {
         display='flex'
         flexWrap='wrap'
         gap='0.5rem'
-        mt='1rem'
+        mt='1.5rem'
         justifyContent={{ xs: 'center', lg: 'flex-start' }}
       >
         {t.home.habilidadesBlandas.map(habilidad => (
