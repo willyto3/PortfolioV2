@@ -27,6 +27,37 @@ export const es = {
     cambiarIdiomaTitulo: 'Switch to English',
   },
 
+  // Metadatos por ruta. Un SPA sirve el mismo index.html en las cinco rutas,
+  // asi que sin esto las cinco declararian el canonical de la home y Google
+  // las trataria como duplicados. Las claves son las rutas de nav.items.
+  seo: {
+    '/': {
+      titulo: 'Willy Corzo | Ingeniero Químico & Desarrollador Web | Colombia',
+      descripcion:
+        'Portfolio de Willy Corzo Lubo, Ingeniero Químico con más de 15 años de experiencia en el sector de Hidrocarburos, Maestría en Gerencia de Proyectos, especialista ISO 17025 y Desarrollador Web Full Stack en Colombia.',
+    },
+    '/experiencia': {
+      titulo: 'Experiencia Profesional | Willy Corzo',
+      descripcion:
+        'Quince años en el sector de Hidrocarburos: liderazgo de medición y transferencia en custodia en Applus+, Ecopetrol, SGS, Intertek, OTI y Bureau Veritas.',
+    },
+    '/estudios': {
+      titulo: 'Formación Académica | Willy Corzo',
+      descripcion:
+        'Maestría en Gerencia de Proyectos (Universidad Isabel I), Ingeniería Química (Universidad del Atlántico) y especialización técnica en la norma ISO/IEC 17025.',
+    },
+    '/herramientas': {
+      titulo: 'Herramientas y Tecnologías | Willy Corzo',
+      descripcion:
+        'Nivel de dominio en Excel y VBA, SQL, JavaScript, React, HTML, CSS, Git y Word, con los años de experiencia y las aplicaciones reales de cada herramienta.',
+    },
+    '/proyectos': {
+      titulo: 'Proyectos | Willy Corzo',
+      descripcion:
+        'Desarrollo web y automatización: plataforma de gestión de inspecciones de hidrocarburos, herramienta Excel-VBA de cinco módulos y tablero de escenarios de refinación.',
+    },
+  },
+
   // Página de Inicio
   home: {
     saludo: 'Hola, Mi Nombre es',

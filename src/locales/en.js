@@ -27,6 +27,37 @@ export const en = {
     cambiarIdiomaTitulo: 'Cambiar a Español',
   },
 
+  // Per-route metadata. A SPA serves the same index.html on all five routes,
+  // so without this all five would declare the home page's canonical and
+  // Google would treat them as duplicates. Keys are the routes in nav.items.
+  seo: {
+    '/': {
+      titulo: 'Willy Corzo | Chemical Engineer & Web Developer | Colombia',
+      descripcion:
+        'Portfolio of Willy Corzo Lubo, Chemical Engineer with over 15 years of experience in the hydrocarbon sector, a Master\'s in Project Management, ISO 17025 specialist and Full Stack Web Developer in Colombia.',
+    },
+    '/experiencia': {
+      titulo: 'Professional Experience | Willy Corzo',
+      descripcion:
+        'Fifteen years in the hydrocarbon sector: leading measurement and custody transfer at Applus+, Ecopetrol, SGS, Intertek, OTI and Bureau Veritas.',
+    },
+    '/estudios': {
+      titulo: 'Education | Willy Corzo',
+      descripcion:
+        'Master\'s in Project Management (Universidad Isabel I), Chemical Engineering (Universidad del Atlántico) and technical specialisation in ISO/IEC 17025.',
+    },
+    '/herramientas': {
+      titulo: 'Tools & Technologies | Willy Corzo',
+      descripcion:
+        'Proficiency in Excel and VBA, SQL, JavaScript, React, HTML, CSS, Git and Word, with years of experience and the real-world applications of each tool.',
+    },
+    '/proyectos': {
+      titulo: 'Projects | Willy Corzo',
+      descripcion:
+        'Web development and automation projects: a hydrocarbon inspection management platform, a five-module Excel-VBA tool and a refining scenarios dashboard.',
+    },
+  },
+
   // Home Page
   home: {
     saludo: 'Hi, My Name is',

@@ -20,7 +20,7 @@ No test script is configured.
 
 ## Architecture
 
-**Stack:** React 19, MUI v7, React Router v7 (hash), Zustand v5, Vite 8.
+**Stack:** React 19, MUI v7, React Router v7 (browser/history), Zustand v5, Vite 8.
 
 **Entry flow:** `main.jsx` → `RouterProvider` → `LayoutPublic` (wraps every page with NavBar + Footer + MUI ThemeProvider) → page-level scene component via `<Outlet>`.
 
@@ -31,8 +31,9 @@ No test script is configured.
   - `NavBar.jsx`, `Footer.jsx`
   - `Secciones.jsx` — the layout behind Estudios, Herramientas and Proyectos (see below).
   - `BanderaIcono.jsx` — the two inline SVG flags used by the language toggle.
+- `src/hooks/useMetadatosRuta.js` — per-route document head (title, description, canonical, `og:*`, `robots`) plus `<html lang>`.
 - `src/layout/LayoutPublic.jsx` — Theme provider setup, global layout.
-- `src/router/index.jsx` — `createHashRouter` with `LayoutPublic` as parent and scenes as children.
+- `src/router/index.jsx` — `createBrowserRouter` with `LayoutPublic` as parent and scenes as children.
 - `src/store/store.js` — Zustand store with `persist`; manages `mode` (dark/light) and `language` (`es`/`en`), saved to localStorage under key `'cv'`. Note `setMode` is a toggle and ignores any argument.
 - `src/theme.js` — MUI theme factory. Primary color is orange (`#FF9800`). Exports `themeSettings(mode)` used in `LayoutPublic` with `useMemo`.
 - `src/locales/` — i18n source of truth (see below).
@@ -64,13 +65,15 @@ const t = useT()
 // t.home.roles, t.nav.items, etc.
 ```
 
-Top-level keys: `nav`, `home`, `experienciaUI`, `experiencia`, `estudiosUI`, `herramientasUI`, `estudios`, `proyectos`, `error404`, `contacto`, `footer`.
+Top-level keys: `nav`, `seo`, `home`, `experienciaUI`, `experiencia`, `estudiosUI`, `herramientasUI`, `estudios`, `proyectos`, `error404`, `contacto`, `footer`.
+
+`seo` is keyed by route path (`'/'`, `'/experiencia'`, …) and holds the `titulo`/`descripcion` that `useMetadatosRuta` writes into the document head. Keep `titulo` under 60 characters and `descripcion` under 160, or search results truncate them.
 
 The `*UI` keys hold labels and headings; the matching plain key holds the data rows. Note that the tools data currently lives under `estudios.herramientas.items` rather than at the top level — a leftover, not a convention to copy.
 
 One deliberate oddity: `nav.cambiarIdiomaTitulo` is the tooltip on the language button, which reads in the language you are switching *to*. So `es.js` holds the English string and `en.js` the Spanish one.
 
-**The two locale files must stay structurally identical.** A key present in one and missing in the other crashes the page that reads it as soon as the user switches language. Both files currently expose 308 key paths.
+**The two locale files must stay structurally identical.** A key present in one and missing in the other crashes the page that reads it as soon as the user switches language. Both files currently expose 318 key paths.
 
 To add another language: create `locales/xx.js` with the same structure, import it in `locales/index.js`, and add it to the `locales` object. The active language is stored in Zustand (`language`) and toggled via `setLanguage(code)`.
 
@@ -93,7 +96,17 @@ Proyectos deliberately wraps at `md` while the other two wrap at `lg`, which is 
 
 ### Routing
 
-Hash router — no server configuration needed (deploys to Render as a static site at domain root, no `base` path needed in Vite). Routes: `/`, `/experiencia`, `/estudios`, `/herramientas`, `/proyectos`, and a wildcard `*` for 404.
+Browser router — real paths, so every page is its own crawlable URL. Routes: `/`, `/experiencia`, `/estudios`, `/herramientas`, `/proyectos`, and a wildcard `*` for 404. Deploys to Render as a static site at domain root, no `base` path needed in Vite.
+
+> **This requires a rewrite rule on the host.** In Render: Redirects/Rewrites →
+> Source `/*`, Destination `/index.html`, Action `Rewrite`. Without it every
+> path except `/` 404s on reload or direct link. A `render.yaml` would *not*
+> cover this: its `routes:` key only applies to services linked to a Blueprint,
+> and this site was created manually in the dashboard.
+
+`index.html` carries a small inline script that rewrites legacy `/#/ruta` links (still live in LinkedIn and Google's index from the hash-router era) to the real path before the app boots.
+
+Because all five routes share one `index.html`, per-route `<title>`, `<meta name="description">`, `canonical` and `og:*` are set at runtime by `hooks/useMetadatosRuta.js`, reading from the `seo` key of the active locale. That hook also keeps `<html lang>` in sync with the language toggle. **A new route needs an entry in `seo` in both locale files and a `<url>` in `public/sitemap.xml`**, or it will inherit a 404's `noindex`.
 
 `Error404` is used both as the wildcard route and as the root `errorElement`, so a render error anywhere in the tree falls through to it.
 

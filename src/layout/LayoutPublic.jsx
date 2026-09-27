@@ -10,12 +10,15 @@ import { themeSettings } from '../theme'
 import Footer, { ALTURA_FOOTER } from '../components/Footer'
 // ? IMPORTACION DE MODULOS
 import { useCVStore } from '../store/store'
+import { useMetadatosRuta } from '../hooks/useMetadatosRuta'
 // Importacion de Componentes
 
 const LayoutPublic = () => {
   // Se hace uso de la Store
   const mode = useCVStore(state => state.mode)
   const theme = useMemo(() => createTheme(themeSettings(mode)), [mode])
+  // title, description, canonical, og:* y <html lang> segun la ruta y el idioma
+  useMetadatosRuta()
   return (
     <ThemeProvider theme={theme}>
       <CssBaseline />

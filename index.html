@@ -38,6 +38,23 @@
     <!-- Favicon -->
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 
+    <!--
+      Puente desde el antiguo router de hash. Los enlaces /#/experiencia siguen
+      vivos en LinkedIn, marcadores y en el indice de Google; React Router ya no
+      lee el hash, asi que los traducimos a la ruta real. Script clasico y en
+      línea a proposito: debe correr antes que el modulo de la app.
+    -->
+    <script>
+      (function () {
+        var hash = window.location.hash
+        if (hash.indexOf('#/') !== 0) return
+        var destino = hash.slice(1)
+        // Un ?query real vive antes del hash; el hash puede traer el suyo.
+        if (destino.indexOf('?') === -1) destino += window.location.search
+        window.history.replaceState(null, '', destino)
+      })()
+    </script>
+
     <!-- Structured Data: Person + ProfilePage (Schema.org) -->
     <script type="application/ld+json">
     {

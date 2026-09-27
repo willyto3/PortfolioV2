@@ -1,5 +1,5 @@
 // Importacion de React Router Dom
-import { createHashRouter } from 'react-router-dom'
+import { createBrowserRouter } from 'react-router-dom'
 
 // Importacion de Paginas
 import LayoutPublic from '../layout/LayoutPublic'
@@ -11,7 +11,12 @@ import Estudios from '../scenes/estudios'
 import Herramientas from '../scenes/herramientas'
 
 // Funcion Router
-export const router = createHashRouter([
+//
+// Router de rutas reales (no hash): cada pagina es una URL propia e indexable.
+// Exige que el host reescriba cualquier ruta a /index.html; en Render es una
+// regla de tipo Rewrite con Source /* y Destination /index.html. Sin esa regla
+// todo lo que no sea / devuelve 404 al recargar o al entrar por enlace directo.
+export const router = createBrowserRouter([
   {
     path: '/',
     element: <LayoutPublic />,
