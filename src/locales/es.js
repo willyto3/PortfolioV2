@@ -63,11 +63,11 @@ export const es = {
 
   // Página de Inicio
   home: {
-    saludo: 'Hola, Mi Nombre es',
+    saludo: 'Hola, mi nombre es',
     nombre: 'Willy Corzo Lubo',
     altFoto: 'Foto de Willy Corzo',
     roles: [
-      'Máster en Gerencia de Proyectos',
+      'Maestría en Gerencia de Proyectos',
       'Ingeniero Químico',
       'Especialista NTC ISO 17025:2017',
       'Desarrollador Web Full Stack',

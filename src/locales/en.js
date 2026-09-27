@@ -63,11 +63,11 @@ export const en = {
 
   // Home Page
   home: {
-    saludo: 'Hi, My Name is',
+    saludo: 'Hi, my name is',
     nombre: 'Willy Corzo Lubo',
     altFoto: 'Photo of Willy Corzo',
     roles: [
-      'Master in Project Management',
+      "Master's in Project Management",
       'Chemical Engineer',
       'NTC ISO 17025:2017 Specialist',
       'Full Stack Web Developer',
