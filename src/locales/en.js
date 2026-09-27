@@ -62,7 +62,6 @@ export const en = {
     labels: {
       contratante: 'Contractor',
       servicioPara: 'Service for',
-      jefe: 'Direct supervisor',
       logoCliente: 'Client logo',
     },
   },
@@ -88,7 +87,6 @@ export const en = {
         'Coordinate audits, inspections, and improvement plans for measurement systems.',
         'Prepare technical reports and dashboards for management follow-up.',
       ],
-      jefe: 'Julieth Zapata - Phone 313 435 35 99',
     },
     {
       image: 'copco.jpg',
@@ -102,7 +100,6 @@ export const en = {
       fecha: 'December 2023 - December 2024',
       lugar: 'Temporary assignment at Ecopetrol S.A. - Bogota D.C.',
       actividades: digitalEcopetrolActivities,
-      jefe: 'Johanna Orjuela - Phone 311 887 03 64',
     },
     {
       image: 'sinmediatas.png',
@@ -116,7 +113,6 @@ export const en = {
       fecha: 'August 2023 - November 2023',
       lugar: 'Bogota D.C., Colombia',
       actividades: digitalEcopetrolActivities,
-      jefe: 'Johanna Orjuela - Phone 311 887 03 64',
     },
     {
       image: 'SGS.png',
@@ -134,7 +130,6 @@ export const en = {
         'Develop the Balance program to calculate daily and monthly balances.',
         'Develop the LabCal program to perform analysis calculations.',
       ],
-      jefe: 'Hernando Rosales - Phone 310 318 45 25',
     },
     {
       image: 'Intertek.png',
@@ -152,7 +147,6 @@ export const en = {
         'Implement strategies for the development and monitoring of corporate and performance indicators.',
         'Develop the Payroll program to calculate surcharges and overtime.',
       ],
-      jefe: 'Cristhian Moreno - Phone 314 238 52 39',
     },
     {
       image: 'OTI.jpg',
@@ -167,7 +161,6 @@ export const en = {
         'Implement and maintain the ISO 17025:2017 standard.',
         'Develop the Analito program to perform analysis and daily/monthly balance calculations.',
       ],
-      jefe: 'Jorge Santander - Phone 316 223 09 55',
     },
     {
       image: 'BV.jpg',
@@ -183,7 +176,6 @@ export const en = {
         'Implement and maintain the ISO 17025:2017 standard.',
         'Conduct volume inspections on tanker ships.',
       ],
-      jefe: 'Cornelio Toledo - Phone 300 404 81 66',
     },
   ],
 

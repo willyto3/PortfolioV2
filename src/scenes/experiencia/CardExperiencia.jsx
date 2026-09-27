@@ -8,7 +8,6 @@ import BusinessOutlinedIcon from '@mui/icons-material/BusinessOutlined'
 import BusinessCenterOutlinedIcon from '@mui/icons-material/BusinessCenterOutlined'
 import CheckIcon from '@mui/icons-material/Check'
 import DateRangeIcon from '@mui/icons-material/DateRange'
-import PersonOutlineOutlinedIcon from '@mui/icons-material/PersonOutlineOutlined'
 import PlaceIcon from '@mui/icons-material/Place'
 
 import { useTheme } from '@mui/material'
@@ -50,7 +49,6 @@ const CardExperiencia = ({
   fecha,
   lugar,
   actividades,
-  jefe,
 }) => {
   const t = useT()
   const theme = useTheme()
@@ -166,12 +164,6 @@ const CardExperiencia = ({
               </Box>
             ))}
           </Box>
-
-          {jefe && (
-            <InfoRow icon={PersonOutlineOutlinedIcon} color={primary}>
-              {labels.jefe}: {jefe}
-            </InfoRow>
-          )}
         </CardContent>
       </Box>
     </Card>

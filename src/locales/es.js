@@ -62,7 +62,6 @@ export const es = {
     labels: {
       contratante: 'Empresa contratante',
       servicioPara: 'Servicio para',
-      jefe: 'Jefe inmediato',
       logoCliente: 'Logo del cliente',
     },
   },
@@ -88,7 +87,6 @@ export const es = {
         'Coordinar auditorías, inspecciones y planes de mejora en sistemas de medición.',
         'Elaborar reportes técnicos y tableros de control para seguimiento gerencial.',
       ],
-      jefe: 'Julieth Zapata - Teléfono 313 435 35 99',
     },
     {
       image: 'copco.jpg',
@@ -102,7 +100,6 @@ export const es = {
       fecha: 'Diciembre 2023 - Diciembre 2024',
       lugar: 'Misión Temporal en Ecopetrol S.A. - Bogotá D.C.',
       actividades: actividadesEcopetrolDigital,
-      jefe: 'Johanna Orjuela - Teléfono 311 887 03 64',
     },
     {
       image: 'sinmediatas.png',
@@ -116,7 +113,6 @@ export const es = {
       fecha: 'Agosto 2023 - Noviembre 2023',
       lugar: 'Bogotá D.C., Colombia',
       actividades: actividadesEcopetrolDigital,
-      jefe: 'Johanna Orjuela - Teléfono 311 887 03 64',
     },
     {
       image: 'SGS.png',
@@ -134,7 +130,6 @@ export const es = {
         'Desarrollar el programa Balance para calcular los balances diarios y mensuales.',
         'Desarrollar el programa LabCal para realizar los cálculos de los análisis.',
       ],
-      jefe: 'Hernando Rosales - Teléfono 310 318 45 25',
     },
     {
       image: 'Intertek.png',
@@ -152,7 +147,6 @@ export const es = {
         'Implementar estrategias para el desarrollo y seguimiento de indicadores corporativos y desempeño laboral.',
         'Desarrollar el programa Nómina para calcular los recargos y horas extras.',
       ],
-      jefe: 'Cristhian Moreno - Teléfono 314 238 52 39',
     },
     {
       image: 'OTI.jpg',
@@ -167,7 +161,6 @@ export const es = {
         'Implementar y mantener la Norma ISO 17025:2017.',
         'Desarrollar el programa Analito para realizar los cálculos de los análisis y balances diarios y mensuales.',
       ],
-      jefe: 'Jorge Santander - Teléfono 316 223 09 55',
     },
     {
       image: 'BV.jpg',
@@ -183,7 +176,6 @@ export const es = {
         'Implementar y mantener la Norma ISO 17025:2017.',
         'Realizar las inspecciones de volúmenes en buques tanque.',
       ],
-      jefe: 'Cornelio Toledo - Teléfono 300 404 81 66',
     },
   ],
 
