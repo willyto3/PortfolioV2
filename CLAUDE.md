@@ -50,10 +50,13 @@ theme.palette.neutral.dark    // text color
 theme.palette.primary.main    // orange accent
 ```
 
-Cards sit on MUI's default `background.paper`, which is near-black in dark mode. Any asset that is essentially black or essentially white will disappear in one of the two themes. Two patterns exist for this:
+Cards sit on `background.paper`, which is `#1F2937` in dark mode. Any asset that is essentially black or essentially white will disappear in one of the two themes. Three patterns exist for this:
 
-- Supply `imageLight`/`imageDark` variants and pick between them, as `CardExperiencia.jsx` does with its `pickByTheme` helper.
-- Or pick a mid-tone that survives both, as `public/github.svg` does.
+- **A light plate** — `palette.placaLogo` (`#FFFFFF` in both modes). This is the default for logos, and what `CardEstudio`, `CardHerramientas` and `CardProyecto` use unconditionally. Because it equals `background.paper` in light mode it is invisible there, so it only changes the dark theme. It fixes both failure modes at once: dark ink becomes legible, and assets with a baked-in white background (every `.jpg`, plus palette PNGs with no alpha like `sena.png` and `sinmediatas.png`) stop reading as glaring boxes.
+- **`imageLight`/`imageDark` variants**, picked by `pickByTheme` in `CardExperiencia.jsx`. That helper returns `{ src, necesitaPlaca }`; `necesitaPlaca` is true only when the entry has no dark variant and we are falling back to its light asset, which is the one case that needs the plate. **Never plate a `.B` asset** — those are white ink and vanish on white.
+- **A mid-tone that survives both**, as `public/github.svg` does.
+
+Measured on the dark card before the plate: React and JavaScript sat at 1.43:1, Universidad Isabel I at 2.14:1, while the opaque-white assets hit 11–13.5:1. To re-measure after changing an asset, draw it to a canvas and average the relative luminance of pixels with alpha > 128.
 
 ### Content and i18n
 

@@ -43,6 +43,7 @@ const CardEstudio = ({
         justifyContent='center'
         alignItems='center'
         flexShrink={0}
+        sx={{ backgroundColor: theme.palette.placaLogo, borderRadius: 1 }}
       >
         <CardMedia
           sx={{

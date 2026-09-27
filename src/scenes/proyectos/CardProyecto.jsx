@@ -29,7 +29,9 @@ const CardProyecto = ({ nombre, imagen, descripcion, tecnologias }) => {
           height: '180px',
           objectFit: 'contain',
           p: '1rem',
-          backgroundColor: theme.palette.neutral.light,
+          // neutral.light aqui era #333333 en oscuro: no salvaba ni a los
+          // logos de tinta oscura ni a los que traen fondo blanco horneado.
+          backgroundColor: theme.palette.placaLogo,
         }}
       />
 

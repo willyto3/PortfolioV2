@@ -55,6 +55,14 @@ export const themeSettings = mode => {
   return {
     palette: {
       mode,
+      // Los logos de instituciones, herramientas y proyectos estan disenados
+      // para fondo claro. Unos son tinta casi negra con alfa (React y
+      // JavaScript quedan en 1.43:1 sobre la tarjeta oscura, Isabel I en
+      // 2.14:1) y otros traen un fondo blanco opaco horneado, que en oscuro
+      // se ve como una caja deslumbrante a 13:1. Ambos casos se resuelven
+      // pintandolos siempre sobre esta placa. En modo claro coincide con
+      // background.paper, asi que alli no se nota nada.
+      placaLogo: '#FFFFFF',
       ...(mode === 'dark'
         ? {
             // palette values for dark mode

@@ -13,8 +13,18 @@ import PlaceIcon from '@mui/icons-material/Place'
 import { useTheme } from '@mui/material'
 import { useT } from '../../locales/useT'
 
-const pickByTheme = (mode, light, dark, fallback) =>
-  mode === 'dark' ? (dark || light || fallback) : (light || dark || fallback)
+// Devuelve la imagen del modo actual y si se esta cayendo al recurso del modo
+// contrario. Copco, Soluciones Inmediatas y OTI no tienen variante oscura, asi
+// que en modo oscuro se sirve su original de fondo blanco: ese caso necesita la
+// placa clara. Los que si tienen variante (Applus.B y companeros) son tinta
+// blanca y sobre una placa clara desapareceran, por eso no se aplica a todos.
+const pickByTheme = (mode, light, dark, fallback) => {
+  const propia = mode === 'dark' ? dark : light
+  return {
+    src: propia || light || dark || fallback,
+    necesitaPlaca: !propia && mode === 'dark',
+  }
+}
 
 const InfoRow = ({ icon: Icon, children, color }) => (
   <Box
@@ -55,8 +65,9 @@ const CardExperiencia = ({
   const primary = theme.palette.primary.main
   const labels = t.experienciaUI.labels
 
-  const imageByTheme = pickByTheme(theme.palette.mode, imageLight, imageDark, image)
-  const clientImageByTheme = pickByTheme(theme.palette.mode, clientImageLight, clientImageDark, clientImage)
+  const logo = pickByTheme(theme.palette.mode, imageLight, imageDark, image)
+  const logoCliente = pickByTheme(theme.palette.mode, clientImageLight, clientImageDark, clientImage)
+  const placa = theme.palette.placaLogo
 
   return (
     <Card
@@ -80,6 +91,7 @@ const CardExperiencia = ({
         justifyContent='center'
         alignItems='center'
         flexShrink={0}
+        sx={logo.necesitaPlaca ? { backgroundColor: placa, borderRadius: 1 } : undefined}
       >
         <CardMedia
           component='img'
@@ -89,7 +101,7 @@ const CardExperiencia = ({
             height: '100%',
             maxWidth: { xs: '9rem', lg: '100%' },
           }}
-          image={imageByTheme}
+          image={logo.src}
           alt={alt}
           loading='lazy'
         />
@@ -131,10 +143,10 @@ const CardExperiencia = ({
                   </InfoRow>
                 )}
               </Box>
-              {clientImageByTheme && (
+              {logoCliente.src && (
                 <Box
                   component='img'
-                  src={clientImageByTheme}
+                  src={logoCliente.src}
                   alt={clientAlt || cliente || labels.logoCliente}
                   loading='lazy'
                   onError={event => {
@@ -146,6 +158,11 @@ const CardExperiencia = ({
                     objectFit: 'contain',
                     maxWidth: '180px',
                     flexShrink: 0,
+                    ...(logoCliente.necesitaPlaca && {
+                      backgroundColor: placa,
+                      borderRadius: 1,
+                      p: '2px',
+                    }),
                   }}
                 />
               )}
