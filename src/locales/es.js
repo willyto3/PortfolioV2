@@ -78,6 +78,13 @@ export const es = {
       'Ingeniero Químico con maestría en Gerencia de Proyectos y más de 15 años de experiencia en el sector de Hidrocarburos, especializado en Transferencia en Custodia, Medición y Análisis.',
       'Me apasiona transformar procesos complejos en soluciones automatizadas y eficientes. Orientado a resultados, trabajo con iniciativa, honestidad y compromiso, adaptándome con facilidad a nuevos retos y entornos.',
     ],
+    cta: {
+      experiencia: 'Ver experiencia',
+      contactar: 'Contactar',
+      // El boton de contacto abre WhatsApp en otra pestaña; se anuncia en el
+      // nombre accesible para que no sorprenda a quien usa lector de pantalla.
+      contactarAria: 'Contactar por WhatsApp (se abre en otra pestaña)',
+    },
     habilidadesBlandas: [
       'Liderazgo',
       'Trabajo en equipo',

@@ -1,5 +1,8 @@
-import { Box, Chip, Divider, useTheme } from '@mui/material'
+import { Box, Button, Chip, Divider, useTheme } from '@mui/material'
 import Typography from '@mui/material/Typography'
+import ArrowForwardIcon from '@mui/icons-material/ArrowForward'
+import WhatsAppIcon from '@mui/icons-material/WhatsApp'
+import { Link as RouterLink } from 'react-router-dom'
 import { RotadorRoles } from './RotadorRoles'
 
 import { useT } from '../../locales/useT'
@@ -61,6 +64,43 @@ const Presentacion = () => {
             {parrafo}
           </Typography>
         ))}
+      </Box>
+
+      {/* La portada terminaba sin nada que pulsar. El solido marca el camino
+          que interesa a un reclutador; el de borde abre el canal de contacto. */}
+      <Box
+        display='flex'
+        flexWrap='wrap'
+        gap='0.75rem'
+        mt='1.5rem'
+        justifyContent={{ xs: 'center', lg: 'flex-start' }}
+      >
+        <Button
+          variant='contained'
+          size='large'
+          component={RouterLink}
+          to='/experiencia'
+          endIcon={<ArrowForwardIcon />}
+        >
+          {t.home.cta.experiencia}
+        </Button>
+
+        <Button
+          variant='outlined'
+          size='large'
+          component='a'
+          href={t.contacto.whatsapp}
+          target='_blank'
+          rel='noopener noreferrer'
+          aria-label={t.home.cta.contactarAria}
+          startIcon={<WhatsAppIcon />}
+          // MUI pinta el borde del outlined con 50% de alfa: 2.19:1 en claro y
+          // 2.72:1 en oscuro, por debajo del 3:1 que WCAG 1.4.11 exige al
+          // limite de un control. A opacidad plena sube a 5.18 y 6.81.
+          sx={{ borderColor: primary }}
+        >
+          {t.home.cta.contactar}
+        </Button>
       </Box>
 
       <Box

@@ -78,6 +78,13 @@ export const en = {
       "Chemical Engineer with a Master's degree in Project Management and over 15 years of experience in the Hydrocarbons sector, specializing in Custody Transfer, Measurement, and Analysis.",
       'I am passionate about transforming complex processes into automated and efficient solutions. Results-oriented, I work with initiative, honesty, and commitment, easily adapting to new challenges and environments.',
     ],
+    cta: {
+      experiencia: 'View experience',
+      contactar: 'Get in touch',
+      // The contact button opens WhatsApp in a new tab; announced in the
+      // accessible name so it does not surprise screen reader users.
+      contactarAria: 'Get in touch on WhatsApp (opens in a new tab)',
+    },
     habilidadesBlandas: [
       'Leadership',
       'Teamwork',
