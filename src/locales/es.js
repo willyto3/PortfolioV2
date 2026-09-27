@@ -24,6 +24,7 @@ export const es = {
       cambiarIdioma: 'Cambiar idioma',
       navegacion: 'Navegación principal',
       saltarContenido: 'Saltar al contenido',
+      cargando: 'Cargando',
     },
     // Se muestra en el idioma al que se va a cambiar, no en el actual
     cambiarIdiomaTitulo: 'Switch to English',

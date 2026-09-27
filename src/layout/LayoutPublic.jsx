@@ -1,9 +1,9 @@
 // Importacion de Outlet de React Router
 import { Outlet } from 'react-router-dom'
 // Importamos useMemo de React
-import { useMemo } from 'react'
+import { Suspense, useMemo } from 'react'
 // Importamos CssBaseLine, Theme Provider y createTheme de mui Material
-import { Box, CssBaseline, ThemeProvider, createTheme } from '@mui/material'
+import { Box, CircularProgress, CssBaseline, ThemeProvider, createTheme } from '@mui/material'
 // Importamos themeSettings del arhivo theme
 import NavBar from '../components/NavBar'
 import { themeSettings } from '../theme'
@@ -52,7 +52,15 @@ const LayoutPublic = () => {
           id='contenido'
           sx={{ flex: 1, display: 'flex', flexDirection: 'column', pb: ALTURA_FOOTER }}
         >
-          <Outlet />
+          <Suspense
+            fallback={
+              <Box sx={{ flex: 1, display: 'grid', placeItems: 'center', p: '4rem' }}>
+                <CircularProgress color='primary' aria-label={t.nav.aria.cargando} />
+              </Box>
+            }
+          >
+            <Outlet />
+          </Suspense>
         </Box>
         <Footer />
       </Box>

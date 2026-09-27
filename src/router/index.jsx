@@ -1,14 +1,20 @@
 // Importacion de React Router Dom
 import { createBrowserRouter } from 'react-router-dom'
+import { lazy } from 'react'
 
 // Importacion de Paginas
 import LayoutPublic from '../layout/LayoutPublic'
 import Error404 from '../scenes/error404'
-import Experiencia from '../scenes/experiencia'
 import Home from '../scenes/home'
-import Proyectos from '../scenes/proyectos'
-import Estudios from '../scenes/estudios'
-import Herramientas from '../scenes/herramientas'
+
+// Home y el layout van en el bundle inicial porque son lo primero que se pinta.
+// El resto se parte en chunks: quien entra por la portada no descarga las
+// tarjetas de las otras cuatro paginas. LayoutPublic envuelve el Outlet en un
+// Suspense, asi que la barra y el pie siguen visibles mientras llega el trozo.
+const Experiencia = lazy(() => import('../scenes/experiencia'))
+const Estudios = lazy(() => import('../scenes/estudios'))
+const Herramientas = lazy(() => import('../scenes/herramientas'))
+const Proyectos = lazy(() => import('../scenes/proyectos'))
 
 // Funcion Router
 //

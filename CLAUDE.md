@@ -22,7 +22,9 @@ No test script is configured.
 
 **Stack:** React 19, MUI v7, React Router v7 (browser/history), Zustand v5, Vite 8.
 
-**Entry flow:** `main.jsx` → `RouterProvider` → `LayoutPublic` (wraps every page with NavBar + Footer + MUI ThemeProvider) → page-level scene component via `<Outlet>`.
+**Entry flow:** `main.jsx` → `RouterProvider` → `LayoutPublic` (wraps every page with NavBar + Footer + MUI ThemeProvider + a `Suspense` boundary) → page-level scene component via `<Outlet>`.
+
+Home and `LayoutPublic` ship in the initial bundle; the other four scenes are `React.lazy` chunks. Note the win is modest — the page chunks are 1–9 kB each because the content lives in the shared locales chunk (~129 kB), and MUI dominates the rest.
 
 ### Key directories
 
@@ -33,7 +35,7 @@ No test script is configured.
   - `BanderaIcono.jsx` — the two inline SVG flags used by the language toggle.
 - `src/hooks/useMetadatosRuta.js` — per-route document head (title, description, canonical, `og:*`, `robots`) plus `<html lang>`.
 - `src/layout/LayoutPublic.jsx` — Theme provider setup, global layout.
-- `src/router/index.jsx` — `createBrowserRouter` with `LayoutPublic` as parent and scenes as children.
+- `src/router/index.jsx` — `createBrowserRouter` with `LayoutPublic` as parent and scenes as children; the four non-home scenes are `React.lazy`.
 - `src/store/store.js` — Zustand store with `persist`; manages `mode` (dark/light) and `language` (`es`/`en`), saved to localStorage under key `'cv'`. Note `setMode` is a toggle and ignores any argument.
 - `src/theme.js` — MUI theme factory. Primary color is orange (`#FF9800`). Exports `themeSettings(mode)` used in `LayoutPublic` with `useMemo`.
 - `src/locales/` — i18n source of truth (see below).
@@ -76,7 +78,7 @@ The `*UI` keys hold labels and headings; the matching plain key holds the data r
 
 One deliberate oddity: `nav.cambiarIdiomaTitulo` is the tooltip on the language button, which reads in the language you are switching *to*. So `es.js` holds the English string and `en.js` the Spanish one.
 
-**The two locale files must stay structurally identical.** A key present in one and missing in the other crashes the page that reads it as soon as the user switches language. Both files currently expose 320 key paths.
+**The two locale files must stay structurally identical.** A key present in one and missing in the other crashes the page that reads it as soon as the user switches language. Both files currently expose 321 key paths.
 
 To add another language: create `locales/xx.js` with the same structure, import it in `locales/index.js`, and add it to the `locales` object. The active language is stored in Zustand (`language`) and toggled via `setLanguage(code)`.
 
