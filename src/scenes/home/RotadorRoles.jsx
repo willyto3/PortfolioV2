@@ -5,7 +5,11 @@ import Typography from '@mui/material/Typography'
 import { useT } from '../../locales/useT'
 
 const INTERVAL_MS = 5000
-const FADE_MS = 800
+// El ciclo gasta dos fundidos: uno para salir y otro para entrar, con el cambio
+// de texto en el punto de opacidad cero. A 800ms eso dejaba el rol en
+// transicion 1,6s de cada 5 -un tercio del tiempo- y con un instante en blanco
+// en el elemento mas visible de la portada. A 350ms baja a 0,7s.
+const FADE_MS = 350
 
 // Quien pide menos movimiento ve el primer rol fijo: la rotacion automatica es
 // justo el tipo de cambio que provoca mareo o distrae en lectura con dificultad.
