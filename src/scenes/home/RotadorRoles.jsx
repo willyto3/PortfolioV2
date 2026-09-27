@@ -65,7 +65,11 @@ export function RotadorRoles() {
 
   return (
     <Box
-      sx={{ py: '0.25rem', minHeight: { xs: '2.25rem', md: '3.25rem' } }}
+      // A 320-360px los roles mas largos ocupan dos lineas y los cortos una,
+      // asi que la caja pasaba de 36 a 56px cada cinco segundos y arrastraba
+      // la bio y los chips. Se reservan las dos lineas: 48px de texto mas los
+      // 8px de py, que con box-sizing: border-box cuentan dentro del minimo.
+      sx={{ py: '0.25rem', minHeight: { xs: '3.5rem', md: '3.25rem' } }}
       onMouseEnter={() => setPausado(true)}
       onMouseLeave={() => setPausado(false)}
       onFocus={() => setPausado(true)}
