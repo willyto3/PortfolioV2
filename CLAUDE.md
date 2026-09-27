@@ -78,7 +78,7 @@ The `*UI` keys hold labels and headings; the matching plain key holds the data r
 
 One deliberate oddity: `nav.cambiarIdiomaTitulo` is the tooltip on the language button, which reads in the language you are switching *to*. So `es.js` holds the English string and `en.js` the Spanish one.
 
-**The two locale files must stay structurally identical.** A key present in one and missing in the other crashes the page that reads it as soon as the user switches language. Both files currently expose 321 key paths.
+**The two locale files must stay structurally identical.** A key present in one and missing in the other crashes the page that reads it as soon as the user switches language. Both files currently expose 320 key paths.
 
 To add another language: create `locales/xx.js` with the same structure, import it in `locales/index.js`, and add it to the `locales` object. The active language is stored in Zustand (`language`) and toggled via `setLanguage(code)`.
 

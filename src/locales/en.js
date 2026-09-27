@@ -101,7 +101,6 @@ export const en = {
   },
   experiencia: [
     {
-      image: 'Applus.W.png',
       imageLight: 'Applus.W.png',
       imageDark: 'Applus.B.png',
       alt: 'Applus corporate image - Measurement Leader',
