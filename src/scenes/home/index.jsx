@@ -36,7 +36,7 @@ const Home = () => {
               height={1260}
               // Imprescindible junto a los atributos: sin esto el alto pintado
               // seria el literal 1260px del atributo en vez de la proporcion.
-              sx={{ maxWidth: { xs: 200, sm: 280, md: 360, lg: 450 }, width: '100%', height: 'auto' }}
+              sx={{ maxWidth: { xs: 270, sm: 280, md: 360, lg: 450 }, width: '100%', height: 'auto' }}
             />
           </Grid>
           <Grid size={{ xs: 12, lg: 8 }}>
