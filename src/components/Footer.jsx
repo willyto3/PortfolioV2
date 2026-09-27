@@ -33,7 +33,9 @@ const Footer = () => {
     {
       key: 'tel',
       icon: PhoneIcon,
-      href: `tel:${t.contacto.telefono}`,
+      // RFC 3966 no admite espacios en un tel:. El texto visible si los lleva,
+      // pero el URI tiene que ir compacto.
+      href: `tel:${t.contacto.telefono.replace(/\s/g, '')}`,
       label: t.contacto.telefono,
       aria: t.footer.aria.telefono,
     },
