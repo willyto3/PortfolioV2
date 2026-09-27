@@ -33,6 +33,8 @@ const CardEstudio = ({
         flexDirection: { xs: 'column', sm: 'row' },
         p: '1rem',
         mb: 0,
+        // El canto de la tarjeta no puede depender solo de la sombra
+        border: `1px solid ${theme.palette.bordeSuperficie}`,
         borderTop: `4px solid ${primary}`,
       }}
     >

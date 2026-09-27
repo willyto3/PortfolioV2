@@ -17,6 +17,8 @@ const CardProyecto = ({ nombre, imagen, descripcion, tecnologias }) => {
         height: '100%',
         display: 'flex',
         flexDirection: 'column',
+        // El canto de la tarjeta no puede depender solo de la sombra
+        border: `1px solid ${theme.palette.bordeSuperficie}`,
         borderTop: `4px solid ${primary}`,
       }}
     >

@@ -63,6 +63,12 @@ export const themeSettings = mode => {
       // pintandolos siempre sobre esta placa. En modo claro coincide con
       // background.paper, asi que alli no se nota nada.
       placaLogo: '#FFFFFF',
+      // La pagina y la tarjeta solo distan 1.05:1 en claro y 1.21:1 en oscuro,
+      // asi que hoy el canto de las tarjetas existe unicamente por la sombra de
+      // elevacion: con sombras desactivadas o contraste forzado, la estructura
+      // de la pagina desaparece. Este borde lo hace explicito sin tocar los
+      // fondos: 1.78:1 sobre la tarjeta clara y 2.56:1 sobre la oscura.
+      bordeSuperficie: mode === 'dark' ? colorTokens.grey[500] : colorTokens.grey[200],
       ...(mode === 'dark'
         ? {
             // palette values for dark mode

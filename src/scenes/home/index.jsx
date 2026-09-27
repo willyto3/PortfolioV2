@@ -17,6 +17,8 @@ const Home = () => {
           mx: 'auto',
           maxWidth: 1400,
           width: '100%',
+          // Igual que las tarjetas: el canto no puede depender solo de la sombra
+          border: theme => `1px solid ${theme.palette.bordeSuperficie}`,
         }}
       >
         <Grid container spacing={2}>

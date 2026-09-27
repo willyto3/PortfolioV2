@@ -74,6 +74,8 @@ const CardExperiencia = ({
       sx={{
         display: 'flex',
         flexDirection: { xs: 'column', lg: 'row' },
+        // El canto de la tarjeta no puede depender solo de la sombra
+        border: `1px solid ${theme.palette.bordeSuperficie}`,
         borderTop: `4px solid ${primary}`,
         width: '100%',
         height: '100%',
