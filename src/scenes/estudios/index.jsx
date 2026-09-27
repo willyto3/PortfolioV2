@@ -9,6 +9,7 @@ const Estudios = () => {
 
   return (
     <Secciones
+      titulo={t.estudiosUI.titulo}
       grupos={[
         { titulo: t.estudios.tituloFormales, items: porTipo('formal') },
         { titulo: t.estudios.tituloCortos, items: porTipo('corto') },

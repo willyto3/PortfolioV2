@@ -22,6 +22,8 @@ export const en = {
       cerrarMenu: 'Close menu',
       cambiarTema: 'Toggle theme',
       cambiarIdioma: 'Change language',
+      navegacion: 'Main navigation',
+      saltarContenido: 'Skip to content',
     },
     // Shown in the language being switched to, not the current one
     cambiarIdiomaTitulo: 'Cambiar a Español',
@@ -212,6 +214,9 @@ export const en = {
 
   // Education Page
   estudiosUI: {
+    // Page heading. Screen readers only: the page already presents itself
+    // through the rotated section titles.
+    titulo: 'Education & Training',
     labels: {
       tesis: 'Thesis',
       logros: 'Achievements',
@@ -221,8 +226,14 @@ export const en = {
 
   // Tools Page
   herramientasUI: {
+    titulo: 'Tools & Technologies',
     anio: 'year',
     anios: 'years',
+  },
+
+  // Projects Page
+  proyectosUI: {
+    titulo: 'Projects',
   },
 
   estudios: {

@@ -17,9 +17,9 @@ const Presentacion = () => {
 
       <Typography
         variant='h1'
-        component='div'
+        component='h1'
         fontWeight='bold'
-        sx={{ color: primary, lineHeight: 1.1 }}
+        sx={{ color: primary, lineHeight: 1.1, m: 0 }}
       >
         {t.home.nombre}
       </Typography>

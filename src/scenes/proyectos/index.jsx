@@ -8,6 +8,7 @@ const Proyectos = () => {
 
   return (
     <Secciones
+      titulo={t.proyectosUI.titulo}
       grupos={agruparPorCategoria(t.proyectos.items)}
       Tarjeta={CardProyecto}
       getKey={proyecto => proyecto.nombre}

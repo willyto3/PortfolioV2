@@ -29,7 +29,7 @@ No test script is configured.
 - `src/scenes/` — One folder per page (`home`, `experiencia`, `estudios`, `herramientas`, `proyectos`, `error404`). Each has an `index.jsx` plus its card sub-components.
 - `src/components/` — Shared components:
   - `NavBar.jsx`, `Footer.jsx`
-  - `Secciones.jsx` — the layout behind Estudios, Herramientas and Proyectos (see below).
+  - `Secciones.jsx` — the layout behind Estudios, Herramientas and Proyectos (see below). Also owns the visually-hidden `<h1>` those three pages need.
   - `BanderaIcono.jsx` — the two inline SVG flags used by the language toggle.
 - `src/hooks/useMetadatosRuta.js` — per-route document head (title, description, canonical, `og:*`, `robots`) plus `<html lang>`.
 - `src/layout/LayoutPublic.jsx` — Theme provider setup, global layout.
@@ -68,7 +68,7 @@ const t = useT()
 // t.home.roles, t.nav.items, etc.
 ```
 
-Top-level keys: `nav`, `seo`, `home`, `experienciaUI`, `experiencia`, `estudiosUI`, `herramientasUI`, `estudios`, `proyectos`, `error404`, `contacto`, `footer`.
+Top-level keys: `nav`, `seo`, `home`, `experienciaUI`, `experiencia`, `estudiosUI`, `herramientasUI`, `proyectosUI`, `estudios`, `proyectos`, `error404`, `contacto`, `footer`.
 
 `seo` is keyed by route path (`'/'`, `'/experiencia'`, …) and holds the `titulo`/`descripcion` that `useMetadatosRuta` writes into the document head. Keep `titulo` under 60 characters and `descripcion` under 160, or search results truncate them.
 
@@ -76,7 +76,7 @@ The `*UI` keys hold labels and headings; the matching plain key holds the data r
 
 One deliberate oddity: `nav.cambiarIdiomaTitulo` is the tooltip on the language button, which reads in the language you are switching *to*. So `es.js` holds the English string and `en.js` the Spanish one.
 
-**The two locale files must stay structurally identical.** A key present in one and missing in the other crashes the page that reads it as soon as the user switches language. Both files currently expose 318 key paths.
+**The two locale files must stay structurally identical.** A key present in one and missing in the other crashes the page that reads it as soon as the user switches language. Both files currently expose 323 key paths.
 
 To add another language: create `locales/xx.js` with the same structure, import it in `locales/index.js`, and add it to the `locales` object. The active language is stored in Zustand (`language`) and toggled via `setLanguage(code)`.
 

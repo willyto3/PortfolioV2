@@ -13,7 +13,7 @@ const Experiencia = () => {
     <Box sx={{ px: { xs: 1, sm: 2 }, py: { xs: '1.5rem', md: '2rem' } }}>
       <Typography
         variant='h2'
-        component='h2'
+        component='h1'
         fontWeight='bold'
         textAlign='center'
         sx={{ color: primary, mb: { xs: '1rem', md: '1.5rem' } }}

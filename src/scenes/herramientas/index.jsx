@@ -8,6 +8,7 @@ const Herramientas = () => {
 
   return (
     <Secciones
+      titulo={t.herramientasUI.titulo}
       grupos={agruparPorCategoria(t.estudios.herramientas.items)}
       Tarjeta={CardHerramientas}
       getKey={item => item.titulo}

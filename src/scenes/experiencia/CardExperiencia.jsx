@@ -111,7 +111,7 @@ const CardExperiencia = ({
         <CardContent sx={{ flex: '1 0 auto' }}>
           <Typography
             variant='h3'
-            component='h3'
+            component='h2'
             textTransform='uppercase'
             fontWeight='bold'
             fontSize='clamp(1.05rem, 2vw, 1.6rem)'

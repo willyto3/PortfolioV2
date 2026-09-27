@@ -36,11 +36,11 @@ const CardProyecto = ({ nombre, imagen, descripcion, tecnologias }) => {
       />
 
       <CardContent sx={{ flex: 1, display: 'flex', flexDirection: 'column', gap: '0.5rem' }}>
-        <Typography variant='h2' component='div' fontSize='clamp(1.2rem, 2.5vw, 2rem)' color='primary'>
+        <Typography variant='h2' component='h3' fontSize='clamp(1.2rem, 2.5vw, 2rem)' color='primary'>
           {nombre}
         </Typography>
 
-        <Typography variant='h4' fontSize='clamp(0.85rem, 1.5vw, 1.15rem)'>
+        <Typography variant='h4' component='p' fontSize='clamp(0.85rem, 1.5vw, 1.15rem)'>
           {descripcion}
         </Typography>
 

@@ -32,7 +32,7 @@ const Error404 = () => {
         {t.error404.subtitulo}
       </Typography>
 
-      <Typography variant='h4' color='text.secondary' mt='1rem' maxWidth='480px'>
+      <Typography variant='h4' component='p' color='text.secondary' mt='1rem' maxWidth='480px'>
         {t.error404.descripcion}
       </Typography>
 

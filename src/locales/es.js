@@ -22,6 +22,8 @@ export const es = {
       cerrarMenu: 'Cerrar menú',
       cambiarTema: 'Cambiar tema',
       cambiarIdioma: 'Cambiar idioma',
+      navegacion: 'Navegación principal',
+      saltarContenido: 'Saltar al contenido',
     },
     // Se muestra en el idioma al que se va a cambiar, no en el actual
     cambiarIdiomaTitulo: 'Switch to English',
@@ -212,6 +214,9 @@ export const es = {
 
   // Página de Estudios
   estudiosUI: {
+    // Encabezado de pagina. Solo lo lee el lector de pantalla: la pagina ya se
+    // presenta con los titulos rotados de cada seccion.
+    titulo: 'Formación y Estudios',
     labels: {
       tesis: 'Tesis',
       logros: 'Logros',
@@ -221,8 +226,14 @@ export const es = {
 
   // Página de Herramientas
   herramientasUI: {
+    titulo: 'Herramientas y Tecnologías',
     anio: 'año',
     anios: 'años',
+  },
+
+  // Página de Proyectos
+  proyectosUI: {
+    titulo: 'Proyectos',
   },
 
   estudios: {

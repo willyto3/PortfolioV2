@@ -26,6 +26,7 @@ const Seccion = ({ titulo, items, Tarjeta, getKey, anchoTarjeta }) => {
         >
           <Typography
             variant='h3'
+            component='h2'
             color='primary'
             sx={{
               writingMode: { xs: 'horizontal-tb', lg: 'vertical-rl' },
@@ -58,10 +59,31 @@ const Seccion = ({ titulo, items, Tarjeta, getKey, anchoTarjeta }) => {
   )
 }
 
+// Estas tres paginas no llevan encabezado visible: se presentan con los titulos
+// rotados de cada seccion. Sin un h1 el documento pasaria del h1 al h3, asi que
+// se aporta uno solo para tecnologia asistiva.
+// Ojo con las unidades: en el sistema sx de MUI `width: 1` significa 100%, no
+// un pixel, asi que aqui van cadenas explicitas.
+const soloLectorPantalla = {
+  position: 'absolute',
+  width: '1px',
+  height: '1px',
+  padding: 0,
+  margin: '-1px',
+  overflow: 'hidden',
+  clip: 'rect(0 0 0 0)',
+  clipPath: 'inset(50%)',
+  whiteSpace: 'nowrap',
+  border: 0,
+}
+
 // Layout compartido por Estudios, Herramientas y Proyectos: una lista de
 // secciones, cada una con su titulo lateral y su rejilla de tarjetas.
-const Secciones = ({ grupos, Tarjeta, getKey, anchoTarjeta = { xs: 12, lg: 5.8 } }) => (
+const Secciones = ({ titulo, grupos, Tarjeta, getKey, anchoTarjeta = { xs: 12, lg: 5.8 } }) => (
   <Paper elevation={0} sx={{ backgroundColor: 'transparent' }}>
+    <Typography variant='h2' component='h1' sx={soloLectorPantalla}>
+      {titulo}
+    </Typography>
     <Grid
       container
       mt='2rem'

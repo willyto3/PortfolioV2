@@ -54,17 +54,17 @@ const CardHerramientas = ({ titulo, imagen, parrafo, conocimiento, nivel, anios,
       </Box>
 
       <CardContent sx={{ flex: 1 }}>
-        <Typography variant='h2' component='div' fontSize='clamp(1.2rem, 2.5vw, 2rem)' color='primary'>
+        <Typography variant='h2' component='h3' fontSize='clamp(1.2rem, 2.5vw, 2rem)' color='primary'>
           {titulo}
         </Typography>
 
         {/* Nivel + anios */}
         <Box display='flex' alignItems='center' justifyContent='space-between' mt='0.4rem' mb='0.2rem'>
-          <Typography variant='h4' fontSize='clamp(0.85rem, 1.5vw, 1.25rem)'>
+          <Typography variant='h4' component='p' fontSize='clamp(0.85rem, 1.5vw, 1.25rem)'>
             {conocimiento}
           </Typography>
           {anios && (
-            <Typography variant='h4' color='text.secondary' fontSize='clamp(0.75rem, 1.2vw, 1rem)'>
+            <Typography variant='h4' component='p' color='text.secondary' fontSize='clamp(0.75rem, 1.2vw, 1rem)'>
               {anios} {anios === 1 ? t.herramientasUI.anio : t.herramientasUI.anios}
             </Typography>
           )}
@@ -86,7 +86,7 @@ const CardHerramientas = ({ titulo, imagen, parrafo, conocimiento, nivel, anios,
           />
         )}
 
-        <Typography variant='h4' fontSize='clamp(0.85rem, 1.5vw, 1.25rem)'>{parrafo}</Typography>
+        <Typography variant='h4' component='p' fontSize='clamp(0.85rem, 1.5vw, 1.25rem)'>{parrafo}</Typography>
 
         {usos?.length > 0 && (
           <List dense disablePadding sx={{ mt: '0.5rem' }}>

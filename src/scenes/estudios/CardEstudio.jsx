@@ -62,20 +62,20 @@ const CardEstudio = ({
       </Box>
 
       <CardContent sx={{ flex: 1 }}>
-        <Typography variant='h2' component='div' fontSize='clamp(1.2rem, 2.5vw, 2rem)' color='primary'>
+        <Typography variant='h2' component='h3' fontSize='clamp(1.2rem, 2.5vw, 2rem)' color='primary'>
           {estudio}
         </Typography>
-        <Typography variant='h3' fontSize='clamp(1rem, 2vw, 1.5rem)'>{grado}</Typography>
-        <Typography variant='h3' fontSize='clamp(1rem, 2vw, 1.5rem)'>{institucion}</Typography>
+        <Typography variant='h3' component='p' fontSize='clamp(1rem, 2vw, 1.5rem)'>{grado}</Typography>
+        <Typography variant='h3' component='p' fontSize='clamp(1rem, 2vw, 1.5rem)'>{institucion}</Typography>
 
         <Box display='flex' alignItems='center' gap='1rem' flexWrap='wrap' mt='0.25rem'>
-          <Typography variant='h4' color='text.secondary' fontSize='clamp(0.85rem, 1.5vw, 1.25rem)'>
+          <Typography variant='h4' component='p' color='text.secondary' fontSize='clamp(0.85rem, 1.5vw, 1.25rem)'>
             {fecha}
           </Typography>
           {duracion && (
             <Box display='flex' alignItems='center' gap='0.25rem'>
               <AccessTimeIcon sx={{ fontSize: 'clamp(0.85rem, 1.5vw, 1.1rem)', color: 'text.secondary' }} />
-              <Typography variant='h4' color='text.secondary' fontSize='clamp(0.85rem, 1.5vw, 1.25rem)'>
+              <Typography variant='h4' component='p' color='text.secondary' fontSize='clamp(0.85rem, 1.5vw, 1.25rem)'>
                 {duracion}
               </Typography>
             </Box>
@@ -83,13 +83,13 @@ const CardEstudio = ({
         </Box>
 
         {descripcion && (
-          <Typography variant='h4' fontSize='clamp(0.85rem, 1.5vw, 1.25rem)' mt='0.5rem'>
+          <Typography variant='h4' component='p' fontSize='clamp(0.85rem, 1.5vw, 1.25rem)' mt='0.5rem'>
             {descripcion}
           </Typography>
         )}
 
         {tesis && (
-          <Typography variant='h4' fontSize='clamp(0.8rem, 1.3vw, 1.1rem)' mt='0.5rem' color='text.secondary' fontStyle='italic'>
+          <Typography variant='h4' component='p' fontSize='clamp(0.8rem, 1.3vw, 1.1rem)' mt='0.5rem' color='text.secondary' fontStyle='italic'>
             <Box component='span' fontWeight='bold' fontStyle='normal'>{labels.tesis}: </Box>
             {tesis}
           </Typography>
@@ -97,7 +97,7 @@ const CardEstudio = ({
 
         {logros?.length > 0 && (
           <>
-            <Typography variant='h4' color='text.secondary' mt='0.5rem' fontSize='clamp(0.8rem, 1.3vw, 1.1rem)' fontWeight='bold'>
+            <Typography variant='h4' component='p' color='text.secondary' mt='0.5rem' fontSize='clamp(0.8rem, 1.3vw, 1.1rem)' fontWeight='bold'>
               {labels.logros}
             </Typography>
             <List dense disablePadding>

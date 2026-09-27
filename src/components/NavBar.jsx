@@ -105,7 +105,7 @@ const NavBar = () => {
 
       <Divider />
 
-      <List>
+      <List component='nav' aria-label={t.nav.aria.navegacion}>
         {t.nav.items.map(item => (
           <ListItem key={item.ruta} disablePadding>
             <ListItemButton
@@ -137,7 +137,7 @@ const NavBar = () => {
 
   return (
     <AppBar
-      component='nav'
+      component='header'
       color='inherit'
       sx={{
         position: 'sticky',
@@ -174,9 +174,11 @@ const NavBar = () => {
           <MenuIcon />
         </IconButton>
 
+        {/* El nombre no es el h1: cada pagina aporta el suyo. Si lo fuera, las
+            cinco paginas compartirian encabezado y ninguna tendria el propio. */}
         <Typography
           variant='h1'
-          component='h1'
+          component='div'
           fontWeight='bold'
           fontSize='clamp(1.5rem, 2.5vw, 3.3rem)'
           sx={{
@@ -202,6 +204,8 @@ const NavBar = () => {
         {/* //? TABS - solo desktop */}
         <Tabs
           value={value}
+          component='nav'
+          aria-label={t.nav.aria.navegacion}
           sx={{ display: { xs: 'none', sm: 'flex' } }}
         >
           {t.nav.items.map(item => (
