@@ -142,7 +142,11 @@ const NavBar = () => {
       sx={{
         position: 'sticky',
         top: 0,
-        zIndex: theme => theme.zIndex.drawer + 1,
+        // drawer + 1 es el patron de un cajon PERMANENTE bajo una barra
+        // completa. Aqui el cajon es temporal y con backdrop, asi que con ese
+        // valor la barra se colocaba sobre sus 65px superiores y ocultaba el
+        // titulo y el aspa de cerrar del propio cajon. El cajon va encima.
+        zIndex: theme => theme.zIndex.appBar,
         backgroundColor: 'background.paper',
       }}
     >
