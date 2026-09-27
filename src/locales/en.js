@@ -304,7 +304,6 @@ export const en = {
       },
     ],
     herramientas: {
-      titulo: 'Tools',
       items: [
         {
           titulo: 'Excel',
@@ -456,15 +455,13 @@ export const en = {
   contacto: {
     email: 'ing.willy.corzo@gmail.com',
     telefono: '+57 301 789 3883',
-    whatsapp: 'https://api.whatsapp.com/send?phone=573017893883&text=Me%20interesa%20Saber%20m%C3%A1s%20sobre%20tu%20Hoja%20de%20Vida',
+    whatsapp: 'https://api.whatsapp.com/send?phone=573017893883&text=I%27d%20like%20to%20know%20more%20about%20your%20r%C3%A9sum%C3%A9',
     linkedin: 'https://www.linkedin.com/in/ing-quimico-willy-corzo/',
     github: 'https://github.com/willyto3',
   },
 
   // Footer
   footer: {
-    descripcion: 'Chemical Engineer with 15 years of experience, specializing in hydrocarbons and development of digital tools for process automation.',
-    hechoCon: 'Made with love by Black Dog Solutions',
     aria: {
       telefono: 'Call phone number',
       email: 'Send email',

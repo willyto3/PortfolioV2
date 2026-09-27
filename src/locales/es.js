@@ -304,7 +304,6 @@ export const es = {
       },
     ],
     herramientas: {
-      titulo: 'Herramientas',
       items: [
         {
           titulo: 'Excel',
@@ -463,8 +462,6 @@ export const es = {
 
   // Footer
   footer: {
-    descripcion: 'Ingeniero Químico con 15 años de experiencia, especializado en Hidrocarburos y desarrollo de herramientas digitales para la automatización de procesos.',
-    hechoCon: 'Made with love by Black Dog Solutions',
     aria: {
       telefono: 'Llamar por teléfono',
       email: 'Enviar correo',
