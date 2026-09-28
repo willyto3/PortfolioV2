@@ -46,8 +46,10 @@ const Presentacion = () => {
           maxWidth: '72ch',
           mx: { xs: 'auto', lg: 0 },
           mt: '1.5rem',
-          borderLeft: { xs: 'none', lg: `4px solid ${primary}` },
-          pl: { xs: 0, lg: '1rem' },
+          // Sin regla lateral: el naranja ya marca el nombre, el divisor, el
+          // rol, el boton solido y los chips. Un sexto acento aqui no anadia
+          // jerarquia, solo competia. Sin padding la bio alinea su borde
+          // izquierdo con el rotador, los botones y los chips.
         }}
       >
         {t.home.bio.map((parrafo, i) => (
