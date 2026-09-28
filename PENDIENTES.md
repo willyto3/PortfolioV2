@@ -57,21 +57,6 @@ documentada en el código, no un fallo.
 
 ## Portada
 
-### El segundo párrafo de la bio no te distingue · **decisión tuya, es contenido**
-
-> «Me apasiona transformar procesos complejos en soluciones automatizadas y
-> eficientes. Orientado a resultados, trabajo con iniciativa, honestidad y
-> compromiso…»
-
-Lo firma cualquiera. El primer párrafo sí es específico y bueno. Un dato
-concreto rendiría mucho más: *«automaticé el balance diario de N estaciones y
-reduje el cierre mensual de X a Y»*.
-
-### Las 8 habilidades blandas repiten la bio · **decisión tuya, es contenido**
-
-«Iniciativa», «Honestidad» y «Orientado a resultados» aparecen literalmente en
-el párrafo que tienen encima.
-
 ### Esquinas de la foto · verificado · descartado por ti
 
 Se probó `border-radius: 12px` y la diferencia es imperceptible: el fondo
@@ -94,16 +79,21 @@ quiera verificar Applus+ o Frontera Energy tiene que salir a buscarlo.
 
 ## Estudios
 
-### El botón «Ver certificado» nunca aparece · verificado · **decisión pendiente**
-
-El campo `certificado` es `undefined` en tres tarjetas y `null` en las otras
-dos, así que la rama `{certificado && …}` de `CardEstudio` **no se ejecuta
-jamás** y la clave `estudiosUI.labels.verCertificado` está viva solo en el
-código. O se añaden los enlaces a los certificados, o se retira el bloque.
-
 ---
 
 ## Herramientas
+
+### Faltan Python y Power BI en la lista · verificado · **decisión pendiente**
+
+La página lista ocho herramientas: Excel, HTML, CSS, JavaScript, React, Git Hub,
+Word y SQL. **Python y Power BI no están**, pese a que los declaras en tres
+sitios: el rol «Desarrollador en Power BI» de la portada, las actividades de
+Ecopetrol («usando Python, SQL, Power BI y Power Automate») y el proyecto
+Tablero Escenarios Refinados.
+
+Desde que los chips de la portada los muestran, el hueco se nota más: alguien
+que los vea ahí y pulse «Herramientas» no los encuentra. O se añaden con su
+nivel y sus años, o se quitan de los chips.
 
 ### Los niveles no explican su escala · verificado · **decisión pendiente**
 
@@ -116,16 +106,24 @@ procesador de textos.
 
 ## Proyectos
 
-### Los proyectos no tienen enlace ni captura · verificado · **decisión pendiente**
+### El botón «Ver proyecto» está publicado pero dormido · **esperando tus URLs**
 
-Es la carencia más seria de esta página. Los tres registros solo tienen
-`nombre`, `imagen`, `descripcion`, `tecnologias` y `categoria`: **ningún campo
-de URL**. «Sin Mediatas» se describe como plataforma web y no hay dónde verla.
+`CardProyecto` ya acepta un campo `url` opcional y pinta el botón cuando existe
+(commit `16b9bd9`, verificado con una URL de prueba). **Ningún registro tiene
+`url` todavía**, así que hoy no se pinta en ninguna tarjeta: es la misma forma
+que la rama de certificados que se retiró en `978df5a`.
 
-Y las tres «imágenes» son logos genéricos reutilizados de otras páginas
-—`sinmediatas.png` sale también en Experiencia, `excel.png` en Herramientas—,
-no capturas del trabajo. Una página de proyectos sin capturas ni enlaces pide
-confianza sin dar nada que mirar.
+Hace falta una URL pública por proyecto —repositorio, demo o incluso un
+artículo—: Sin Mediatas, Programador Digital Prodigio, Tablero Escenarios
+Refinados. Los que sean internos y no tengan nada público se quedan sin botón,
+que para eso el campo es opcional. **Si ninguno llega a tener URL, lo honesto
+es revertir `16b9bd9`.**
+
+### Las imágenes de los proyectos no son capturas · verificado · **decisión pendiente**
+
+Las tres son logos genéricos reutilizados de otras páginas: `sinmediatas.png`
+sale también en Experiencia y `excel.png` en Herramientas. Una página de
+proyectos sin capturas del trabajo pide confianza sin dar nada que mirar.
 
 ### Solo tres proyectos, y el tercero queda suelto · verificado · observación
 
