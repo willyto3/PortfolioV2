@@ -161,7 +161,7 @@ const NavBar = () => {
           onClose={handleDrawerToggle}
           ModalProps={{ keepMounted: true }}
           sx={{
-            display: { xs: 'block', sm: 'none' },
+            display: { xs: 'block', lg: 'none' },
             '& .MuiDrawer-paper': {
               boxSizing: 'border-box',
               width: drawerWidth,
@@ -176,7 +176,7 @@ const NavBar = () => {
           aria-label={t.nav.aria.abrirMenu}
           edge='start'
           onClick={handleDrawerToggle}
-          sx={{ display: { xs: 'flex', sm: 'none' }, color: dark }}
+          sx={{ display: { xs: 'flex', lg: 'none' }, color: dark }}
         >
           <MenuIcon />
         </IconButton>
@@ -191,7 +191,7 @@ const NavBar = () => {
           sx={{
             flexGrow: 1,
             lineHeight: 1.2,
-            textAlign: { xs: 'center', sm: 'left' },
+            textAlign: { xs: 'center', lg: 'left' },
             m: 0,
           }}
         >
@@ -209,11 +209,15 @@ const NavBar = () => {
         </Typography>
 
         {/* //? TABS - solo desktop */}
+        {/* Las cinco pestañas suman 533px y MuiTabs recorta en silencio lo
+            que no cabe: a 900px se perdia Proyectos y a 700px tambien
+            Herramientas. Solo entran a partir de lg, donde caben las cinco;
+            por debajo manda el cajon, que las lista todas. */}
         <Tabs
           value={value}
           component='nav'
           aria-label={t.nav.aria.navegacion}
-          sx={{ display: { xs: 'none', sm: 'flex' } }}
+          sx={{ display: { xs: 'none', lg: 'flex' } }}
         >
           {t.nav.items.map(item => (
             <Tab
