@@ -1,5 +1,5 @@
 // Importacion de React Router Dom
-import { createBrowserRouter } from 'react-router-dom'
+import { createHashRouter } from 'react-router-dom'
 import { lazy } from 'react'
 
 // Importacion de Paginas
@@ -18,11 +18,16 @@ const Proyectos = lazy(() => import('../scenes/proyectos'))
 
 // Funcion Router
 //
-// Router de rutas reales (no hash): cada pagina es una URL propia e indexable.
-// Exige que el host reescriba cualquier ruta a /index.html; en Render es una
-// regla de tipo Rewrite con Source /* y Destination /index.html. Sin esa regla
-// todo lo que no sea / devuelve 404 al recargar o al entrar por enlace directo.
-export const router = createBrowserRouter([
+// Router de hash. Se volvio a el porque Render servia 404 en /experiencia y las
+// otras tres al recargar o al entrar por enlace directo: las rutas reales
+// exigen una regla de rewrite en el host que no estaba puesta.
+//
+// Para recuperar las URLs indexables hay que, EN ESTE ORDEN:
+//   1. crear en Render la regla Rewrite: Source /* -> Destination /index.html
+//   2. volver al router de navegador
+//   3. devolver al sitemap las cuatro rutas y el canonical por ruta
+//   4. reponer en index.html el puente de enlaces /#/ruta -> /ruta
+export const router = createHashRouter([
   {
     path: '/',
     element: <LayoutPublic />,

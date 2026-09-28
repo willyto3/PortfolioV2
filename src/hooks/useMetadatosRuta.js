@@ -50,7 +50,14 @@ export const useMetadatosRuta = () => {
 
     // Una ruta inexistente no debe competir por indexacion ni declararse
     // canonica de si misma, pero sus enlaces si merecen seguirse.
-    const url = conocida ? `${ORIGEN}${pathname === '/' ? '/' : pathname}` : null
+    // Con router de hash la unica direccion indexable es la raiz: /#/experiencia
+    // no es una URL propia para un rastreador. El canonical apunta siempre ahi,
+    // mientras que og:url lleva el enlace real para que al compartir se abra la
+    // pagina correcta. Al volver a rutas reales, canonical = ORIGEN + pathname.
+    const url = conocida ? `${ORIGEN}/` : null
+    const urlParaCompartir = conocida
+      ? `${ORIGEN}/${pathname === '/' ? '' : '#' + pathname}`
+      : null
 
     document.documentElement.lang = language
     document.title = meta.titulo
@@ -64,7 +71,7 @@ export const useMetadatosRuta = () => {
     fijarMeta('meta[name="twitter:title"]', meta.titulo)
     fijarMeta('meta[name="twitter:description"]', meta.descripcion)
 
-    if (url) fijarMeta('meta[property="og:url"]', url)
+    if (urlParaCompartir) fijarMeta('meta[property="og:url"]', urlParaCompartir)
 
     if (url) canonicalNode().setAttribute('href', url)
     else document.head.querySelector('link[rel="canonical"]')?.remove()

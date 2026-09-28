@@ -112,14 +112,12 @@ test('el nivel de cada herramienta esta entre 0 y 100', () => {
   }
 })
 
-// El sitemap solo sirve de algo si cubre las rutas reales; se quedo corto
-// durante toda la etapa del router de hash.
-test('el sitemap cubre exactamente las rutas del menu', () => {
+// Con router de hash la unica URL indexable es la raiz. Si algun dia se vuelve
+// a rutas reales, este test debe exigir las cinco y el sitemap crecer con ellas.
+test('el sitemap declara solo la raiz mientras el router sea de hash', () => {
   const xml = fs.readFileSync(new URL('../public/sitemap.xml', import.meta.url), 'utf8')
-  const enElSitemap = [...xml.matchAll(/<loc>https:\/\/www\.willycorzo\.com(\/[^<]*)?<\/loc>/g)]
-    .map(m => (m[1] || '/').replace(/\/$/, '') || '/')
-  const esperadas = es.nav.items.map(i => i.ruta)
-  assert.deepEqual([...enElSitemap].sort(), [...esperadas].sort())
+  const enElSitemap = [...xml.matchAll(/<loc>([^<]*)<\/loc>/g)].map(m => m[1])
+  assert.deepEqual(enElSitemap, ['https://www.willycorzo.com/'])
 })
 
 // El enlace de WhatsApp lleva un mensaje precargado: si no se traduce, un
