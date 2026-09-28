@@ -1,10 +1,18 @@
 import {create} from 'zustand'
 import { persist } from 'zustand/middleware'
 
+// Solo cuenta en la primera visita: en cuanto hay algo en localStorage, manda
+// lo guardado. Antes se forzaba 'dark' a todo el mundo, ignorando que el
+// sistema operativo ya expresa esta preferencia.
+const temaDelSistema = () => {
+  if (typeof window === 'undefined' || !window.matchMedia) return 'dark'
+  return window.matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark'
+}
+
 export const useCVStore = create(
   persist(
     set => ({
-      mode: 'dark',
+      mode: temaDelSistema(),
       setMode: () =>
         set(state => ({ mode: state.mode === 'dark' ? 'light' : 'dark' })),
       language: 'es',
