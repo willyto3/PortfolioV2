@@ -242,6 +242,9 @@ export const en = {
 
   // Projects Page
   proyectosUI: {
+    verProyecto: 'View project',
+    // The link opens in a new tab; announced in the accessible name.
+    verProyectoAria: 'View the project (opens in a new tab)',
     titulo: 'Projects',
   },
 

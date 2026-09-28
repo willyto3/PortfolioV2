@@ -1,12 +1,16 @@
+import Button from '@mui/material/Button'
 import Card from '@mui/material/Card'
 import CardContent from '@mui/material/CardContent'
 import CardMedia from '@mui/material/CardMedia'
 import Chip from '@mui/material/Chip'
 import Box from '@mui/material/Box'
+import OpenInNewIcon from '@mui/icons-material/OpenInNew'
 import Typography from '@mui/material/Typography'
 import { useTheme } from '@mui/material'
+import { useT } from '../../locales/useT'
 
-const CardProyecto = ({ nombre, imagen, descripcion, tecnologias }) => {
+const CardProyecto = ({ nombre, imagen, descripcion, tecnologias, url }) => {
+  const t = useT()
   const theme = useTheme()
   const primary = theme.palette.primary.main
 
@@ -45,6 +49,23 @@ const CardProyecto = ({ nombre, imagen, descripcion, tecnologias }) => {
         <Typography variant='h4' component='p' fontSize='clamp(0.85rem, 1.5vw, 1.15rem)'>
           {descripcion}
         </Typography>
+
+        {url && (
+          <Button
+            variant='outlined'
+            size='small'
+            endIcon={<OpenInNewIcon />}
+            href={url}
+            target='_blank'
+            rel='noopener noreferrer'
+            aria-label={`${t.proyectosUI.verProyectoAria}: ${nombre}`}
+            // MUI dibuja el borde del outlined al 50% de alfa, por debajo del
+            // 3:1 que WCAG 1.4.11 pide al limite de un control.
+            sx={{ mt: '0.5rem', alignSelf: 'flex-start', borderColor: primary }}
+          >
+            {t.proyectosUI.verProyecto}
+          </Button>
+        )}
 
         {tecnologias?.length > 0 && (
           <Box display='flex' flexWrap='wrap' gap='0.4rem' mt='auto' pt='0.5rem'>

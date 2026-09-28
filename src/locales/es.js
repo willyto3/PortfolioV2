@@ -242,6 +242,9 @@ export const es = {
 
   // Página de Proyectos
   proyectosUI: {
+    verProyecto: 'Ver proyecto',
+    // El enlace abre en otra pestaña; se avisa en el nombre accesible.
+    verProyectoAria: 'Ver el proyecto (se abre en otra pestaña)',
     titulo: 'Proyectos',
   },
 
