@@ -79,7 +79,7 @@ export const es = {
     ],
     bio: [
       'Ingeniero Químico con maestría en Gerencia de Proyectos y más de 15 años de experiencia en el sector de Hidrocarburos, especializado en Transferencia en Custodia, Medición y Análisis.',
-      'Me apasiona transformar procesos complejos en soluciones automatizadas y eficientes. Orientado a resultados, trabajo con iniciativa, honestidad y compromiso, adaptándome con facilidad a nuevos retos y entornos.',
+      'He desarrollado las herramientas que mi propio trabajo necesitaba: Balance y LabCal en SGS, Analito en OTI, y los cinco módulos del Programador Digital Prodigio en Ecopetrol. Automatizo desde el problema, no desde la tecnología.',
     ],
     cta: {
       experiencia: 'Ver experiencia',

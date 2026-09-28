@@ -79,7 +79,7 @@ export const en = {
     ],
     bio: [
       "Chemical Engineer with a Master's degree in Project Management and over 15 years of experience in the Hydrocarbons sector, specializing in Custody Transfer, Measurement, and Analysis.",
-      'I am passionate about transforming complex processes into automated and efficient solutions. Results-oriented, I work with initiative, honesty, and commitment, easily adapting to new challenges and environments.',
+      'I built the tools my own work needed: Balance and LabCal at SGS, Analito at OTI, and the five modules of the Programador Digital Prodigio at Ecopetrol. I automate from the problem, not from the technology.',
     ],
     cta: {
       experiencia: 'View experience',
