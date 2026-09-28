@@ -79,7 +79,7 @@ export const en = {
     ],
     bio: [
       "Chemical Engineer with a Master's degree in Project Management and over 15 years of experience in the Hydrocarbons sector, specializing in Custody Transfer, Measurement, and Analysis.",
-      'I built the tools my own work needed: Balance and LabCal at SGS, Analito at OTI, and the five modules of the Programador Digital Prodigio at Ecopetrol. I automate from the problem, not from the technology.',
+      'I built the tools my own work needed: calculation and balance programs for laboratory and inspection work, and control dashboards for operational and management follow-up. I automate from the problem, not from the technology.',
     ],
     cta: {
       experiencia: 'View experience',
