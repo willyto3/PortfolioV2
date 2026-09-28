@@ -13,11 +13,11 @@ import ListItemText from '@mui/material/ListItemText'
 import MenuIcon from '@mui/icons-material/Menu'
 import Toolbar from '@mui/material/Toolbar'
 import Typography from '@mui/material/Typography'
-import { Tab, Tabs, useTheme } from '@mui/material'
+import { useTheme } from '@mui/material'
 
 import { useState } from 'react'
 
-import { Link as RouterLink, useNavigate, useLocation } from 'react-router-dom'
+import { Link as RouterLink, useLocation } from 'react-router-dom'
 
 import BanderaIcono from './BanderaIcono'
 import { useCVStore } from '../store/store'
@@ -36,16 +36,11 @@ const NavBar = () => {
     setMobileOpen(prevState => !prevState)
   }
 
-  const navigate = useNavigate()
   const location = useLocation()
   const theme = useTheme()
   const dark = theme.palette.neutral.dark
   const principal = theme.palette.primary.main
   const isDark = theme.palette.mode === 'dark'
-
-  const routeToIndex = Object.fromEntries(t.nav.items.map((item, i) => [item.ruta, i]))
-  // false = ninguna pestaña marcada, para rutas que no estan en el menu (404)
-  const value = routeToIndex[location.pathname] ?? false
 
   const langButton = (
     <IconButton
@@ -112,8 +107,11 @@ const NavBar = () => {
         {t.nav.items.map(item => (
           <ListItem key={item.ruta} disablePadding>
             <ListItemButton
+              component={RouterLink}
+              to={item.ruta}
+              aria-current={location.pathname === item.ruta ? 'page' : undefined}
               sx={{ textAlign: 'center' }}
-              onClick={() => { navigate(item.ruta); setMobileOpen(false) }}
+              onClick={() => setMobileOpen(false)}
             >
               <ListItemText>
                 <Typography
@@ -208,33 +206,47 @@ const NavBar = () => {
           </Box>
         </Typography>
 
-        {/* //? TABS - solo desktop */}
-        {/* Las cinco pestañas suman 533px y MuiTabs recorta en silencio lo
-            que no cabe: a 900px se perdia Proyectos y a 700px tambien
-            Herramientas. Solo entran a partir de lg, donde caben las cinco;
-            por debajo manda el cajon, que las lista todas. */}
-        <Tabs
-          value={value}
+        {/* //? NAVEGACION - solo desktop */}
+        {/* Enlaces reales, no Tabs. role=tab anuncia un panel que aqui no
+            existe, y su roving tabindex dejaba solo la pestaña activa
+            alcanzable con el tabulador. Ademas un <button> sin href no se
+            puede abrir en otra pestaña ni lo ve un rastreador.
+            Las cinco suman 533px, asi que solo entran a partir de lg; por
+            debajo manda el cajon, que las lista todas. */}
+        <Box
           component='nav'
           aria-label={t.nav.aria.navegacion}
-          sx={{ display: { xs: 'none', lg: 'flex' } }}
+          sx={{ display: { xs: 'none', lg: 'flex' }, alignSelf: 'stretch' }}
         >
-          {t.nav.items.map(item => (
-            <Tab
-              label={item.label}
-              key={item.ruta}
-              onClick={() => navigate(item.ruta)}
-              sx={{
-                height: 65,
-                color: dark,
-                fontSize: 'clamp(0.875rem, 1vw, 1rem)',
-                textTransform: 'capitalize',
-                flexGrow: 1,
-                '&:hover': { color: principal },
-              }}
-            />
-          ))}
-        </Tabs>
+          {t.nav.items.map(item => {
+            const activo = location.pathname === item.ruta
+            return (
+              <Box
+                key={item.ruta}
+                component={RouterLink}
+                to={item.ruta}
+                aria-current={activo ? 'page' : undefined}
+                sx={{
+                  display: 'flex',
+                  alignItems: 'center',
+                  px: 2,
+                  color: activo ? principal : dark,
+                  fontSize: 'clamp(0.875rem, 1vw, 1rem)',
+                  textTransform: 'capitalize',
+                  textDecoration: 'none',
+                  whiteSpace: 'nowrap',
+                  // el subrayado marca la ruta actual; transparente para que
+                  // el alto no cambie al pasar de una a otra
+                  borderBottom: '2px solid',
+                  borderBottomColor: activo ? principal : 'transparent',
+                  '&:hover': { color: principal },
+                }}
+              >
+                {item.label}
+              </Box>
+            )
+          })}
+        </Box>
 
         {/* //? SELECTOR DE IDIOMA + BOTON TEMA */}
         <Box display='flex' alignItems='center'>
