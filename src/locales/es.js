@@ -60,7 +60,7 @@ export const es = {
     '/proyectos': {
       titulo: 'Proyectos | Willy Corzo',
       descripcion:
-        'Desarrollo web y automatización: plataforma de gestión de inspecciones de hidrocarburos, herramienta Excel-VBA de cinco módulos y tablero de escenarios de refinación.',
+        'Desarrollo web y automatización: plataforma de inspecciones de hidrocarburos, herramienta Excel-VBA de cinco módulos y tablero de escenarios de refinación.',
     },
   },
 
