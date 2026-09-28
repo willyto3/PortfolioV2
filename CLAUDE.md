@@ -20,7 +20,7 @@ No test script is configured.
 
 ## Architecture
 
-**Stack:** React 19, MUI v7, React Router v7 (browser/history), Zustand v5, Vite 8.
+**Stack:** React 19, MUI v7, React Router v7 (hash), Zustand v5, Vite 8.
 
 **Entry flow:** `main.jsx` → `RouterProvider` → `LayoutPublic` (wraps every page with NavBar + Footer + MUI ThemeProvider + a `Suspense` boundary) → page-level scene component via `<Outlet>`.
 
@@ -35,7 +35,7 @@ Home and `LayoutPublic` ship in the initial bundle; the other four scenes are `R
   - `BanderaIcono.jsx` — the two inline SVG flags used by the language toggle.
 - `src/hooks/useMetadatosRuta.js` — per-route document head (title, description, canonical, `og:*`, `robots`) plus `<html lang>`.
 - `src/layout/LayoutPublic.jsx` — Theme provider setup, global layout.
-- `src/router/index.jsx` — `createBrowserRouter` with `LayoutPublic` as parent and scenes as children; the four non-home scenes are `React.lazy`.
+- `src/router/index.jsx` — `createHashRouter` with `LayoutPublic` as parent and scenes as children; the four non-home scenes are `React.lazy`.
 - `src/store/store.js` — Zustand store with `persist`; manages `mode` (dark/light) and `language` (`es`/`en`), saved to localStorage under key `'cv'`. Note `setMode` is a toggle and ignores any argument.
 - `src/theme.js` — MUI theme factory. Primary color is orange (`#FF9800`). Exports `themeSettings(mode)` used in `LayoutPublic` with `useMemo`.
 - `src/locales/` — i18n source of truth (see below).
@@ -101,17 +101,23 @@ Proyectos deliberately wraps at `md` while the other two wrap at `lg`, which is 
 
 ### Routing
 
-Browser router — real paths, so every page is its own crawlable URL. Routes: `/`, `/experiencia`, `/estudios`, `/herramientas`, `/proyectos`, and a wildcard `*` for 404. Deploys to Render as a static site at domain root, no `base` path needed in Vite.
+Hash router — routes live under `/#/…`, so no server configuration is needed. Routes: `/`, `/experiencia`, `/estudios`, `/herramientas`, `/proyectos`, and a wildcard `*` for 404. Deploys to Render as a static site at domain root, no `base` path needed in Vite.
 
-> **This requires a rewrite rule on the host.** In Render: Redirects/Rewrites →
-> Source `/*`, Destination `/index.html`, Action `Rewrite`. Without it every
-> path except `/` 404s on reload or direct link. A `render.yaml` would *not*
-> cover this: its `routes:` key only applies to services linked to a Blueprint,
-> and this site was created manually in the dashboard.
+> **It was a browser router for a while and that broke production.** Real paths
+> need a rewrite rule on the host — in Render: Redirects/Rewrites → Source `/*`,
+> Destination `/index.html`, Action `Rewrite` — and it was never created, so
+> every path except `/` served a bare Render 404 on reload or direct entry.
+> Reverted in `d9dc4b8`. `vite preview` hides this: it has an SPA fallback that
+> Render does not, so the same URL is 200 locally and 404 in production.
+>
+> To go back to real paths, in this order: create the Render rule, switch to
+> `createBrowserRouter`, restore the four routes in `sitemap.xml` and the
+> per-route canonical in `useMetadatosRuta`, and re-add the `/#/ruta` bridge in
+> `index.html`. A `render.yaml` would *not* cover the rule: its `routes:` key
+> only applies to services linked to a Blueprint, and this site was created
+> manually in the dashboard.
 
-`index.html` carries a small inline script that rewrites legacy `/#/ruta` links (still live in LinkedIn and Google's index from the hash-router era) to the real path before the app boots.
-
-Because all five routes share one `index.html`, per-route `<title>`, `<meta name="description">`, `canonical` and `og:*` are set at runtime by `hooks/useMetadatosRuta.js`, reading from the `seo` key of the active locale. That hook also keeps `<html lang>` in sync with the language toggle. **A new route needs an entry in `seo` in both locale files and a `<url>` in `public/sitemap.xml`**, or it will inherit a 404's `noindex`.
+Per-route `<title>`, `<meta name="description">` and `og:*` are still set at runtime by `hooks/useMetadatosRuta.js`, reading from the `seo` key of the active locale, and that hook also keeps `<html lang>` in sync with the language toggle. Under hash routing the `canonical` always points at the root, since `/#/experiencia` is not a separate address for a crawler, while `og:url` carries the real hash link so sharing opens the right page. **A new route needs an entry in `seo` in both locale files**, or it will inherit a 404's `noindex`.
 
 `Error404` is used both as the wildcard route and as the root `errorElement`, so a render error anywhere in the tree falls through to it.
 

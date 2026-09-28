@@ -9,13 +9,26 @@ decisión tuya antes de tocarlo.
 
 ---
 
-## Antes de desplegar
+## Para recuperar las URLs indexables
 
-- [ ] **Regla de rewrite en Render.** Redirects/Rewrites → Source `/*`,
-      Destination `/index.html`, Action **Rewrite**. Sin ella, las cuatro rutas
-      que no son `/` devuelven 404 al recargar o al entrar por enlace directo.
-      Un `render.yaml` **no** sirve: su clave `routes:` solo aplica a servicios
-      vinculados a un Blueprint, y este sitio se creó a mano.
+El sitio volvió al router de hash en `d9dc4b8` porque las rutas reales servían
+404 en producción. Recuperarlas exige estos cuatro pasos **en orden**:
+
+- [ ] **1. Crear la regla en Render.** Redirects/Rewrites → Source `/*`,
+      Destination `/index.html`, Action **Rewrite**. Un `render.yaml` no sirve:
+      su clave `routes:` solo aplica a servicios vinculados a un Blueprint, y
+      este sitio se creó a mano.
+- [ ] **2. Comprobar que la regla funciona** pidiendo `/experiencia` en
+      producción: debe devolver 200, no 404.
+- [ ] **3. Volver a `createBrowserRouter`**, devolver las cuatro rutas al
+      `sitemap.xml` con su test, y restaurar el canonical por ruta en
+      `useMetadatosRuta`.
+- [ ] **4. Reponer en `index.html`** el puente que traduce `/#/ruta` a `/ruta`,
+      para los enlaces antiguos que sigan circulando.
+
+> Cuidado al verificar: `vite preview` tiene fallback SPA y Render no. La misma
+> URL da 200 en local y 404 en producción, así que el paso 2 **tiene que**
+> hacerse contra el sitio real.
 
 - [ ] **Probar la barra por debajo de 1200px en un dispositivo real.** El
       cambio del punto de corte a `lg` (commit `aa8a051`) se publicó sin poder
