@@ -88,15 +88,18 @@ export const es = {
       // nombre accesible para que no sorprenda a quien usa lector de pantalla.
       contactarAria: 'Contactar por WhatsApp (se abre en otra pestaña)',
     },
-    habilidadesBlandas: [
+    // Cuatro tecnicas y cuatro blandas. Las blandas que faltan -Trabajo en
+    // equipo, Orientado a resultados, Iniciativa, Honestidad- se cayeron
+    // porque el parrafo de arriba ya las decia con esas mismas palabras.
+    habilidades: [
+      'Python',
+      'SQL',
+      'Power BI',
+      'Excel-VBA',
       'Liderazgo',
-      'Trabajo en equipo',
       'Comunicación efectiva',
-      'Orientado a resultados',
       'Pensamiento crítico',
       'Adaptabilidad',
-      'Iniciativa',
-      'Honestidad',
     ],
   },
 

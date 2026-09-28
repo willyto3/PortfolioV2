@@ -88,15 +88,18 @@ export const en = {
       // accessible name so it does not surprise screen reader users.
       contactarAria: 'Get in touch on WhatsApp (opens in a new tab)',
     },
-    habilidadesBlandas: [
+    // Four technical and four soft. The soft ones that are gone - Teamwork,
+    // Results-Oriented, Initiative, Integrity - were dropped because the
+    // paragraph above already used those very words.
+    habilidades: [
+      'Python',
+      'SQL',
+      'Power BI',
+      'Excel-VBA',
       'Leadership',
-      'Teamwork',
       'Effective Communication',
-      'Results-Oriented',
       'Critical Thinking',
       'Adaptability',
-      'Initiative',
-      'Integrity',
     ],
   },
 

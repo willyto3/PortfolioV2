@@ -110,7 +110,7 @@ const Presentacion = () => {
         mt='1.5rem'
         justifyContent={{ xs: 'center', lg: 'flex-start' }}
       >
-        {t.home.habilidadesBlandas.map(habilidad => (
+        {t.home.habilidades.map(habilidad => (
           <Chip
             key={habilidad}
             label={habilidad}
