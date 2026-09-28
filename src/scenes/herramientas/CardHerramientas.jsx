@@ -50,7 +50,8 @@ const CardHerramientas = ({ titulo, imagen, parrafo, conocimiento, nivel, anios,
           image={imagen}
           component='img'
           alt={titulo}
-          title={titulo}
+          // sin title: duplicaba el alt en un tooltip nativo que ademas
+          // no existe en tactil
           loading='lazy'
         />
       </Box>

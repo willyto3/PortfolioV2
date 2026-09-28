@@ -58,7 +58,8 @@ const CardEstudio = ({
           image={fondo}
           component='img'
           alt={institucion}
-          title={institucion}
+          // sin title: duplicaba el alt en un tooltip nativo que ademas
+          // no existe en tactil
           loading='lazy'
         />
       </Box>
