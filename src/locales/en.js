@@ -230,7 +230,6 @@ export const en = {
     labels: {
       tesis: 'Thesis',
       logros: 'Achievements',
-      verCertificado: 'View certificate',
     },
   },
 
@@ -298,7 +297,6 @@ export const en = {
         descripcion: 'Training program in frontend web development with emphasis on modern web technologies and version control.',
         habilidades: ['HTML', 'CSS', 'JavaScript', 'Git', 'React'],
         duracion: '120 hours',
-        certificado: null,
       },
       {
         institucion: 'Servicio Nacional de Aprendizaje - SENA',
@@ -310,7 +308,6 @@ export const en = {
         descripcion: 'Training in advanced Microsoft Excel usage, from data management and functions to automation with macros and VBA programming.',
         habilidades: ['Advanced Formulas', 'Pivot Tables', 'Macros', 'VBA', 'Power Query'],
         duracion: '40 hours',
-        certificado: null,
       },
     ],
     herramientas: {

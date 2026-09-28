@@ -1,5 +1,4 @@
 import Box from '@mui/material/Box'
-import Button from '@mui/material/Button'
 import Card from '@mui/material/Card'
 import CardContent from '@mui/material/CardContent'
 import CardMedia from '@mui/material/CardMedia'
@@ -10,14 +9,13 @@ import ListItemText from '@mui/material/ListItemText'
 import Typography from '@mui/material/Typography'
 import AccessTimeIcon from '@mui/icons-material/AccessTime'
 import FiberManualRecordIcon from '@mui/icons-material/FiberManualRecord'
-import OpenInNewIcon from '@mui/icons-material/OpenInNew'
 import { useTheme } from '@mui/material'
 import { useT } from '../../locales/useT'
 
 const CardEstudio = ({
   institucion, estudio, fecha, fondo, grado,
   descripcion, tesis, logros,
-  habilidades, duracion, certificado,
+  habilidades, duracion,
 }) => {
   const t = useT()
   const theme = useTheme()
@@ -136,19 +134,6 @@ const CardEstudio = ({
           </Box>
         )}
 
-        {certificado && (
-          <Button
-            variant='outlined'
-            size='small'
-            endIcon={<OpenInNewIcon />}
-            href={certificado}
-            target='_blank'
-            rel='noopener noreferrer'
-            sx={{ mt: '0.75rem', fontSize: 'clamp(0.75rem, 1.2vw, 0.9rem)' }}
-          >
-            {labels.verCertificado}
-          </Button>
-        )}
       </CardContent>
     </Card>
   )

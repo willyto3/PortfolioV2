@@ -230,7 +230,6 @@ export const es = {
     labels: {
       tesis: 'Tesis',
       logros: 'Logros',
-      verCertificado: 'Ver certificado',
     },
   },
 
@@ -298,7 +297,6 @@ export const es = {
         descripcion: 'Programa de formación en desarrollo web frontend con énfasis en las tecnologías fundamentales de la web moderna y control de versiones.',
         habilidades: ['HTML', 'CSS', 'JavaScript', 'Git', 'React'],
         duracion: '120 horas',
-        certificado: null,
       },
       {
         institucion: 'Servicio Nacional de Aprendizaje - SENA',
@@ -310,7 +308,6 @@ export const es = {
         descripcion: 'Formación en el uso avanzado de Microsoft Excel, desde gestión de datos y funciones hasta automatización con macros y programación en VBA.',
         habilidades: ['Fórmulas avanzadas', 'Tablas dinámicas', 'Macros', 'VBA', 'Power Query'],
         duracion: '40 horas',
-        certificado: null,
       },
     ],
     herramientas: {
