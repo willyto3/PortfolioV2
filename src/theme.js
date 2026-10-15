@@ -15,34 +15,34 @@ export const colorTokens = {
     900: '#0A0A0A',
     1000: '#000000',
   },
+  // Azul del CV maestro (#1F4E79), para que portafolio y hoja de vida se
+  // lean como una sola marca.
   primary: {
-    50: '#FFF3E0',
-    100: '#FFE0B2',
-    200: '#FFCC80',
-    300: '#FFB74D',
-    400: '#FFA726',
-    500: '#FF9800',
-    600: '#FB8C00',
-    700: '#F57C00',
-    800: '#E65100',
-    900: '#BF360C',
+    50: '#E8F0F8',
+    100: '#BFD9F2',
+    200: '#8AB8E6',
+    300: '#5E95CC',
+    400: '#3A73AA',
+    500: '#1F4E79',
+    600: '#163A5A',
   },
 }
 
-// El naranja de marca (#FF9800) solo alcanza 2.06:1 sobre el fondo claro,
-// muy por debajo del 4.5:1 que exige WCAG AA. Sobre fondo oscuro da 8.23:1,
-// asi que el acento se define por modo en vez de compartir un unico valor.
-const NARANJA_SOBRE_CLARO = '#C2410C' // 5.18:1 sobre #FFFFFF
+// El azul del CV (#1F4E79) da 8.66:1 sobre blanco pero se hunde sobre la
+// tarjeta oscura, asi que el acento se define por modo: en oscuro se usa un
+// azul claro de la misma familia (#8AB8E6, 7.05:1 sobre #1F2937).
+const AZUL_SOBRE_CLARO = '#1F4E79' // 8.66:1 sobre #FFFFFF
+const AZUL_SOBRE_OSCURO = '#8AB8E6' // 7.05:1 sobre #1F2937
 
-// MUI usa primary.dark para el hover de los botones contained. Con el acento
-// en #C2410C, el antiguo primary[700] (#F57C00) era mas CLARO que main: el
-// boton se aclaraba al pasar el raton y caia a 2.70:1.
-const NARANJA_HOVER_CLARO = '#9A3412' // 7.31:1 sobre #FFFFFF
+// MUI usa primary.dark para el hover de los botones contained: tiene que
+// alejarse del fondo, no acercarse. En claro oscurece, en oscuro aclara.
+const AZUL_HOVER_CLARO = '#163A5A' // 11.75:1 sobre #FFFFFF
+const AZUL_HOVER_OSCURO = '#BFD9F2' // 10.08:1 sobre #1F2937
 
 // Fondo tenue para chips y pistas de progreso en modo oscuro: 15% de
-// #FF9800 mezclado sobre background.paper. Sustituye a primary[800], que
-// dejaba el texto del chip en 1.76:1.
-const NARANJA_TENUE_OSCURO = '#413A2F'
+// #8AB8E6 mezclado sobre background.paper. El texto del chip (primary[100])
+// queda a 7.48:1 sobre el.
+const AZUL_TENUE_OSCURO = '#2F3E51'
 
 // La tarjeta y la barra rellena solo distan 6.81:1, asi que ninguna pista de
 // color plano puede estar a 3:1 de ambas a la vez. Se prioriza que la barra
@@ -73,11 +73,11 @@ export const themeSettings = mode => {
         ? {
             // palette values for dark mode
             primary: {
-              dark: colorTokens.primary[200],
-              main: colorTokens.primary[500],
-              light: colorTokens.primary[800],
-              soft: NARANJA_TENUE_OSCURO,
-              onSoft: colorTokens.primary[300],
+              dark: AZUL_HOVER_OSCURO,
+              main: AZUL_SOBRE_OSCURO,
+              light: colorTokens.primary[500],
+              soft: AZUL_TENUE_OSCURO,
+              onSoft: colorTokens.primary[100],
               softBorder: BORDE_TENUE_OSCURO,
             },
             neutral: {
@@ -98,11 +98,11 @@ export const themeSettings = mode => {
         : {
             // palette values for light mode
             primary: {
-              dark: NARANJA_HOVER_CLARO,
-              main: NARANJA_SOBRE_CLARO,
+              dark: AZUL_HOVER_CLARO,
+              main: AZUL_SOBRE_CLARO,
               light: colorTokens.primary[50],
               soft: colorTokens.primary[50],
-              onSoft: NARANJA_SOBRE_CLARO,
+              onSoft: AZUL_SOBRE_CLARO,
               softBorder: BORDE_TENUE_CLARO,
             },
             neutral: {
