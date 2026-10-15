@@ -132,7 +132,7 @@ export const es = {
       ],
     },
     {
-      image: 'copco.jpg',
+      imageLight: 'Copco.W.png',
       alt: 'Imagen Corporativa Copco - Profesional Semi Senior',
       cargo: 'Profesional Semi Senior – Automatización e Inteligencia de Datos',
       empresa: 'Copco',
@@ -152,7 +152,7 @@ export const es = {
       ],
     },
     {
-      image: 'sinmediatas.png',
+      imageLight: 'SInmediatas.W.png',
       alt: 'Imagen Corporativa Soluciones Inmediatas',
       cargo: 'Programador – Integrador de Sistemas',
       empresa: 'Soluciones Inmediatas',
@@ -169,7 +169,6 @@ export const es = {
       ],
     },
     {
-      image: 'SGS.png',
       imageLight: 'SGS.W.png',
       imageDark: 'SGS.B.png',
       alt: 'Imagen Corporativa SGS',
@@ -186,7 +185,6 @@ export const es = {
       ],
     },
     {
-      image: 'Intertek.png',
       imageLight: 'Intertek.W.png',
       imageDark: 'Intertek.B.png',
       alt: 'Imagen Corporativa Intertek',
@@ -205,7 +203,8 @@ export const es = {
       ],
     },
     {
-      image: 'OTI.jpg',
+      imageLight: 'OTI.W.png',
+      imageDark: 'OTI.B.png',
       alt: 'Imagen Corporativa OTI',
       cargo: 'Inspector de Hidrocarburos',
       empresa: 'OTI Colombia',
@@ -218,7 +217,6 @@ export const es = {
       ],
     },
     {
-      image: 'BV.jpg',
       imageLight: 'BV.W.png',
       imageDark: 'BV.B.png',
       alt: 'Imagen Corporativa BV',
