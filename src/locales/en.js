@@ -574,6 +574,7 @@ export const en = {
     items: [
       {
         nombre: 'Laboratory Metrology Management System',
+        lugar: 'Frontera Energy',
         imagen: 'piton.png',
         descripcion: 'In development: equipment calibration and metrological confirmation, alerts to calibration providers, water % and Karl Fischer factor calculation, and decision traceability with an audit log.',
         tecnologias: ['Python', 'FastAPI', 'JavaScript', 'pytest'],
@@ -581,6 +582,7 @@ export const en = {
       },
       {
         nombre: 'Flow Meter Metrological Analysis',
+        lugar: 'Frontera Energy',
         imagen: 'piton.png',
         descripcion: 'In development: automatic reading of PDF calibration certificates, Shewhart control charts of the meter factor and recalibration interval per OIML D 10, with automatic PDF reports.',
         tecnologias: ['Python', 'Pandas', 'NumPy', 'Matplotlib'],
@@ -588,12 +590,14 @@ export const en = {
       },
       {
         nombre: 'App API Density ASTM D-1298',
+        lugar: 'Personal project',
         imagen: 'app-densidad.svg',
-        descripcion: 'App published on Google Play for calculating the API density of hydrocarbons according to ASTM D-1298.',
+        descripcion: 'Android app, formerly published on Google Play, for calculating the API density of hydrocarbons according to ASTM D-1298.',
         categoria: 'Metrology & Measurement',
       },
       {
         nombre: 'LabCal, Balance, Analito and Nómina suite',
+        lugar: 'LabCal at SGS · Balance and Analito at OTI · Nómina at Intertek',
         imagen: 'excel.png',
         descripcion: 'Industrial calculation systems in Excel VBA for mass balances, quality certification, physicochemical analyses applied to measurement, and payroll control with surcharge calculation.',
         tecnologias: ['Excel', 'VBA'],
@@ -601,13 +605,15 @@ export const en = {
       },
       {
         nombre: 'Robot JAVI and Robot CIEG',
+        lugar: 'Ecopetrol',
         imagen: 'powerautomate.svg',
-        descripcion: 'Robots that automate data and operational reports for fuel transport and energy and gas monitoring at Ecopetrol.',
+        descripcion: 'Robots that automate data and operational reports for fuel transport and energy and gas monitoring.',
         tecnologias: ['Python', 'SQL', 'Power Automate', 'Power BI'],
         categoria: 'Automation & Engineering',
       },
       {
         nombre: 'HEDA – Heat Exchanger Design Assistant',
+        lugar: 'Universidad del Atlántico',
         imagen: 'excel.png',
         descripcion: 'Graduation project with Meritorious Mention: heat exchanger design simulator using mass and energy balances, thermal and hydraulic calculations, and process engineering criteria.',
         tecnologias: ['Excel', 'VBA'],
