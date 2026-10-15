@@ -133,6 +133,7 @@ export const es = {
     },
     {
       imageLight: 'Copco.W.png',
+      imageDark: 'Copco.B.png',
       alt: 'Imagen Corporativa Copco - Profesional Semi Senior',
       cargo: 'Profesional Semi Senior – Automatización e Inteligencia de Datos',
       empresa: 'Copco',
@@ -153,6 +154,7 @@ export const es = {
     },
     {
       imageLight: 'SInmediatas.W.png',
+      imageDark: 'SInmediatas.B.png',
       alt: 'Imagen Corporativa Soluciones Inmediatas',
       cargo: 'Programador – Integrador de Sistemas',
       empresa: 'Soluciones Inmediatas',

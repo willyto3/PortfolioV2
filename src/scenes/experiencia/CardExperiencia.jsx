@@ -14,8 +14,8 @@ import { useTheme } from '@mui/material'
 import { useT } from '../../locales/useT'
 
 // Devuelve la imagen del modo actual y si se esta cayendo al recurso del modo
-// contrario. Copco y Soluciones Inmediatas no tienen variante oscura (su tinta
-// es azul oscuro), asi que en modo oscuro se sirve su version clara: ese caso
+// contrario. Hoy todos los logos de Experiencia tienen las dos variantes; si
+// uno nuevo llega solo con la clara, en modo oscuro se sirve esa y ese caso
 // necesita la placa clara. Los que si tienen variante (Applus.B y companeros) son tinta
 // blanca y sobre una placa clara desapareceran, por eso no se aplica a todos.
 const pickByTheme = (mode, light, dark, fallback) => {
