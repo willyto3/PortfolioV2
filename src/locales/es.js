@@ -55,7 +55,7 @@ export const es = {
     '/proyectos': {
       titulo: 'Proyectos | Willy Corzo',
       descripcion:
-        'Desarrollo web y automatización: plataforma de inspecciones de hidrocarburos, herramienta Excel-VBA de cinco módulos y tablero de escenarios de refinación.',
+        'Software para metrología y medición de hidrocarburos: gestión de laboratorio, análisis de medidores, app de densidad API y automatización con Python y VBA.',
     },
   },
 
@@ -573,18 +573,45 @@ export const es = {
   proyectos: {
     items: [
       {
-        nombre: 'Programador Digital Prodigio',
-        imagen: 'excel.png',
-        descripcion: 'Herramienta en Excel-VBA con 5 módulos para la programación, control y automatización de operaciones de transferencia en custodia de hidrocarburos.',
-        tecnologias: ['Excel', 'VBA', 'SQL'],
-        categoria: 'Automatización',
+        nombre: 'Lab_2026',
+        imagen: 'piton.png',
+        descripcion: 'Sistema de gestión de laboratorio y metrología (en desarrollo): calibraciones y confirmación metrológica de equipos, alertas a empresas calibradoras, cálculo de % de agua y factor Karl Fischer, y trazabilidad de decisiones con registro de auditoría.',
+        tecnologias: ['Python', 'FastAPI', 'pytest'],
+        categoria: 'Metrología y Medición',
       },
       {
-        nombre: 'Tablero Escenarios Refinados',
+        nombre: 'Medidores V2',
         imagen: 'piton.png',
-        descripcion: 'Dashboard para el control y análisis de escenarios proyectados de refinación, con visualización de datos en tiempo real y generación de reportes.',
-        tecnologias: ['Python', 'Excel'],
-        categoria: 'Automatización',
+        descripcion: 'Análisis metrológico de medidores de flujo (en desarrollo): lectura automática de certificados de calibración en PDF, cartas de control Shewhart del factor del medidor e intervalo de recalibración según OIML D 10, con informes PDF automáticos.',
+        tecnologias: ['Python', 'Pandas', 'NumPy', 'Matplotlib'],
+        categoria: 'Metrología y Medición',
+      },
+      {
+        nombre: 'App API Density ASTM D-1298',
+        imagen: 'app-densidad.svg',
+        descripcion: 'Aplicación publicada en Google Play para el cálculo de la densidad API de hidrocarburos según la norma ASTM D-1298.',
+        categoria: 'Metrología y Medición',
+      },
+      {
+        nombre: 'Suite LabCal, Balance, Analito y Nómina',
+        imagen: 'excel.png',
+        descripcion: 'Sistemas de cálculo industrial en Excel VBA para balances de masa, certificación de calidad, análisis fisicoquímicos aplicados a la medición y control de nómina con cálculo de recargos.',
+        tecnologias: ['Excel', 'VBA'],
+        categoria: 'Metrología y Medición',
+      },
+      {
+        nombre: 'Robot JAVI y Robot CIEG',
+        imagen: 'powerautomate.svg',
+        descripcion: 'Robots de automatización de datos e informes operativos de transporte de combustible y de monitoreo de energía y gas en Ecopetrol.',
+        tecnologias: ['Python', 'SQL', 'Power Automate', 'Power BI'],
+        categoria: 'Automatización e Ingeniería',
+      },
+      {
+        nombre: 'HEDA – Heat Exchanger Design Assistant',
+        imagen: 'excel.png',
+        descripcion: 'Proyecto de grado con Mención Meritoria: simulador para el diseño de intercambiadores de calor con balances de materia y energía, cálculos térmicos e hidráulicos y criterios de ingeniería de procesos.',
+        tecnologias: ['Excel', 'VBA'],
+        categoria: 'Automatización e Ingeniería',
       },
     ],
   },

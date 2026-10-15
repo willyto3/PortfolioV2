@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" role="img" aria-label="App API Density">
+  <rect x="6" y="1.5" width="12" height="21" rx="2.2" fill="#2E7D5B"/>
+  <rect x="7.5" y="4" width="9" height="15" rx="0.8" fill="#FFFFFF"/>
+  <path d="M12 6.5 C12 6.5 9 10.2 9 12.3 a3 3 0 0 0 6 0 C15 10.2 12 6.5 12 6.5 Z" fill="#2E7D5B"/>
+  <circle cx="12" cy="20.8" r="0.8" fill="#FFFFFF"/>
+</svg>

@@ -55,7 +55,7 @@ export const en = {
     '/proyectos': {
       titulo: 'Projects | Willy Corzo',
       descripcion:
-        'Web development and automation projects: a hydrocarbon inspection management platform, a five-module Excel-VBA tool and a refining scenarios dashboard.',
+        'Software for hydrocarbon metrology and measurement: laboratory management, flow meter analysis, an API density app and automation with Python and VBA.',
     },
   },
 
@@ -573,18 +573,45 @@ export const en = {
   proyectos: {
     items: [
       {
-        nombre: 'Digital Programmer Prodigio',
-        imagen: 'excel.png',
-        descripcion: 'Excel-VBA tool with 5 modules for programming, controlling, and automating custody transfer operations for hydrocarbons.',
-        tecnologias: ['Excel', 'VBA', 'SQL'],
-        categoria: 'Automation',
+        nombre: 'Lab_2026',
+        imagen: 'piton.png',
+        descripcion: 'Laboratory and metrology management system (in development): equipment calibration and metrological confirmation, alerts to calibration providers, water % and Karl Fischer factor calculation, and decision traceability with an audit log.',
+        tecnologias: ['Python', 'FastAPI', 'pytest'],
+        categoria: 'Metrology & Measurement',
       },
       {
-        nombre: 'Refined Scenarios Dashboard',
+        nombre: 'Medidores V2',
         imagen: 'piton.png',
-        descripcion: 'Dashboard for controlling and analyzing projected refining scenarios, with real-time data visualization and report generation.',
-        tecnologias: ['Python', 'Excel'],
-        categoria: 'Automation',
+        descripcion: 'Metrological analysis of flow meters (in development): automatic reading of PDF calibration certificates, Shewhart control charts of the meter factor and recalibration interval per OIML D 10, with automatic PDF reports.',
+        tecnologias: ['Python', 'Pandas', 'NumPy', 'Matplotlib'],
+        categoria: 'Metrology & Measurement',
+      },
+      {
+        nombre: 'App API Density ASTM D-1298',
+        imagen: 'app-densidad.svg',
+        descripcion: 'App published on Google Play for calculating the API density of hydrocarbons according to ASTM D-1298.',
+        categoria: 'Metrology & Measurement',
+      },
+      {
+        nombre: 'LabCal, Balance, Analito and Nómina suite',
+        imagen: 'excel.png',
+        descripcion: 'Industrial calculation systems in Excel VBA for mass balances, quality certification, physicochemical analyses applied to measurement, and payroll control with surcharge calculation.',
+        tecnologias: ['Excel', 'VBA'],
+        categoria: 'Metrology & Measurement',
+      },
+      {
+        nombre: 'Robot JAVI and Robot CIEG',
+        imagen: 'powerautomate.svg',
+        descripcion: 'Robots that automate data and operational reports for fuel transport and energy and gas monitoring at Ecopetrol.',
+        tecnologias: ['Python', 'SQL', 'Power Automate', 'Power BI'],
+        categoria: 'Automation & Engineering',
+      },
+      {
+        nombre: 'HEDA – Heat Exchanger Design Assistant',
+        imagen: 'excel.png',
+        descripcion: 'Graduation project with Meritorious Mention: heat exchanger design simulator using mass and energy balances, thermal and hydraulic calculations, and process engineering criteria.',
+        tecnologias: ['Excel', 'VBA'],
+        categoria: 'Automation & Engineering',
       },
     ],
   },

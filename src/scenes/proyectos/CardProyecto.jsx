@@ -34,10 +34,9 @@ const CardProyecto = ({ nombre, imagen, descripcion, tecnologias, url }) => {
         sx={{
           height: '180px',
           objectFit: 'contain',
-          p: '1rem',
-          // neutral.light aqui era #333333 en oscuro: no salvaba ni a los
-          // logos de tinta oscura ni a los que traen fondo blanco horneado.
-          backgroundColor: theme.palette.placaLogo,
+          p: '1.5rem',
+          // Los iconos de proyecto son transparentes y de color medio, asi
+          // que se leen en los dos modos sin placa clara.
         }}
       />
 
