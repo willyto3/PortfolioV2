@@ -40,7 +40,7 @@ export const es = {
     '/': {
       titulo: 'Willy Corzo | Ingeniero Químico & Desarrollador Web | Colombia',
       descripcion:
-        'Portfolio de Willy Corzo Lubo, Ingeniero Químico con más de 18 años de experiencia en el sector de Hidrocarburos, Maestría en Gerencia de Proyectos, especialista ISO 17025 y Desarrollador Web Full Stack en Colombia.',
+        'Willy Corzo, Ingeniero Químico y Máster en Gerencia de Proyectos: más de 18 años en medición, fiscalización y transferencia de custodia de hidrocarburos.',
     },
     '/experiencia': {
       titulo: 'Experiencia Profesional | Willy Corzo',
