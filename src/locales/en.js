@@ -458,6 +458,7 @@ export const en = {
         {
           titulo: 'JavaScript',
           imagen: 'js.png',
+          imagenOscura: 'js.B.png',
           parrafo: 'Programming language that enables logic and interactivity in web applications.',
           conocimiento: 'Intermediate',
           nivel: 70,
@@ -471,6 +472,7 @@ export const en = {
         {
           titulo: 'React',
           imagen: 'atom.png',
+          imagenOscura: 'atom.B.png',
           parrafo: 'JavaScript library for building user interfaces based on reusable components.',
           conocimiento: 'Intermediate',
           nivel: 70,
