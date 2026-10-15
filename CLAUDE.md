@@ -53,8 +53,8 @@ theme.palette.primary.main    // blue accent
 
 Cards sit on `background.paper`, which is `#1F2937` in dark mode. Any asset that is essentially black or essentially white will disappear in one of the two themes. Three patterns exist for this:
 
-- **A light plate** — `palette.placaLogo` (`#FFFFFF` in both modes). This is the default for logos, and what `CardHerramientas` and `CardProyecto` use unconditionally. Because it equals `background.paper` in light mode it is invisible there, so it only changes the dark theme. It fixes both failure modes at once: dark ink becomes legible, and assets with a baked-in white background (every `.jpg`, plus palette PNGs with no alpha) stop reading as glaring boxes.
-- **Light/dark variants** (`X.W.png` in colour, `X.B.png` in white ink): Estudios uses `fondo`/`fondoOscuro` with no plate; Experiencia uses `imageLight`/`imageDark`, picked by `pickByTheme` in `CardExperiencia.jsx`. That helper returns `{ src, necesitaPlaca }`; `necesitaPlaca` is true only when the entry has no dark variant and we are falling back to its light asset, which is the one case that needs the plate; there the plate hugs the logo instead of filling the column. **Never plate a `.B` asset** — those are white ink and vanish on white.
+- **A light plate** — `palette.placaLogo` (`#FFFFFF` in both modes). This is the default for logos, and what `CardProyecto` uses unconditionally. Because it equals `background.paper` in light mode it is invisible there, so it only changes the dark theme. It fixes both failure modes at once: dark ink becomes legible, and assets with a baked-in white background (every `.jpg`, plus palette PNGs with no alpha) stop reading as glaring boxes.
+- **Light/dark variants** (`X.W.png` in colour, `X.B.png` in white ink): Estudios uses `fondo`/`fondoOscuro` and Herramientas `imagen`/`imagenOscura`, both with no plate; Experiencia uses `imageLight`/`imageDark`, picked by `pickByTheme` in `CardExperiencia.jsx`. That helper returns `{ src, necesitaPlaca }`; `necesitaPlaca` is true only when the entry has no dark variant and we are falling back to its light asset, which is the one case that needs the plate; there the plate hugs the logo instead of filling the column. **Never plate a `.B` asset** — those are white ink and vanish on white.
 - **A mid-tone that survives both**, as `public/github.svg` does.
 
 Measured on the dark card before the plate: React and JavaScript sat at 1.43:1, Universidad Isabel I at 2.14:1, while the opaque-white assets hit 11–13.5:1. To re-measure after changing an asset, draw it to a canvas and average the relative luminance of pixels with alpha > 128.
@@ -77,7 +77,7 @@ The `*UI` keys hold labels and headings; the matching plain key holds the data r
 
 The language switch is text (`ES | EN`), not flags: `nav.idiomas` lists each language named in its own tongue and is identical in both files. The active one is marked with `aria-pressed`.
 
-**The two locale files must stay structurally identical.** A key present in one and missing in the other crashes the page that reads it as soon as the user switches language. Both files currently expose 420 key paths.
+**The two locale files must stay structurally identical.** A key present in one and missing in the other crashes the page that reads it as soon as the user switches language. Both files currently expose 432 key paths.
 
 To add another language: create `locales/xx.js` with the same structure, import it in `locales/index.js`, and add it to the `locales` object. The active language is stored in Zustand (`language`) and toggled via `setLanguage(code)`.
 

@@ -11,7 +11,7 @@ import FiberManualRecordIcon from '@mui/icons-material/FiberManualRecord'
 import { useTheme } from '@mui/material'
 import { useT } from '../../locales/useT'
 
-const CardHerramientas = ({ titulo, imagen, parrafo, conocimiento, nivel, anios, usos }) => {
+const CardHerramientas = ({ titulo, imagen, imagenOscura, parrafo, conocimiento, nivel, anios, usos }) => {
   const t = useT()
   const theme = useTheme()
   const primary = theme.palette.primary.main
@@ -37,17 +37,19 @@ const CardHerramientas = ({ titulo, imagen, parrafo, conocimiento, nivel, anios,
         justifyContent='center'
         alignItems='center'
         flexShrink={0}
-        sx={{ backgroundColor: theme.palette.placaLogo, borderRadius: 1 }}
+        p={{ xs: '0.5rem', sm: '1rem' }}
       >
+        {/* Los iconos son transparentes y de color, asi que no llevan placa;
+            los de tinta negra (JavaScript, React) traen version blanca. */}
         <CardMedia
           sx={{
-            ml: { xs: 0, sm: '10px' },
-            padding: { xs: '0.5em', sm: '1em' },
             objectFit: 'contain',
-            height: '100%',
-            maxWidth: { xs: '8rem', sm: '100%' },
+            width: '100%',
+            height: 'auto',
+            maxWidth: { xs: '6rem', sm: '7rem' },
+            maxHeight: { xs: '6rem', sm: '7rem' },
           }}
-          image={imagen}
+          image={theme.palette.mode === 'dark' && imagenOscura ? imagenOscura : imagen}
           component='img'
           alt={titulo}
           // sin title: duplicaba el alt en un tooltip nativo que ademas

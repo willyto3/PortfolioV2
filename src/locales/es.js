@@ -50,7 +50,7 @@ export const es = {
     '/herramientas': {
       titulo: 'Herramientas y Tecnologías | Willy Corzo',
       descripcion:
-        'Nivel de dominio en Excel y VBA, SQL, JavaScript, React, HTML, CSS, Git y Word, con los años de experiencia y las aplicaciones reales de cada herramienta.',
+        'Python y Power BI avanzados, Excel y VBA, SQL, Power Automate y desarrollo web con React, con los años de experiencia y los usos reales de cada herramienta.',
     },
     '/proyectos': {
       titulo: 'Proyectos | Willy Corzo',
@@ -420,7 +420,7 @@ export const es = {
           parrafo: 'Hoja de cálculo para manipular datos numéricos y de texto, con capacidad de automatización mediante macros y VBA.',
           conocimiento: 'Avanzado',
           nivel: 90,
-          anios: 15,
+          anios: 18,
           categoria: 'Ofimática',
           usos: [
             'Balances de producción y medición de Hidrocarburos.',
@@ -457,6 +457,7 @@ export const es = {
         {
           titulo: 'JavaScript',
           imagen: 'js.png',
+          imagenOscura: 'js.B.png',
           parrafo: 'Lenguaje de programación que permite implementar lógica e interactividad en aplicaciones web.',
           conocimiento: 'Intermedio',
           nivel: 70,
@@ -470,6 +471,7 @@ export const es = {
         {
           titulo: 'React',
           imagen: 'atom.png',
+          imagenOscura: 'atom.B.png',
           parrafo: 'Librería de JavaScript para construir interfaces de usuario basadas en componentes reutilizables.',
           conocimiento: 'Intermedio',
           nivel: 70,
@@ -481,7 +483,7 @@ export const es = {
           ],
         },
         {
-          titulo: 'Git Hub',
+          titulo: 'Git y GitHub',
           imagen: 'github.svg',
           parrafo: 'Plataforma de alojamiento de código con control de versiones Git para colaboración y despliegue.',
           conocimiento: 'Intermedio',
@@ -499,7 +501,7 @@ export const es = {
           parrafo: 'Procesador de texto para crear, editar y dar formato a documentos profesionales con herramientas avanzadas de redacción.',
           conocimiento: 'Avanzado',
           nivel: 90,
-          anios: 15,
+          anios: 18,
           categoria: 'Ofimática',
           usos: [
             'Redacción de informes técnicos y reportes de inspección.',
@@ -525,13 +527,14 @@ export const es = {
           titulo: 'Python',
           imagen: 'piton.png',
           parrafo: 'Lenguaje de programación usado para automatizar procesos operativos y construir herramientas de cálculo y análisis.',
-          conocimiento: 'Intermedio',
-          nivel: 70,
+          conocimiento: 'Avanzado',
+          nivel: 85,
           anios: 3,
           categoria: 'Automatización y Datos',
           usos: [
             'Automatización de procesos con Robot JAVI y Robot CIEG.',
-            'Tablero de escenarios proyectados de refinación.',
+            'Lab_2026: gestión de laboratorio y metrología con FastAPI y más de 1.500 pruebas con pytest.',
+            'Medidores V2: análisis de certificados de calibración y cartas de control con Pandas y NumPy.',
             'Herramientas informáticas para la operación del Centro de Cadena.',
           ],
         },
@@ -547,6 +550,19 @@ export const es = {
             'Tableros de Escenarios Refinados y Gestión GIP.',
             'Centro de Información de Energía y Gas.',
             'Reportes técnicos para seguimiento gerencial.',
+          ],
+        },
+        {
+          titulo: 'Power Automate',
+          imagen: 'powerautomate.svg',
+          parrafo: 'Plataforma de automatización de flujos de trabajo de Microsoft, integrada con Power BI y SQL Server.',
+          conocimiento: 'Intermedio',
+          nivel: 70,
+          anios: 1,
+          categoria: 'Automatización y Datos',
+          usos: [
+            'Robots RPA Robot JAVI y Robot CIEG para el monitoreo de transporte de combustible y energía.',
+            'Automatización de informes operativos en Ecopetrol.',
           ],
         },
       ],
