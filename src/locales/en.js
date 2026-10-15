@@ -40,7 +40,7 @@ export const en = {
     '/': {
       titulo: 'Willy Corzo | Chemical Engineer & Web Developer | Colombia',
       descripcion:
-        'Portfolio of Willy Corzo Lubo, Chemical Engineer with over 18 years of experience in the hydrocarbon sector, a Master\'s in Project Management, ISO 17025 specialist and Full Stack Web Developer in Colombia.',
+        'Willy Corzo, Chemical Engineer with a Master\'s in Project Management: 18+ years in hydrocarbon measurement, fiscal metering and custody transfer.',
     },
     '/experiencia': {
       titulo: 'Professional Experience | Willy Corzo',
