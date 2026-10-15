@@ -22,39 +22,59 @@ const CardProyecto = ({ nombre, lugar, imagen, descripcion, tecnologias, url }) 
         height: '100%',
         display: 'flex',
         flexDirection: 'column',
+        p: '1rem',
         // El canto de la tarjeta no puede depender solo de la sombra
         border: `1px solid ${theme.palette.bordeSuperficie}`,
         borderTop: `4px solid ${primary}`,
       }}
     >
-      <CardMedia
-        component='img'
-        image={imagen}
-        alt={nombre}
-        loading='lazy'
-        sx={{
-          height: '180px',
-          objectFit: 'contain',
-          p: '1.5rem',
-          // Los iconos de proyecto son transparentes y de color medio, asi
-          // que se leen en los dos modos sin placa clara.
-        }}
-      />
+      {/* Igual que Experiencia, Estudios y Herramientas: desde sm la cabecera
+          es una fila (icono, nombre y lugar) y el resto va debajo a todo el
+          ancho. En movil todo se apila. */}
+      <Box display='flex' flexDirection={{ xs: 'column', sm: 'row' }} alignItems={{ sm: 'center' }} gap={{ sm: '0.5rem' }}>
+        <Box
+          width={{ xs: '100%', sm: '7rem', md: '8rem' }}
+          height={{ xs: '7rem', sm: 'auto' }}
+          display='flex'
+          justifyContent='center'
+          alignItems='center'
+          flexShrink={0}
+          p={{ xs: '0.5rem', sm: '0.75rem' }}
+        >
+          {/* Los iconos de proyecto son transparentes y de color medio, asi
+              que se leen en los dos modos sin placa clara. */}
+          <CardMedia
+            component='img'
+            image={imagen}
+            alt={nombre}
+            loading='lazy'
+            sx={{
+              objectFit: 'contain',
+              width: '100%',
+              height: 'auto',
+              maxWidth: { xs: '6rem', sm: '5.5rem' },
+              maxHeight: { xs: '6rem', sm: '5.5rem' },
+            }}
+          />
+        </Box>
 
-      <CardContent sx={{ flex: 1, display: 'flex', flexDirection: 'column', gap: '0.5rem' }}>
-        <Typography variant='h2' component='h3' fontSize='clamp(1.2rem, 2.5vw, 2rem)' color='primary'>
-          {nombre}
-        </Typography>
+        <Box flex={1} minWidth={0} px={{ xs: '1rem', sm: 0 }}>
+          <Typography variant='h2' component='h3' fontSize='clamp(1.2rem, 2.5vw, 2rem)' color='primary'>
+            {nombre}
+          </Typography>
 
-        {lugar && (
-          <Box display='flex' alignItems='flex-start' gap='6px' color='text.secondary'>
-            <BusinessOutlinedIcon fontSize='small' sx={{ mt: '2px', flexShrink: 0 }} />
-            <Typography component='p' fontSize='clamp(0.85rem, 1.3vw, 1rem)' lineHeight={1.5}>
-              {lugar}
-            </Typography>
-          </Box>
-        )}
+          {lugar && (
+            <Box display='flex' alignItems='flex-start' gap='6px' color='text.secondary' mt='0.25rem'>
+              <BusinessOutlinedIcon fontSize='small' sx={{ mt: '2px', flexShrink: 0 }} />
+              <Typography component='p' fontSize='clamp(0.85rem, 1.3vw, 1rem)' lineHeight={1.5}>
+                {lugar}
+              </Typography>
+            </Box>
+          )}
+        </Box>
+      </Box>
 
+      <CardContent sx={{ flex: 1, display: 'flex', flexDirection: 'column', gap: '0.5rem', pt: '0.75rem', '&:last-child': { pb: '0.5rem' } }}>
         <Typography variant='h4' component='p' fontSize='clamp(0.85rem, 1.5vw, 1.15rem)'>
           {descripcion}
         </Typography>
