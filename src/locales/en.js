@@ -40,12 +40,12 @@ export const en = {
     '/': {
       titulo: 'Willy Corzo | Chemical Engineer & Web Developer | Colombia',
       descripcion:
-        'Portfolio of Willy Corzo Lubo, Chemical Engineer with over 15 years of experience in the hydrocarbon sector, a Master\'s in Project Management, ISO 17025 specialist and Full Stack Web Developer in Colombia.',
+        'Portfolio of Willy Corzo Lubo, Chemical Engineer with over 18 years of experience in the hydrocarbon sector, a Master\'s in Project Management, ISO 17025 specialist and Full Stack Web Developer in Colombia.',
     },
     '/experiencia': {
       titulo: 'Professional Experience | Willy Corzo',
       descripcion:
-        'Fifteen years in the hydrocarbon sector: leading measurement and custody transfer at Applus+, Ecopetrol, SGS, Intertek, OTI and Bureau Veritas.',
+        'Over 18 years in the hydrocarbon sector: leading measurement and custody transfer at Applus+, Ecopetrol, SGS, Intertek, OTI and Bureau Veritas.',
     },
     '/estudios': {
       titulo: 'Education | Willy Corzo',
@@ -70,15 +70,15 @@ export const en = {
     nombre: 'Willy Corzo Lubo',
     altFoto: 'Photo of Willy Corzo',
     roles: [
-      "Master's in Project Management",
+      'Measurement and Fiscal Metering Lead',
       'Chemical Engineer',
-      'NTC ISO 17025:2017 Specialist',
-      'Full Stack Web Developer',
-      'Power BI Developer',
-      'Excel - VBA Expert',
+      "Master's in Project Management",
+      'ISO/IEC 17025 Specialist',
+      'Automation and Data Intelligence',
+      'Python and Power BI Developer',
     ],
     bio: [
-      "Chemical Engineer with a Master's degree in Project Management and over 15 years of experience in the Hydrocarbons sector, specializing in Custody Transfer, Measurement, and Analysis.",
+      "Chemical Engineer with a Master's in Project Management and over 18 years in the hydrocarbon sector, specializing in measurement, fiscal metering and custody transfer under API MPMS, ASTM, ISO/IEC 17025 and ANH Resolution 40236.",
       'I built the tools my own work needed: calculation and balance programs for laboratory and inspection work, and control dashboards for operational and management follow-up. I automate from the problem, not from the technology.',
     ],
     cta: {
