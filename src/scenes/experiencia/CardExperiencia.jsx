@@ -69,11 +69,36 @@ const CardExperiencia = ({
   const logoCliente = pickByTheme(theme.palette.mode, clientImageLight, clientImageDark, clientImage)
   const placa = theme.palette.placaLogo
 
+  const imgCliente = logoCliente.src && (
+    <Box
+      component='img'
+      src={logoCliente.src}
+      alt={clientAlt || cliente || labels.logoCliente}
+      loading='lazy'
+      onError={event => {
+        event.currentTarget.style.display = 'none'
+      }}
+      sx={{
+        height: { xs: '36px', lg: 'auto' },
+        width: 'auto',
+        maxHeight: { lg: '4.5rem' },
+        objectFit: 'contain',
+        maxWidth: { xs: '180px', lg: '100%' },
+        flexShrink: 0,
+        ...(logoCliente.necesitaPlaca && {
+          backgroundColor: placa,
+          borderRadius: 1,
+          p: '2px',
+        }),
+      }}
+    />
+  )
+
   return (
     <Card
       sx={{
         display: 'flex',
-        flexDirection: { xs: 'column', lg: 'row' },
+        flexDirection: 'column',
         // El canto de la tarjeta no puede depender solo de la sombra
         border: `1px solid ${theme.palette.bordeSuperficie}`,
         borderTop: `4px solid ${primary}`,
@@ -86,40 +111,43 @@ const CardExperiencia = ({
         },
       }}
     >
-      <Box
-        width={{ xs: '100%', lg: '12rem', xl: '15rem' }}
-        height={{ xs: '9rem', lg: 'auto' }}
-        display='flex'
-        justifyContent='center'
-        alignItems='center'
-        flexShrink={0}
-        p={{ xs: '0.75rem', lg: '1rem' }}
-      >
-        {/* Caja comun para todos los logos: los anchos (Applus) y los altos
-            (BV) ocupan lo mismo a la vista. La placa abraza el logo en vez
-            de pintar toda la columna. */}
-        <CardMedia
-          component='img'
-          sx={{
-            objectFit: 'contain',
-            width: 'auto',
-            height: 'auto',
-            maxWidth: { xs: '10rem', lg: '100%' },
-            maxHeight: { xs: '7rem', lg: '8rem' },
-            ...(logo.necesitaPlaca && {
-              backgroundColor: placa,
-              borderRadius: 1,
-              p: '0.5rem',
-            }),
-          }}
-          image={logo.src}
-          alt={alt}
-          loading='lazy'
-        />
-      </Box>
+      {/* En PC la cabecera es una fila: logo, datos del cargo y logo del
+          cliente; las actividades van debajo a todo el ancho para que la
+          tarjeta no se alargue. En movil todo se apila como antes. */}
+      <Box display='flex' flexDirection={{ xs: 'column', lg: 'row' }} alignItems={{ lg: 'center' }}>
+        <Box
+          width={{ xs: '100%', lg: '10rem', xl: '12rem' }}
+          height={{ xs: '9rem', lg: 'auto' }}
+          display='flex'
+          justifyContent='center'
+          alignItems='center'
+          flexShrink={0}
+          p={{ xs: '0.75rem', lg: '1rem' }}
+        >
+          {/* Caja comun para todos los logos: los anchos (Applus) y los altos
+              (BV) ocupan lo mismo a la vista. La placa abraza el logo en vez
+              de pintar toda la columna. */}
+          <CardMedia
+            component='img'
+            sx={{
+              objectFit: 'contain',
+              width: 'auto',
+              height: 'auto',
+              maxWidth: { xs: '10rem', lg: '100%' },
+              maxHeight: { xs: '7rem', lg: '7rem' },
+              ...(logo.necesitaPlaca && {
+                backgroundColor: placa,
+                borderRadius: 1,
+                p: '0.5rem',
+              }),
+            }}
+            image={logo.src}
+            alt={alt}
+            loading='lazy'
+          />
+        </Box>
 
-      <Box sx={{ display: 'flex', flexDirection: 'column', flex: 1 }}>
-        <CardContent sx={{ flex: '1 0 auto' }}>
+        <Box flex={1} minWidth={0} px={{ xs: '1rem', lg: '0.5rem' }} pt={{ xs: 0, lg: '1rem' }}>
           <Typography
             variant='h3'
             component='h2'
@@ -154,46 +182,40 @@ const CardExperiencia = ({
                   </InfoRow>
                 )}
               </Box>
-              {logoCliente.src && (
-                <Box
-                  component='img'
-                  src={logoCliente.src}
-                  alt={clientAlt || cliente || labels.logoCliente}
-                  loading='lazy'
-                  onError={event => {
-                    event.currentTarget.style.display = 'none'
-                  }}
-                  sx={{
-                    height: '36px',
-                    width: 'auto',
-                    objectFit: 'contain',
-                    maxWidth: '180px',
-                    flexShrink: 0,
-                    ...(logoCliente.necesitaPlaca && {
-                      backgroundColor: placa,
-                      borderRadius: 1,
-                      p: '2px',
-                    }),
-                  }}
-                />
-              )}
+              {/* En movil el logo del cliente sigue junto a estos datos */}
+              {imgCliente && <Box display={{ xs: 'flex', lg: 'none' }}>{imgCliente}</Box>}
             </Box>
           )}
 
-          <Box display='flex' alignItems='center' gap='1rem' flexWrap='wrap' mb='4px'>
+          <Box display='flex' alignItems='center' gap='1rem' flexWrap='wrap'>
             <InfoRow icon={DateRangeIcon} color='text.secondary'>{fecha}</InfoRow>
             <InfoRow icon={PlaceIcon} color='text.secondary'>{lugar}</InfoRow>
           </Box>
+        </Box>
 
-          <Box component='ul' sx={{ listStyle: 'none', p: 0, m: 0, my: '6px' }}>
-            {actividades.map(item => (
-              <Box component='li' key={item} sx={{ py: '2px' }}>
-                <InfoRow icon={CheckIcon} color={primary}>{item}</InfoRow>
-              </Box>
-            ))}
+        {imgCliente && (
+          <Box
+            display={{ xs: 'none', lg: 'flex' }}
+            width={{ lg: '8rem', xl: '10rem' }}
+            flexShrink={0}
+            justifyContent='center'
+            alignItems='center'
+            p='1rem'
+          >
+            {imgCliente}
           </Box>
-        </CardContent>
+        )}
       </Box>
+
+      <CardContent sx={{ flex: '1 0 auto', pt: '0.5rem' }}>
+        <Box component='ul' sx={{ listStyle: 'none', p: 0, m: 0 }}>
+          {actividades.map(item => (
+            <Box component='li' key={item} sx={{ py: '2px' }}>
+              <InfoRow icon={CheckIcon} color={primary}>{item}</InfoRow>
+            </Box>
+          ))}
+        </Box>
+      </CardContent>
     </Card>
   )
 }
