@@ -533,8 +533,8 @@ export const en = {
           categoria: 'Automation & Data',
           usos: [
             'Process automation with Robot JAVI and Robot CIEG.',
-            'Lab_2026: laboratory and metrology management with FastAPI and over 1,500 pytest tests.',
-            'Medidores V2: calibration certificate analysis and control charts with Pandas and NumPy.',
+            'Laboratory metrology management system with FastAPI and over 1,500 pytest tests.',
+            'Flow meter metrological analysis: calibration certificates and control charts with Pandas and NumPy.',
             'Digital tools for the Supply Chain Center operation.',
           ],
         },
@@ -573,16 +573,16 @@ export const en = {
   proyectos: {
     items: [
       {
-        nombre: 'Lab_2026',
+        nombre: 'Laboratory Metrology Management System',
         imagen: 'piton.png',
-        descripcion: 'Laboratory and metrology management system (in development): equipment calibration and metrological confirmation, alerts to calibration providers, water % and Karl Fischer factor calculation, and decision traceability with an audit log.',
-        tecnologias: ['Python', 'FastAPI', 'pytest'],
+        descripcion: 'In development: equipment calibration and metrological confirmation, alerts to calibration providers, water % and Karl Fischer factor calculation, and decision traceability with an audit log.',
+        tecnologias: ['Python', 'FastAPI', 'JavaScript', 'pytest'],
         categoria: 'Metrology & Measurement',
       },
       {
-        nombre: 'Medidores V2',
+        nombre: 'Flow Meter Metrological Analysis',
         imagen: 'piton.png',
-        descripcion: 'Metrological analysis of flow meters (in development): automatic reading of PDF calibration certificates, Shewhart control charts of the meter factor and recalibration interval per OIML D 10, with automatic PDF reports.',
+        descripcion: 'In development: automatic reading of PDF calibration certificates, Shewhart control charts of the meter factor and recalibration interval per OIML D 10, with automatic PDF reports.',
         tecnologias: ['Python', 'Pandas', 'NumPy', 'Matplotlib'],
         categoria: 'Metrology & Measurement',
       },
