@@ -15,7 +15,7 @@ const Estudios = () => {
         { titulo: t.estudios.tituloCortos, items: porTipo('corto') },
       ]}
       Tarjeta={CardEstudio}
-      getKey={card => card.institucion + card.fecha}
+      getKey={card => card.institucion + card.estudio}
     />
   )
 }
