@@ -14,9 +14,9 @@ import { useTheme } from '@mui/material'
 import { useT } from '../../locales/useT'
 
 // Devuelve la imagen del modo actual y si se esta cayendo al recurso del modo
-// contrario. Copco, Soluciones Inmediatas y OTI no tienen variante oscura, asi
-// que en modo oscuro se sirve su original de fondo blanco: ese caso necesita la
-// placa clara. Los que si tienen variante (Applus.B y companeros) son tinta
+// contrario. Hoy todos los logos de Experiencia tienen las dos variantes; si
+// uno nuevo llega solo con la clara, en modo oscuro se sirve esa y ese caso
+// necesita la placa clara. Los que si tienen variante (Applus.B y companeros) son tinta
 // blanca y sobre una placa clara desapareceran, por eso no se aplica a todos.
 const pickByTheme = (mode, light, dark, fallback) => {
   const propia = mode === 'dark' ? dark : light
@@ -93,15 +93,24 @@ const CardExperiencia = ({
         justifyContent='center'
         alignItems='center'
         flexShrink={0}
-        sx={logo.necesitaPlaca ? { backgroundColor: placa, borderRadius: 1 } : undefined}
+        p={{ xs: '0.75rem', lg: '1rem' }}
       >
+        {/* Caja comun para todos los logos: los anchos (Applus) y los altos
+            (BV) ocupan lo mismo a la vista. La placa abraza el logo en vez
+            de pintar toda la columna. */}
         <CardMedia
           component='img'
           sx={{
-            padding: { xs: '0.5em', lg: '1em' },
             objectFit: 'contain',
-            height: '100%',
-            maxWidth: { xs: '9rem', lg: '100%' },
+            width: 'auto',
+            height: 'auto',
+            maxWidth: { xs: '10rem', lg: '100%' },
+            maxHeight: { xs: '7rem', lg: '8rem' },
+            ...(logo.necesitaPlaca && {
+              backgroundColor: placa,
+              borderRadius: 1,
+              p: '0.5rem',
+            }),
           }}
           image={logo.src}
           alt={alt}
