@@ -4,12 +4,13 @@ import CardContent from '@mui/material/CardContent'
 import CardMedia from '@mui/material/CardMedia'
 import Chip from '@mui/material/Chip'
 import Box from '@mui/material/Box'
+import BusinessOutlinedIcon from '@mui/icons-material/BusinessOutlined'
 import OpenInNewIcon from '@mui/icons-material/OpenInNew'
 import Typography from '@mui/material/Typography'
 import { useTheme } from '@mui/material'
 import { useT } from '../../locales/useT'
 
-const CardProyecto = ({ nombre, imagen, descripcion, tecnologias, url }) => {
+const CardProyecto = ({ nombre, lugar, imagen, descripcion, tecnologias, url }) => {
   const t = useT()
   const theme = useTheme()
   const primary = theme.palette.primary.main
@@ -44,6 +45,15 @@ const CardProyecto = ({ nombre, imagen, descripcion, tecnologias, url }) => {
         <Typography variant='h2' component='h3' fontSize='clamp(1.2rem, 2.5vw, 2rem)' color='primary'>
           {nombre}
         </Typography>
+
+        {lugar && (
+          <Box display='flex' alignItems='flex-start' gap='6px' color='text.secondary'>
+            <BusinessOutlinedIcon fontSize='small' sx={{ mt: '2px', flexShrink: 0 }} />
+            <Typography component='p' fontSize='clamp(0.85rem, 1.3vw, 1rem)' lineHeight={1.5}>
+              {lugar}
+            </Typography>
+          </Box>
+        )}
 
         <Typography variant='h4' component='p' fontSize='clamp(0.85rem, 1.5vw, 1.15rem)'>
           {descripcion}
