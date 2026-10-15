@@ -24,13 +24,16 @@ export const en = {
       // reader also reveals which theme and language the page is in.
       temaAOscuro: 'Switch to dark mode',
       temaAClaro: 'Switch to light mode',
-      cambiarIdiomaA: 'Switch language to Spanish',
+      idioma: 'Language',
       navegacion: 'Main navigation',
       saltarContenido: 'Skip to content',
       cargando: 'Loading',
     },
-    // Shown in the language being switched to, not the current one
-    cambiarIdiomaTitulo: 'Cambiar a Español',
+    // Each language is named in its own tongue, same in es.js and en.js
+    idiomas: [
+      { codigo: 'es', corto: 'ES', nombre: 'Español' },
+      { codigo: 'en', corto: 'EN', nombre: 'English' },
+    ],
   },
 
   // Per-route metadata. A SPA serves the same index.html on all five routes,

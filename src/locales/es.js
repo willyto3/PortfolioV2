@@ -24,13 +24,16 @@ export const es = {
       // revela de paso en que tema e idioma esta la pagina ahora mismo.
       temaAOscuro: 'Cambiar a modo oscuro',
       temaAClaro: 'Cambiar a modo claro',
-      cambiarIdiomaA: 'Cambiar idioma a inglés',
+      idioma: 'Idioma',
       navegacion: 'Navegación principal',
       saltarContenido: 'Saltar al contenido',
       cargando: 'Cargando',
     },
-    // Se muestra en el idioma al que se va a cambiar, no en el actual
-    cambiarIdiomaTitulo: 'Switch to English',
+    // Cada idioma se nombra en su propia lengua, igual en es.js y en.js
+    idiomas: [
+      { codigo: 'es', corto: 'ES', nombre: 'Español' },
+      { codigo: 'en', corto: 'EN', nombre: 'English' },
+    ],
   },
 
   // Metadatos por ruta. Un SPA sirve el mismo index.html en las cinco rutas,

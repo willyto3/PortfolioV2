@@ -5,6 +5,7 @@ import AppBar from '@mui/material/AppBar'
 import Box from '@mui/material/Box'
 import Divider from '@mui/material/Divider'
 import Drawer from '@mui/material/Drawer'
+import ButtonBase from '@mui/material/ButtonBase'
 import IconButton from '@mui/material/IconButton'
 import List from '@mui/material/List'
 import ListItem from '@mui/material/ListItem'
@@ -19,7 +20,6 @@ import { useState } from 'react'
 
 import { Link as RouterLink, useLocation } from 'react-router-dom'
 
-import BanderaIcono from './BanderaIcono'
 import { useCVStore } from '../store/store'
 import { useT } from '../locales/useT'
 
@@ -42,19 +42,48 @@ const NavBar = () => {
   const principal = theme.palette.primary.main
   const isDark = theme.palette.mode === 'dark'
 
+  // Texto y no banderas: una bandera nombra un pais, no un idioma, y no
+  // dejaba claro si marcaba el idioma actual o el de destino. Dos botones con
+  // aria-pressed dicen las dos cosas: cual esta activo y cual se puede elegir.
   const langButton = (
-    <IconButton
-      aria-label={t.nav.aria.cambiarIdiomaA}
-      onClick={() => setLanguage(language === 'es' ? 'en' : 'es')}
-      title={t.nav.cambiarIdiomaTitulo}
-    >
-      <BanderaIcono code={language === 'es' ? 'us' : 'co'} />
-    </IconButton>
+    <Box role='group' aria-label={t.nav.aria.idioma} display='flex' alignItems='center'>
+      {t.nav.idiomas.map((idioma, i) => {
+        const activo = language === idioma.codigo
+        return (
+          <Box key={idioma.codigo} display='flex' alignItems='center'>
+            {i > 0 && (
+              <Box component='span' aria-hidden='true' sx={{ color: 'text.secondary', px: '2px' }}>
+                |
+              </Box>
+            )}
+            <ButtonBase
+              lang={idioma.codigo}
+              title={idioma.nombre}
+              aria-pressed={activo}
+              onClick={() => setLanguage(idioma.codigo)}
+              sx={{
+                minWidth: 40,
+                minHeight: 40,
+                borderRadius: 1,
+                fontSize: '0.95rem',
+                fontWeight: activo ? 700 : 400,
+                color: activo ? principal : 'text.secondary',
+                '&:hover': { color: principal },
+                '&.Mui-focusVisible': { outline: `2px solid ${principal}` },
+              }}
+            >
+              {idioma.corto}
+            </ButtonBase>
+          </Box>
+        )
+      })}
+    </Box>
   )
 
   const themeButton = (
     <IconButton
       aria-label={isDark ? t.nav.aria.temaAClaro : t.nav.aria.temaAOscuro}
+      title={isDark ? t.nav.aria.temaAClaro : t.nav.aria.temaAOscuro}
       onClick={setMode}
     >
       {isDark ? (
@@ -128,11 +157,6 @@ const NavBar = () => {
           </ListItem>
         ))}
       </List>
-
-      <Box display='flex' justifyContent='center' alignItems='center' gap='0.5rem' mb={1}>
-        {themeButton}
-        {langButton}
-      </Box>
     </Box>
   )
 
