@@ -93,7 +93,7 @@ test('las claves de React de cada listado son unicas', () => {
   for (const [nombre, loc] of Object.entries(locales)) {
     const casos = [
       ['experiencia (alt)', loc.experiencia.map(e => e.alt)],
-      ['estudios (institucion+fecha)', loc.estudios.tarjetas.map(c => c.institucion + c.fecha)],
+      ['estudios (institucion+estudio)', loc.estudios.tarjetas.map(c => c.institucion + c.estudio)],
       ['herramientas (titulo)', loc.estudios.herramientas.items.map(i => i.titulo)],
       ['proyectos (nombre)', loc.proyectos.items.map(p => p.nombre)],
     ]
