@@ -40,12 +40,12 @@ export const es = {
     '/': {
       titulo: 'Willy Corzo | Ingeniero Químico & Desarrollador Web | Colombia',
       descripcion:
-        'Portfolio de Willy Corzo Lubo, Ingeniero Químico con más de 15 años de experiencia en el sector de Hidrocarburos, Maestría en Gerencia de Proyectos, especialista ISO 17025 y Desarrollador Web Full Stack en Colombia.',
+        'Portfolio de Willy Corzo Lubo, Ingeniero Químico con más de 18 años de experiencia en el sector de Hidrocarburos, Maestría en Gerencia de Proyectos, especialista ISO 17025 y Desarrollador Web Full Stack en Colombia.',
     },
     '/experiencia': {
       titulo: 'Experiencia Profesional | Willy Corzo',
       descripcion:
-        'Quince años en el sector de Hidrocarburos: liderazgo de medición y transferencia en custodia en Applus+, Ecopetrol, SGS, Intertek, OTI y Bureau Veritas.',
+        'Más de 18 años en el sector de Hidrocarburos: liderazgo de medición y transferencia en custodia en Applus+, Ecopetrol, SGS, Intertek, OTI y Bureau Veritas.',
     },
     '/estudios': {
       titulo: 'Formación Académica | Willy Corzo',
@@ -70,15 +70,15 @@ export const es = {
     nombre: 'Willy Corzo Lubo',
     altFoto: 'Foto de Willy Corzo',
     roles: [
-      'Maestría en Gerencia de Proyectos',
+      'Líder de Medición y Fiscalización',
       'Ingeniero Químico',
-      'Especialista NTC ISO 17025:2017',
-      'Desarrollador Web Full Stack',
-      'Desarrollador en Power BI',
-      'Experto en Excel - VBA',
+      'Máster en Gerencia de Proyectos',
+      'Especialista ISO/IEC 17025',
+      'Automatización e Inteligencia de Datos',
+      'Desarrollador Python y Power BI',
     ],
     bio: [
-      'Ingeniero Químico con maestría en Gerencia de Proyectos y más de 15 años de experiencia en el sector de Hidrocarburos, especializado en Transferencia en Custodia, Medición y Análisis.',
+      'Ingeniero Químico con Maestría en Gerencia de Proyectos y más de 18 años en el sector de hidrocarburos, especializado en medición, fiscalización y transferencia de custodia bajo API MPMS, ASTM, ISO/IEC 17025 y la Resolución 40236 de la ANH.',
       'He desarrollado las herramientas que mi propio trabajo necesitaba: programas de cálculo y balance para laboratorio e inspección, y tableros de control para seguimiento operativo y gerencial. Automatizo desde el problema, no desde la tecnología.',
     ],
     cta: {
