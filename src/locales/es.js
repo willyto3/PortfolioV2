@@ -161,7 +161,7 @@ export const es = {
       imageLight: 'SInmediatas.W.png',
       imageDark: 'SInmediatas.B.png',
       alt: 'Imagen Corporativa Soluciones Inmediatas',
-      cargo: 'Programador – Integrador de Sistemas',
+      cargo: 'Programador – Integrador',
       empresa: 'Soluciones Inmediatas',
       cliente: 'Ecopetrol S.A.',
       clientImageLight: 'Ecopetrol.W.png',
