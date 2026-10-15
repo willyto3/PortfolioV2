@@ -28,7 +28,7 @@ const CardEstudio = ({
         width: '100%',
         height: '100%',
         display: 'flex',
-        flexDirection: { xs: 'column', sm: 'row' },
+        flexDirection: 'column',
         p: '1rem',
         mb: 0,
         // El canto de la tarjeta no puede depender solo de la sombra
@@ -36,56 +36,63 @@ const CardEstudio = ({
         borderTop: `4px solid ${primary}`,
       }}
     >
-      <Box
-        width={{ xs: '100%', sm: '10rem' }}
-        height={{ xs: '8rem', sm: 'auto' }}
-        display='flex'
-        justifyContent='center'
-        alignItems='center'
-        flexShrink={0}
-        p={{ xs: '0.5rem', sm: '0.75rem' }}
-      >
-        {/* Cada logo trae version clara (.W) y oscura (.B, tinta blanca),
-            asi que no hace falta placa. Caja comun para que los anchos
-            (SENA) y los altos (U. del Atlantico) pesen parecido. */}
-        <CardMedia
-          sx={{
-            objectFit: 'contain',
-            width: 'auto',
-            height: 'auto',
-            maxWidth: '100%',
-            maxHeight: { xs: '7rem', sm: '8rem' },
-          }}
-          image={theme.palette.mode === 'dark' && fondoOscuro ? fondoOscuro : fondo}
-          component='img'
-          alt={institucion}
-          // sin title: duplicaba el alt en un tooltip nativo que ademas
-          // no existe en tactil
-          loading='lazy'
-        />
-      </Box>
-
-      <CardContent sx={{ flex: 1 }}>
-        <Typography variant='h2' component='h3' fontSize='clamp(1.2rem, 2.5vw, 2rem)' color='primary'>
-          {estudio}
-        </Typography>
-        <Typography variant='h3' component='p' fontSize='clamp(1rem, 2vw, 1.5rem)'>{grado}</Typography>
-        <Typography variant='h3' component='p' fontSize='clamp(1rem, 2vw, 1.5rem)'>{institucion}</Typography>
-
-        <Box display='flex' alignItems='center' gap='1rem' flexWrap='wrap' mt='0.25rem'>
-          <Typography variant='h4' component='p' color='text.secondary' fontSize='clamp(0.85rem, 1.5vw, 1.25rem)'>
-            {fecha}
-          </Typography>
-          {duracion && (
-            <Box display='flex' alignItems='center' gap='0.25rem'>
-              <AccessTimeIcon sx={{ fontSize: 'clamp(0.85rem, 1.5vw, 1.1rem)', color: 'text.secondary' }} />
-              <Typography variant='h4' component='p' color='text.secondary' fontSize='clamp(0.85rem, 1.5vw, 1.25rem)'>
-                {duracion}
-              </Typography>
-            </Box>
-          )}
+      {/* Igual que en Experiencia: desde sm la cabecera es una fila (logo y
+          datos del estudio) y el resto va debajo a todo el ancho, para que la
+          tarjeta no se alargue. En movil todo se apila. */}
+      <Box display='flex' flexDirection={{ xs: 'column', sm: 'row' }} alignItems={{ sm: 'center' }} gap={{ sm: '0.5rem' }}>
+        <Box
+          width={{ xs: '100%', sm: '9rem' }}
+          height={{ xs: '8rem', sm: 'auto' }}
+          display='flex'
+          justifyContent='center'
+          alignItems='center'
+          flexShrink={0}
+          p={{ xs: '0.5rem', sm: '0.75rem' }}
+        >
+          {/* Cada logo trae version clara (.W) y oscura (.B, tinta blanca),
+              asi que no hace falta placa. Caja comun para que los anchos
+              (SENA) y los altos (U. del Atlantico) pesen parecido. */}
+          <CardMedia
+            sx={{
+              objectFit: 'contain',
+              width: 'auto',
+              height: 'auto',
+              maxWidth: '100%',
+              maxHeight: { xs: '7rem', sm: '6.5rem' },
+            }}
+            image={theme.palette.mode === 'dark' && fondoOscuro ? fondoOscuro : fondo}
+            component='img'
+            alt={institucion}
+            // sin title: duplicaba el alt en un tooltip nativo que ademas
+            // no existe en tactil
+            loading='lazy'
+          />
         </Box>
 
+        <Box flex={1} minWidth={0} px={{ xs: '1rem', sm: 0 }}>
+          <Typography variant='h2' component='h3' fontSize='clamp(1.2rem, 2.5vw, 2rem)' color='primary'>
+            {estudio}
+          </Typography>
+          <Typography variant='h3' component='p' fontSize='clamp(1rem, 2vw, 1.5rem)'>{grado}</Typography>
+          <Typography variant='h3' component='p' fontSize='clamp(1rem, 2vw, 1.5rem)'>{institucion}</Typography>
+
+          <Box display='flex' alignItems='center' gap='1rem' flexWrap='wrap' mt='0.25rem'>
+            <Typography variant='h4' component='p' color='text.secondary' fontSize='clamp(0.85rem, 1.5vw, 1.25rem)'>
+              {fecha}
+            </Typography>
+            {duracion && (
+              <Box display='flex' alignItems='center' gap='0.25rem'>
+                <AccessTimeIcon sx={{ fontSize: 'clamp(0.85rem, 1.5vw, 1.1rem)', color: 'text.secondary' }} />
+                <Typography variant='h4' component='p' color='text.secondary' fontSize='clamp(0.85rem, 1.5vw, 1.25rem)'>
+                  {duracion}
+                </Typography>
+              </Box>
+            )}
+          </Box>
+        </Box>
+      </Box>
+
+      <CardContent sx={{ flex: 1, pt: '0.5rem', '&:last-child': { pb: '0.5rem' } }}>
         {descripcion && (
           <Typography variant='h4' component='p' fontSize='clamp(0.85rem, 1.5vw, 1.25rem)' mt='0.5rem'>
             {descripcion}
