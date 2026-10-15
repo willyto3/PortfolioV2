@@ -533,8 +533,8 @@ export const es = {
           categoria: 'Automatización y Datos',
           usos: [
             'Automatización de procesos con Robot JAVI y Robot CIEG.',
-            'Lab_2026: gestión de laboratorio y metrología con FastAPI y más de 1.500 pruebas con pytest.',
-            'Medidores V2: análisis de certificados de calibración y cartas de control con Pandas y NumPy.',
+            'Sistema de gestión metrológica de laboratorio con FastAPI y más de 1.500 pruebas con pytest.',
+            'Análisis metrológico de medidores de flujo: certificados de calibración y cartas de control con Pandas y NumPy.',
             'Herramientas informáticas para la operación del Centro de Cadena.',
           ],
         },
@@ -573,16 +573,16 @@ export const es = {
   proyectos: {
     items: [
       {
-        nombre: 'Lab_2026',
+        nombre: 'Sistema de Gestión Metrológica de Laboratorio',
         imagen: 'piton.png',
-        descripcion: 'Sistema de gestión de laboratorio y metrología (en desarrollo): calibraciones y confirmación metrológica de equipos, alertas a empresas calibradoras, cálculo de % de agua y factor Karl Fischer, y trazabilidad de decisiones con registro de auditoría.',
-        tecnologias: ['Python', 'FastAPI', 'pytest'],
+        descripcion: 'En desarrollo: calibraciones y confirmación metrológica de equipos, alertas a empresas calibradoras, cálculo de % de agua y factor Karl Fischer, y trazabilidad de decisiones con registro de auditoría.',
+        tecnologias: ['Python', 'FastAPI', 'JavaScript', 'pytest'],
         categoria: 'Metrología y Medición',
       },
       {
-        nombre: 'Medidores V2',
+        nombre: 'Análisis Metrológico de Medidores de Flujo',
         imagen: 'piton.png',
-        descripcion: 'Análisis metrológico de medidores de flujo (en desarrollo): lectura automática de certificados de calibración en PDF, cartas de control Shewhart del factor del medidor e intervalo de recalibración según OIML D 10, con informes PDF automáticos.',
+        descripcion: 'En desarrollo: lectura automática de certificados de calibración en PDF, cartas de control Shewhart del factor del medidor e intervalo de recalibración según OIML D 10, con informes PDF automáticos.',
         tecnologias: ['Python', 'Pandas', 'NumPy', 'Matplotlib'],
         categoria: 'Metrología y Medición',
       },
