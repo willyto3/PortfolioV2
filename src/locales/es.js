@@ -290,7 +290,6 @@ export const es = {
         logros: [
           'Trabajo de grado calificado como Meritorio, con Mención Meritoria.',
           'Cuarto puesto a nivel Costa Caribe en las Pruebas ECAES (2005), con 114,7 puntos.',
-          'Primer puesto en la Prueba ICFES, con 353 puntos.',
         ],
       },
       {

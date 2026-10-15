@@ -77,7 +77,7 @@ The `*UI` keys hold labels and headings; the matching plain key holds the data r
 
 The language switch is text (`ES | EN`), not flags: `nav.idiomas` lists each language named in its own tongue and is identical in both files. The active one is marked with `aria-pressed`.
 
-**The two locale files must stay structurally identical.** A key present in one and missing in the other crashes the page that reads it as soon as the user switches language. Both files currently expose 421 key paths.
+**The two locale files must stay structurally identical.** A key present in one and missing in the other crashes the page that reads it as soon as the user switches language. Both files currently expose 419 key paths.
 
 To add another language: create `locales/xx.js` with the same structure, import it in `locales/index.js`, and add it to the `locales` object. The active language is stored in Zustand (`language`) and toggled via `setLanguage(code)`.
 
