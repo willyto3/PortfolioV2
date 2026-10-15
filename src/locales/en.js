@@ -50,7 +50,7 @@ export const en = {
     '/herramientas': {
       titulo: 'Tools & Technologies | Willy Corzo',
       descripcion:
-        'Proficiency in Excel and VBA, SQL, JavaScript, React, HTML, CSS, Git and Word, with years of experience and the real-world applications of each tool.',
+        'Advanced Python and Power BI, Excel and VBA, SQL, Power Automate and web development with React, with years of experience and real uses of each tool.',
     },
     '/proyectos': {
       titulo: 'Projects | Willy Corzo',
@@ -421,7 +421,7 @@ export const en = {
           parrafo: 'Spreadsheet application for manipulating numerical and text data, with automation capabilities through macros and VBA.',
           conocimiento: 'Advanced',
           nivel: 90,
-          anios: 15,
+          anios: 18,
           categoria: 'Office Suite',
           usos: [
             'Hydrocarbon production and measurement balances.',
@@ -484,7 +484,7 @@ export const en = {
           ],
         },
         {
-          titulo: 'Git Hub',
+          titulo: 'Git & GitHub',
           imagen: 'github.svg',
           parrafo: 'Code hosting platform with Git version control for collaboration and deployment.',
           conocimiento: 'Intermediate',
@@ -502,7 +502,7 @@ export const en = {
           parrafo: 'Word processor for creating, editing, and formatting professional documents with advanced writing tools.',
           conocimiento: 'Advanced',
           nivel: 90,
-          anios: 15,
+          anios: 18,
           categoria: 'Office Suite',
           usos: [
             'Writing technical reports and inspection reports.',
@@ -528,13 +528,14 @@ export const en = {
           titulo: 'Python',
           imagen: 'piton.png',
           parrafo: 'Programming language used to automate operational processes and build calculation and analysis tools.',
-          conocimiento: 'Intermediate',
-          nivel: 70,
+          conocimiento: 'Advanced',
+          nivel: 85,
           anios: 3,
           categoria: 'Automation & Data',
           usos: [
             'Process automation with Robot JAVI and Robot CIEG.',
-            'Projected refining scenarios dashboard.',
+            'Lab_2026: laboratory and metrology management with FastAPI and over 1,500 pytest tests.',
+            'Medidores V2: calibration certificate analysis and control charts with Pandas and NumPy.',
             'Digital tools for the Supply Chain Center operation.',
           ],
         },
@@ -550,6 +551,19 @@ export const en = {
             'Refined Scenarios and GIP Management dashboards.',
             'Energy and Gas Information Center.',
             'Technical reports for management follow-up.',
+          ],
+        },
+        {
+          titulo: 'Power Automate',
+          imagen: 'powerautomate.svg',
+          parrafo: 'Microsoft workflow automation platform, integrated with Power BI and SQL Server.',
+          conocimiento: 'Intermediate',
+          nivel: 70,
+          anios: 1,
+          categoria: 'Automation & Data',
+          usos: [
+            'RPA robots Robot JAVI and Robot CIEG for monitoring fuel and energy transport.',
+            'Automation of operational reports at Ecopetrol.',
           ],
         },
       ],
