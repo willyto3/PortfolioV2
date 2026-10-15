@@ -268,7 +268,7 @@ export const es = {
     tarjetas: [
       {
         institucion: 'Universidad Isabel I',
-        fecha: 'Madrid España - 2020',
+        fecha: 'En línea, España - 2020',
         estudio: 'Project Management',
         fondo: 'isabel.W.png',
         fondoOscuro: 'isabel.B.png',
@@ -288,7 +288,7 @@ export const es = {
         descripcion: 'Carrera orientada al diseño y optimización de procesos industriales, con sólida formación en fisicoquímica, termodinámica, operaciones unitarias y análisis de materiales aplicados al sector de Hidrocarburos.',
         tesis: 'HEDA - Heat Exchanger Design Assistant: hoja de cálculo en Excel-VBA para el diseño de intercambiadores de calor',
         logros: [
-          'Trabajo de grado calificado como Meritorio, con Mención Honorífica.',
+          'Trabajo de grado calificado como Meritorio, con Mención Meritoria.',
           'Cuarto puesto a nivel Costa Caribe en las Pruebas ECAES (2005).',
         ],
       },
@@ -298,7 +298,7 @@ export const es = {
         estudio: 'Gestión en Laboratorios de Ensayo y Calibración - Norma ISO/IEC 17025',
         fondo: 'sena.W.png',
         fondoOscuro: 'sena.B.png',
-        grado: 'Especialización Técnica',
+        grado: 'Especialización Tecnológica',
         tipo: 'formal',
         descripcion: 'Especialización en implementación y gestión de sistemas de calidad para laboratorios de ensayo y calibración bajo los requisitos de la norma NTC ISO/IEC 17025.',
         tesis: null,

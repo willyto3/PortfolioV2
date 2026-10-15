@@ -268,7 +268,7 @@ export const en = {
     tarjetas: [
       {
         institucion: 'Universidad Isabel I',
-        fecha: 'Madrid, Spain - 2020',
+        fecha: 'Online, Spain - 2020',
         estudio: 'Project Management',
         fondo: 'isabel.W.png',
         fondoOscuro: 'isabel.B.png',
@@ -288,7 +288,7 @@ export const en = {
         descripcion: 'Degree focused on the design and optimization of industrial processes, with a solid foundation in physical chemistry, thermodynamics, unit operations, and materials analysis applied to the Hydrocarbons sector.',
         tesis: 'HEDA - Heat Exchanger Design Assistant: Excel-VBA spreadsheet for heat exchanger design',
         logros: [
-          'Thesis graded Meritorious, with Honorable Mention.',
+          'Thesis graded Meritorious, with Meritorious Mention.',
           'Fourth place in the Caribbean Coast region in the ECAES exams (2005).',
         ],
       },
@@ -298,7 +298,7 @@ export const en = {
         estudio: 'Management of Testing and Calibration Laboratories - ISO/IEC 17025 Standard',
         fondo: 'sena.W.png',
         fondoOscuro: 'sena.B.png',
-        grado: 'Technical Specialization',
+        grado: 'Technological Specialization',
         tipo: 'formal',
         descripcion: 'Specialization in implementation and quality management systems for testing and calibration laboratories under the requirements of the NTC ISO/IEC 17025 standard.',
         tesis: null,
