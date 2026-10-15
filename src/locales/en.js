@@ -289,7 +289,8 @@ export const en = {
         tesis: 'HEDA - Heat Exchanger Design Assistant: Excel-VBA spreadsheet for heat exchanger design',
         logros: [
           'Thesis graded Meritorious, with Meritorious Mention.',
-          'Fourth place in the Caribbean Coast region in the ECAES exams (2005).',
+          'Fourth place in the Caribbean Coast region in the ECAES exams (2005), with 114.7 points.',
+          'First place in the ICFES exam, with 353 points.',
         ],
       },
       {
@@ -350,6 +351,18 @@ export const en = {
         descripcion: 'Training program in frontend web development with emphasis on modern web technologies and version control.',
         habilidades: ['HTML', 'CSS', 'JavaScript', 'Git', 'React'],
         duracion: '360 hours',
+      },
+      {
+        institucion: 'Udemy',
+        fecha: 'Online - 2021',
+        estudio: 'Learn HTML from Scratch to Expert',
+        fondo: 'udemy.W.png',
+        fondoOscuro: 'udemy.B.png',
+        grado: 'Course',
+        tipo: 'corto',
+        descripcion: 'HTML course from the fundamentals to an advanced level.',
+        habilidades: ['HTML'],
+        duracion: '6.5 hours',
       },
       {
         institucion: 'Servicio Nacional de Aprendizaje - SENA',

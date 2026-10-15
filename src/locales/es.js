@@ -289,7 +289,8 @@ export const es = {
         tesis: 'HEDA - Heat Exchanger Design Assistant: hoja de cálculo en Excel-VBA para el diseño de intercambiadores de calor',
         logros: [
           'Trabajo de grado calificado como Meritorio, con Mención Meritoria.',
-          'Cuarto puesto a nivel Costa Caribe en las Pruebas ECAES (2005).',
+          'Cuarto puesto a nivel Costa Caribe en las Pruebas ECAES (2005), con 114,7 puntos.',
+          'Primer puesto en la Prueba ICFES, con 353 puntos.',
         ],
       },
       {
@@ -350,6 +351,18 @@ export const es = {
         descripcion: 'Programa de formación en desarrollo web frontend con énfasis en las tecnologías fundamentales de la web moderna y control de versiones.',
         habilidades: ['HTML', 'CSS', 'JavaScript', 'Git', 'React'],
         duracion: '360 horas',
+      },
+      {
+        institucion: 'Udemy',
+        fecha: 'En línea - 2021',
+        estudio: 'Aprende HTML desde Cero hasta Experto',
+        fondo: 'udemy.W.png',
+        fondoOscuro: 'udemy.B.png',
+        grado: 'Curso',
+        tipo: 'corto',
+        descripcion: 'Curso de HTML desde los fundamentos hasta nivel avanzado.',
+        habilidades: ['HTML'],
+        duracion: '6,5 horas',
       },
       {
         institucion: 'Servicio Nacional de Aprendizaje - SENA',
