@@ -45,7 +45,9 @@ const Presentacion = () => {
           // 95% anterior solo restaba un margen derecho asimetrico.
           maxWidth: '72ch',
           mx: { xs: 'auto', lg: 0 },
-          mt: '1.5rem',
+          // En movil el rotador ya reserva dos lineas para los roles largos;
+          // con 1,5rem encima, un rol de una linea dejaba un hueco de ~50px.
+          mt: { xs: '0.5rem', lg: '1.5rem' },
           // Sin regla lateral: el acento ya marca el divisor, el rol, el
           // boton solido y los chips. Un sexto acento aqui no anadia
           // jerarquia, solo competia. Sin padding la bio alinea su borde
