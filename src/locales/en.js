@@ -290,7 +290,6 @@ export const en = {
         logros: [
           'Thesis graded Meritorious, with Meritorious Mention.',
           'Fourth place in the Caribbean Coast region in the ECAES exams (2005), with 114.7 points.',
-          'First place in the ICFES exam, with 353 points.',
         ],
       },
       {
