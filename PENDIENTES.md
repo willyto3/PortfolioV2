@@ -41,14 +41,9 @@ El sitio volvió al router de hash en `d9dc4b8` porque las rutas reales servían
 
 ## NavBar
 
-### Idioma y tema duplicados en móvil · verificado · **decisión pendiente**
-
-Ambos botones aparecen en la barra **y** dentro del cajón: dos formas de hacer
-lo mismo a treinta píxeles de distancia. Hay que elegir de dónde se quitan.
-
 ### Zonas táctiles de 40×40 · verificado · **decisión pendiente**
 
-Los botones de la barra miden 40×40 (el de idioma, 46×38). Cumplen
+Los botones de la barra miden 40×40 (también ES y EN). Cumplen
 WCAG 2.5.8 AA, que pide 24×24, pero quedan por debajo de los 44×44 que
 recomiendan Apple y el nivel AAA. Subirlos cambia la altura de la barra.
 
