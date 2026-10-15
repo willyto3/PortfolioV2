@@ -9,6 +9,11 @@ export const en = {
       { label: 'Tools', ruta: '/herramientas' },
       { label: 'Projects', ruta: '/proyectos' },
     ],
+    recorrido: {
+      anterior: 'Previous',
+      siguiente: 'Next',
+      aria: 'Portfolio tour',
+    },
     aria: {
       abrirMenu: 'Open menu',
       cerrarMenu: 'Close menu',

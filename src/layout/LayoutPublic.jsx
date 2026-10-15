@@ -1,5 +1,5 @@
 // Importacion de Outlet de React Router
-import { Outlet } from 'react-router-dom'
+import { Outlet, ScrollRestoration } from 'react-router-dom'
 // Importamos useMemo de React
 import { Suspense, useMemo } from 'react'
 // Importamos CssBaseLine, Theme Provider y createTheme de mui Material
@@ -8,6 +8,7 @@ import { Box, CircularProgress, CssBaseline, ThemeProvider, createTheme } from '
 import NavBar from '../components/NavBar'
 import { themeSettings } from '../theme'
 import Footer, { ALTURA_FOOTER } from '../components/Footer'
+import Recorrido from '../components/Recorrido'
 // ? IMPORTACION DE MODULOS
 import { useCVStore } from '../store/store'
 import { useMetadatosRuta } from '../hooks/useMetadatosRuta'
@@ -60,10 +61,14 @@ const LayoutPublic = () => {
             }
           >
             <Outlet />
+            <Recorrido />
           </Suspense>
         </Box>
         <Footer />
       </Box>
+      {/* Sin esto, el boton de pie de pagina abria la siguiente pagina a mitad
+          de scroll en lugar de arriba */}
+      <ScrollRestoration />
     </ThemeProvider>
   )
 }
