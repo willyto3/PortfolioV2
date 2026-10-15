@@ -13,7 +13,7 @@ import { useTheme } from '@mui/material'
 import { useT } from '../../locales/useT'
 
 const CardEstudio = ({
-  institucion, estudio, fecha, fondo, grado,
+  institucion, estudio, fecha, fondo, fondoOscuro, grado,
   descripcion, tesis, logros,
   habilidades, duracion,
 }) => {
@@ -43,17 +43,20 @@ const CardEstudio = ({
         justifyContent='center'
         alignItems='center'
         flexShrink={0}
-        sx={{ backgroundColor: theme.palette.placaLogo, borderRadius: 1 }}
+        p={{ xs: '0.5rem', sm: '0.75rem' }}
       >
+        {/* Cada logo trae version clara (.W) y oscura (.B, tinta blanca),
+            asi que no hace falta placa. Caja comun para que los anchos
+            (SENA) y los altos (U. del Atlantico) pesen parecido. */}
         <CardMedia
           sx={{
-            ml: { xs: 0, sm: '10px' },
-            padding: { xs: '0.5em', sm: '1em' },
             objectFit: 'contain',
-            height: '100%',
-            maxWidth: { xs: '8rem', sm: '100%' },
+            width: 'auto',
+            height: 'auto',
+            maxWidth: '100%',
+            maxHeight: { xs: '7rem', sm: '8rem' },
           }}
-          image={fondo}
+          image={theme.palette.mode === 'dark' && fondoOscuro ? fondoOscuro : fondo}
           component='img'
           alt={institucion}
           // sin title: duplicaba el alt en un tooltip nativo que ademas
