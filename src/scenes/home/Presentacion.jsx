@@ -22,7 +22,7 @@ const Presentacion = () => {
         variant='h1'
         component='h1'
         fontWeight='bold'
-        sx={{ color: primary, lineHeight: 1.1, m: 0 }}
+        sx={{ color: 'text.primary', lineHeight: 1.1, m: 0 }}
       >
         {t.home.nombre}
       </Typography>
@@ -46,8 +46,8 @@ const Presentacion = () => {
           maxWidth: '72ch',
           mx: { xs: 'auto', lg: 0 },
           mt: '1.5rem',
-          // Sin regla lateral: el naranja ya marca el nombre, el divisor, el
-          // rol, el boton solido y los chips. Un sexto acento aqui no anadia
+          // Sin regla lateral: el acento ya marca el divisor, el rol, el
+          // boton solido y los chips. Un sexto acento aqui no anadia
           // jerarquia, solo competia. Sin padding la bio alinea su borde
           // izquierdo con el rotador, los botones y los chips.
         }}

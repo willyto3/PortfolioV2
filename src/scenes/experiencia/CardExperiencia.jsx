@@ -135,12 +135,12 @@ const CardExperiencia = ({
             >
               <Box flex='1 1 240px' display='flex' flexDirection='column' gap='4px'>
                 {empresa && (
-                  <InfoRow icon={BusinessOutlinedIcon} color={primary}>
+                  <InfoRow icon={BusinessOutlinedIcon} color='text.secondary'>
                     {labels.contratante}: {empresa}
                   </InfoRow>
                 )}
                 {cliente && (
-                  <InfoRow icon={BusinessCenterOutlinedIcon} color={primary}>
+                  <InfoRow icon={BusinessCenterOutlinedIcon} color='text.secondary'>
                     {labels.servicioPara}: {cliente}
                   </InfoRow>
                 )}
@@ -172,8 +172,8 @@ const CardExperiencia = ({
           )}
 
           <Box display='flex' alignItems='center' gap='1rem' flexWrap='wrap' mb='4px'>
-            <InfoRow icon={DateRangeIcon} color={primary}>{fecha}</InfoRow>
-            <InfoRow icon={PlaceIcon} color={primary}>{lugar}</InfoRow>
+            <InfoRow icon={DateRangeIcon} color='text.secondary'>{fecha}</InfoRow>
+            <InfoRow icon={PlaceIcon} color='text.secondary'>{lugar}</InfoRow>
           </Box>
 
           <Box component='ul' sx={{ listStyle: 'none', p: 0, m: 0, my: '6px' }}>

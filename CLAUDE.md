@@ -37,7 +37,7 @@ Home and `LayoutPublic` ship in the initial bundle; the other four scenes are `R
 - `src/layout/LayoutPublic.jsx` — Theme provider setup, global layout.
 - `src/router/index.jsx` — `createHashRouter` with `LayoutPublic` as parent and scenes as children; the four non-home scenes are `React.lazy`.
 - `src/store/store.js` — Zustand store with `persist`; manages `mode` (dark/light) and `language` (`es`/`en`), saved to localStorage under key `'cv'`. Note `setMode` is a toggle and ignores any argument.
-- `src/theme.js` — MUI theme factory. Primary color is orange (`#FF9800`). Exports `themeSettings(mode)` used in `LayoutPublic` with `useMemo`.
+- `src/theme.js` — MUI theme factory. Primary color is the CV's blue (`#1F4E79` in light mode, `#8AB8E6` in dark mode). Exports `themeSettings(mode)` used in `LayoutPublic` with `useMemo`.
 - `src/locales/` — i18n source of truth (see below).
 - `public/` — Static assets, referenced by bare filename from the locales (e.g. `imagen: 'excel.png'`). Profile photo is `WillyNegro.webp`.
 
@@ -49,7 +49,7 @@ Home and `LayoutPublic` ship in the initial bundle; the other four scenes are `R
 const theme = useTheme()
 theme.palette.neutral.light   // background color
 theme.palette.neutral.dark    // text color
-theme.palette.primary.main    // orange accent
+theme.palette.primary.main    // blue accent
 ```
 
 Cards sit on `background.paper`, which is `#1F2937` in dark mode. Any asset that is essentially black or essentially white will disappear in one of the two themes. Three patterns exist for this:
