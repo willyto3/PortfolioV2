@@ -45,8 +45,10 @@ const Seccion = ({ titulo, items, Tarjeta, getKey, anchoTarjeta }) => {
           }} />
         </Box>
 
-        {/* Cards */}
-        <Grid container gap='1rem' flex={1}>
+        {/* Cards. Por debajo de lg la seccion es una columna con alignItems
+            flex-start, y sin alignSelf la rejilla tomaba el ancho de su
+            contenido: en tablet cada seccion quedaba de un ancho distinto. */}
+        <Grid container gap='1rem' flex={1} alignSelf='stretch'>
           {items.map(item => (
             <Grid size={anchoTarjeta} key={getKey(item)} sx={{ display: 'flex' }}>
               <Tarjeta {...item} />
