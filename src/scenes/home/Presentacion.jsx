@@ -13,7 +13,7 @@ const Presentacion = () => {
   const primary = theme.palette.primary.main
 
   return (
-    <Box sx={{ textAlign: { xs: 'center', lg: 'left' } }}>
+    <Box sx={{ textAlign: { xs: 'center', md: 'left' } }}>
       <Typography variant='h2' component='p' color='text.secondary' sx={{ m: 0 }}>
         {t.home.saludo}
       </Typography>
@@ -32,8 +32,8 @@ const Presentacion = () => {
           my: '1rem',
           borderColor: primary,
           borderBottomWidth: 3,
-          width: { xs: '60%', lg: '40%' },
-          mx: { xs: 'auto', lg: 0 },
+          width: { xs: '60%', md: '40%' },
+          mx: { xs: 'auto', md: 0 },
         }}
       />
 
@@ -44,10 +44,10 @@ const Presentacion = () => {
           // El ancho lo fijan ya maxWidth y el padding de los contenedores; el
           // 95% anterior solo restaba un margen derecho asimetrico.
           maxWidth: '72ch',
-          mx: { xs: 'auto', lg: 0 },
+          mx: { xs: 'auto', md: 0 },
           // En movil el rotador ya reserva dos lineas para los roles largos;
           // con 1,5rem encima, un rol de una linea dejaba un hueco de ~50px.
-          mt: { xs: '0.5rem', lg: '1.5rem' },
+          mt: { xs: '0.5rem', md: '1.5rem' },
           // Sin regla lateral: el acento ya marca el divisor, el rol, el
           // boton solido y los chips. Un sexto acento aqui no anadia
           // jerarquia, solo competia. Sin padding la bio alinea su borde
@@ -77,7 +77,7 @@ const Presentacion = () => {
         flexWrap='wrap'
         gap='0.75rem'
         mt='1.5rem'
-        justifyContent={{ xs: 'center', lg: 'flex-start' }}
+        justifyContent={{ xs: 'center', md: 'flex-start' }}
       >
         <Button
           variant='contained'
@@ -112,7 +112,7 @@ const Presentacion = () => {
         flexWrap='wrap'
         gap='0.5rem'
         mt='1.5rem'
-        justifyContent={{ xs: 'center', lg: 'flex-start' }}
+        justifyContent={{ xs: 'center', md: 'flex-start' }}
       >
         {t.home.habilidades.map(habilidad => (
           <Chip
