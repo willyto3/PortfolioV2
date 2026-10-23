@@ -80,7 +80,7 @@ export function RotadorRoles() {
         minHeight: { xs: '3.5rem', md: '3.25rem' },
         display: 'flex',
         alignItems: 'center',
-        justifyContent: { xs: 'center', lg: 'flex-start' },
+        justifyContent: { xs: 'center', md: 'flex-start' },
       }}
       onMouseEnter={() => setPausado(true)}
       onMouseLeave={() => setPausado(false)}
@@ -99,7 +99,7 @@ export function RotadorRoles() {
             m: 0,
             display: 'flex',
             alignItems: 'center',
-            justifyContent: { xs: 'center', lg: 'flex-start' },
+            justifyContent: { xs: 'center', md: 'flex-start' },
           }}
         >
           {items[indiceSeguro]}
